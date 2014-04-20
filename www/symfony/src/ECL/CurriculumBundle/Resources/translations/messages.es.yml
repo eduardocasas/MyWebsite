@@ -1,0 +1,48 @@
+curriculum:
+    title: Mi Curriculum Vitae
+    section_1: 
+        title: Datos Personales
+        text_1: "Nombre: Eduardo Casas"
+        text_2: "Fecha de nacimiento: 5 de febrero de 1983"
+        text_3: "Edad: 31 años"
+        text_4: "Lugar: Madrid"
+    section_2: 
+        title: Conocimientos Técnicos 
+        subsection_1:
+            title: Programación Back-End
+            text_1: "Lenguajes: PHP, Python, Java, MySQL"
+            text_2: "Frameworks: Symfony, Zend Framework, Django, Spring"
+            text_3: "Testing: PHPUnit"
+            text_4: "Gestión de Paquetes: Composer, pip, Maven"
+            text_5: "Servidores: Apache, Nginx"
+        subsection_2:
+            title: Programación Front-End
+            text_1: "Lenguajes: HTML, CSS, JavaScript, XML, JSON"
+            text_2: "Frameworks: jQuery"
+            text_3: "Compatibilidad Cross-Browser"
+            text_4: "Motor de plantillas: Twig, Thymeleaf"
+            text_5: Técnicas SEO
+            text_6: "Gestión de Paquetes: Bower"
+        subsection_3:
+            title: Otros 
+            text_1: "Sistemas Operativos: Debian GNU/Linux, Microsoft Windows, Android"
+            text_2: "Otros lenguajes: C++ (+Qt), Bash, MATLAB, Fortran"
+            text_3: "Control de Versiones: Git, Subversion"
+            text_4: "Diseño Gráfico: GIMP, Photoshop"
+            text_5: "Otras herramientas: MediaWiki, Firebug, yuglify, Mantis Bug Tracker, VirtualBox, virtualenv"
+    section_3: 
+        title: Experiencia laboral 
+        subtitle_1: España
+        subtitle_2: Inglaterra
+        text_1: "Desarrollador Web en <a target=\"_blank\" href=\"http://www.mazars.es\">MAZARS AUDITORES, SLP</a>.<br>Madrid. Julio 2011 - Actualmente."
+        text_2: "Desarrollador Web en <a target=\"_blank\" href=\"https://www.evoluciona.com\">EVOLUCIONA</a>.<br>Madrid. Septiembre 2010 - Julio 2011."
+        text_3: "Ingeniero en Generación de Energía en <a target=\"_blank\" href=\"http://www.tecnicasreunidas.es\">TÉCNICAS REUNIDAS, SA</a>.<br>Madrid. Enero 2008 - Enero 2010."
+        text_4: "Dependiente en <a target=\"_blank\" href=\"http://www.sportsdirect.com\">SPORTS WORLD</a>.<br>Exeter. Abril - Junio 2007."
+    section_4: 
+        title: Formación Académica
+        text_1: "Ingeniero Industrial en la <a target=\"_blank\" href=\"http://www.unican.es/index.html\">Universidad de Cantabria</a>.<br>Santander. Septiembre 2001 - Junio 2007."
+        text_2: "Erasmus en la <a target=\"_blank\" href=\"https://www.exeter.ac.uk/\">Universidad de Exeter</a>.<br>Exeter, Inglaterra. Septiembre 2006 - Junio 2007."
+    section_5: 
+        title: Idiomas
+        text_1: "Español: Nativo"
+        text_2: "Inglés: <a target=\"_blank\" href=\"http://www.cambridgeenglish.org/exams-and-qualifications/advanced/\">Certificate in Advanced English</a>"

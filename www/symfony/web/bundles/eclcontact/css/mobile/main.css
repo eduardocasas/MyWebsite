@@ -1,0 +1,45 @@
+/* ----------- form ----------- */
+
+#contact_form
+{
+    display: block;
+    font-size: 2em;
+    margin: 50px auto;
+    width: 90%;
+}
+    #contact_form fieldset
+    {
+        margin: 20px 0;
+    }
+        #contact_name,
+        #contact_email
+        {
+            padding: 0.5em 0.2em 0.5em 1em;
+            width: 100%;
+        }
+        #contact_subject,
+        #contact_message
+        {
+            padding: 0.5em 0.2em 0.5em 1em;
+            width: 100%;
+        }
+            #contact_message
+            {
+                height: 160px; 
+            }
+    input[type=submit]
+    {
+        margin: 10px 0 30px 0;
+    }
+    
+/* ----------- info ----------- */
+
+#message_sent_image
+{
+    display: block;
+    float: right;
+}
+#main_article_wrapper p
+{
+    font-size: 1.6em;
+}

@@ -1,0 +1,12 @@
+about:
+    title: About Me
+    text_1: Hi! My name is Eduardo Casas and I'm a 31 year old <strong>web developer</strong>.
+    text_2: Born in Zaragoza (Spain), raised and educated in Cantabria, currently I'm living in <strong>Madrid</strong> for more than six years ago.
+    text_3: Although my university degree says I'm an <strong>Industrial Engineer</strong>, I work as a software developer, especially in web enviroment which is my passion. I'm an autodidact in this field that never ceases to learn.
+    text_4: In my spare time I usually program my personal projects and study new programming languages and other areas of the computer science. My girlfriend, friends and watching films let me break away from the computer. When I have enough time I like travelling and reading, when I am not with a technical book, Sci-Fi or fantasy books.
+    text_5: To sum up, I guess I can say that I'm a programmer, analyst; linux, free software and open standards supporter; moderate tech geek, freak, ex-vegetarian, cinephile and animal and music lover.
+    text_6: This is my personal website. Here you can find <a href="%curriculum_url%">my professional resume</a> and a <a href="%blog_url%">software development blog</a>, which is quite unattended but I promise to update it, sooner or later. If you want to keep in touch with me you can use this <a href="%contact_url%">contact form</a>.
+    text_7: |
+        Of course you can also find me in some of the most popular social networks: <a href="%github_url%">github</a>, <a href="%google_url%">google+</a>, <a href="%twitter_url%">twitter</a>, <a href="%linkedin_url%">linkedin</a>.
+    text_8: Greetings!
+    text_9: "PS: This site is also available in <a href=\"%change_language_url%\">Spanish</a>."

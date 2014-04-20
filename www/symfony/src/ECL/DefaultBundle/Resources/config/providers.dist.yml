@@ -1,0 +1,9 @@
+security:
+
+    encoders:
+
+    providers:
+        my_in_memory_provider:
+            
+        my_custom_hwi_provider:
+             id: my.oauth_aware.user_provider.service

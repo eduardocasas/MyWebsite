@@ -1,0 +1,33 @@
+{% extends "ECLDefaultBundle::pc/backoffice_base.html.twig" %}
+{% block title %}{{ parent() }} | Backoffice | Comentarios {% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{asset('bundles/eclblog/css/pc/backoffice/comment.css')}}">
+{% endblock %}
+{% block backoffice_main %}
+<article id="main_article_wrapper">
+    <h1 id="title">Comentarios</h1>
+    <table id="comment_list">
+        <thead>
+            <tr>
+                <th class="delete_field"></th>
+                <th class="edit_field"></th>
+                <th class="name_field">Fecha</th>
+                <th class="name_field">Usuario</th>
+                <th class="name_field">Artículo</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in comments %}
+            <tr>
+                <td class="delete_field"><a href="{{ path('ecl_blog_backoffice_comments_delete', { 'id': item.id }) }}" title="borrar"></a></td>
+                <td class="edit_field"><a href="{{ path('ecl_blog_backoffice_comments_edit', { 'id': item.id }) }}" title="editar"></a></td>
+                <td class="name_field">{{ item.creationDate|date('d-m-Y H:m') }}</td>
+                <td class="name_field">{{ item.name }}</td>
+                <td class="name_field">{{ item.title }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</article>
+{% endblock %}

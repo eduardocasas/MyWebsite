@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Eduardo Casas | {{ 'web_developer' | trans }}{% endblock %}</title>
+        <meta name="description" content="{% block description %}{% endblock %}">
+        <link rel="stylesheet" href="{{asset('bundles/ecldefault/css/mobile/main.css')}}">
+        {% block stylesheets %}{% endblock %}
+        <script src="{{asset('bundles/ecldefault/vendor/bower_components/jquery/dist/jquery.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('bundles/ecldefault/js/mobile/main.js')}}" type="text/javascript"></script>
+        {% block javascripts %}{% endblock %}
+        {% render(controller("ECLDefaultBundle:Boilerplate:browserStyle" ))  %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    </head>
+    <body>
+        <div id="content">
+        {% include 'ECLDefaultBundle::mobile/header.html.twig' %}
+        {% include 'ECLDefaultBundle::mobile/sidebar.html.twig' %}
+        <div id="main_wrapper">{% block main %}{% endblock %}</div>
+        {% include 'ECLDefaultBundle::mobile/footer.html.twig' %}
+        </div>
+    </body>
+</html>

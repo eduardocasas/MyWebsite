@@ -1,0 +1,2 @@
+imports:
+    - { resource: '@ECLDefaultBundle/Resources/config/config.yml' }

@@ -1,0 +1,31 @@
+#backoffice_menu
+{
+    background-color: #000;
+    float: left;
+    font-weight: bold;
+    padding: 5px 10px;
+    position: absolute;
+    width: 602px;
+}
+    #backoffice_menu li
+    {
+        display: inline-block;
+    }
+        #backoffice_menu .separator:before
+        {
+            color: #fff;
+            content: "|";
+            margin: 0 10px 0 6px;
+        }
+        #backoffice_menu a
+        {    
+            color: #fff;
+        }
+#main_article_wrapper
+{
+    padding-top: 40px;
+}
+#logout_button
+{
+    float: right;
+}

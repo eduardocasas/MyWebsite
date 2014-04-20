@@ -1,0 +1,15 @@
+<ul id="pages">
+    {% if tag_slug != null %}
+        {% if nav_array.first != null %}<li><a href="{{url('ecl_blog_homepage', { tag_slug: tag_slug } ) }}"><<</a></li>{% endif %}
+        {% if nav_array.previous != null %}<li><a href="{{url('ecl_blog_homepage', { tag_slug: tag_slug, page: nav_array.previous } ) }}"><</a></li>{% endif %}
+        <li id="pages_info">{{nav_array.current_page}} / {{nav_array.last_page}}</li>
+        {% if nav_array.next != null %}<li><a href="{{url('ecl_blog_homepage', { tag_slug: tag_slug, page: nav_array.next } ) }}">></a></li>{% endif %}
+        {% if nav_array.last != null %}<li><a href="{{url('ecl_blog_homepage', { tag_slug: tag_slug, page: nav_array.last } ) }}">>></a></li>{% endif %}
+    {% else %}
+        {% if nav_array.first != null %}<li><a href="{{url('ecl_blog_homepage') }}"><<</a></li>{% endif %}
+        {% if nav_array.previous != null %}<li><a href="{{url('ecl_blog_homepage', { tag_slug: nav_array.previous } ) }}"><</a></li>{% endif %}
+        <li id="pages_info">{{nav_array.current_page}} / {{nav_array.last_page}}</li>
+        {% if nav_array.next != null %}<li><a href="{{url('ecl_blog_homepage', { tag_slug: nav_array.next } ) }}">></a></li>{% endif %}
+        {% if nav_array.last != null %}<li><a href="{{url('ecl_blog_homepage', { tag_slug: nav_array.last } ) }}">>></a></li>{% endif %}
+    {% endif %}
+</ul>

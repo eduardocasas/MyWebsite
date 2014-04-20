@@ -1,0 +1,17 @@
+ecl_home_homepage:
+    path:  /
+    defaults: { _controller: ECLHomeBundle:Default:index }
+    
+ecl_home_backoffice_homepage:
+    path:  /backoffice
+    defaults: { _controller: ECLHomeBundle:backoffice/Default:index }
+    
+login:
+    path:     /backoffice/login
+    defaults: { _controller: ECLHomeBundle:backoffice/Default:login }
+    
+login_check:
+    path: /backoffice/login_check
+    
+logout:
+    path: /backoffice/logout

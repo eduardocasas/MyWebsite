@@ -1,0 +1,23 @@
+ecl_default:
+    resource: "@ECLDefaultBundle/Resources/config/routing.yml"
+        
+ecl_curriculum:
+    resource: "@ECLCurriculumBundle/Resources/config/routing.yml"
+    prefix: /{_locale}
+    requirements:
+        _locale: en|es
+
+ecl_blog:
+    resource: "@ECLBlogBundle/Resources/config/routing.yml"
+    prefix: /{_locale}
+    requirements:
+        _locale: en|es
+
+ecl_contact:
+    resource: "@ECLContactBundle/Resources/config/routing.yml"
+
+ecl_home:
+    resource: "@ECLHomeBundle/Resources/config/routing.yml"
+    prefix: /{_locale}
+    requirements:
+        _locale: en|es

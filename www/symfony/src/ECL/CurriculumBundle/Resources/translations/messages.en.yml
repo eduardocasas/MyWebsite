@@ -1,0 +1,48 @@
+curriculum:
+    title: My Curriculum Vitae
+    section_1: 
+        title: Personal Data
+        text_1: "Name: Eduardo Casas"
+        text_2: "Date of birth: 5th February 1983"
+        text_3: "Age: 31 years old"
+        text_4: "Location: Madrid"
+    section_2: 
+        title: Technical Skills
+        subsection_1:
+            title: Back-End Development
+            text_1: "Languages: PHP, Python, Java, MySQL"
+            text_2: "Frameworks: Symfony, Zend Framework, Django, Spring"
+            text_3: "Testing: PHPUnit"
+            text_4: "Package managers: Composer, pip, Maven"
+            text_5: "Servers: Apache, Nginx"
+        subsection_2:
+            title: Front-End Development
+            text_1: "Languages: HTML, CSS, JavaScript, XML, JSON"
+            text_2: "Frameworks: jQuery"
+            text_3: "Cross-Browser Compatibility"
+            text_4: "Template engines: Twig, Thymeleaf"
+            text_5: SEO Skills
+            text_6: "Package manager: Bower"
+        subsection_3:
+            title: Others
+            text_1: "Operating systems: Debian GNU/Linux, Microsoft Windows, Android"
+            text_2: "Other languages: C++ (+Qt), Bash, MATLAB, Fortran"
+            text_3: "Version Control Systems: Git, Subversion"
+            text_4: "Graphic Design: GIMP, Photoshop"
+            text_5: "Other tools: MediaWiki, Firebug, yuglify, Mantis Bug Tracker, VirtualBox, virtualenv"
+    section_3: 
+        title: Work Experience
+        subtitle_1: Spain
+        subtitle_2: England
+        text_1: "Web Developer at <a target=\"_blank\" href=\"http://www.mazars.es\">MAZARS AUDITORES, SLP</a>.<br>Madrid. July 2011 - At present."
+        text_2: "Web Developer at <a target=\"_blank\" href=\"https://www.evoluciona.com\">EVOLUCIONA</a>.<br>Madrid. September 2010 - July 2011."
+        text_3: "Power Generation Engineer at <a target=\"_blank\" href=\"http://www.tecnicasreunidas.es\">TÉCNICAS REUNIDAS, SA</a>.<br>Madrid. January 2008 - June 2010."
+        text_4: "Shop Assistant at <a target=\"_blank\" href=\"http://www.sportsdirect.com\">SPORTS WORLD</a>.<br>Exeter. April - June 2007."
+    section_4: 
+        title: Academic Background
+        text_1: "Industrial Engineer at <a target=\"_blank\" href=\"http://www.unican.es/index.html\">University of Cantabria</a>.<br>Santander. September 2001 - June 2007."
+        text_2: "Erasmus at <a target=\"_blank\" href=\"https://www.exeter.ac.uk/\">University of Exeter</a>.<br>Exeter, England. September 2006 - June 2007."
+    section_5: 
+        title: Languages
+        text_1: "Spanish: Mother tongue"
+        text_2: "Engish: <a target=\"_blank\" href=\"http://www.cambridgeenglish.org/exams-and-qualifications/advanced/\">Certificate in Advanced English</a>"

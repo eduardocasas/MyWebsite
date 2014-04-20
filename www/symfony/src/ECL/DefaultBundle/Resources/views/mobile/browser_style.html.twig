@@ -1,0 +1,10 @@
+{% if isWebkitBrowser %}
+    <meta name="viewport" content="user-scalable=no, target-densitydpi=device-dpi, initial-scale=.4, maximum-scale=.5">
+{% else %}
+    <meta name="viewport" content="user-scalable=no, target-densitydpi=device-dpi, initial-scale=.3, maximum-scale=.4">
+    <script type="text/javascript">
+        if(!window.location.hash) {
+            $('html, body').animate({ scrollTop: 0 }, 600);
+        }
+    </script>
+{% endif %}

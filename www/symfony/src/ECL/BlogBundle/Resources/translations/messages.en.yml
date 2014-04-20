@@ -1,0 +1,22 @@
+blog:
+    title: Mi Blog
+article:
+    singular: Article
+comments:
+    title: Comments
+    form:
+        placeholder: Leave a Comment...
+    update: This comment has been edited on
+    empty_message: There are no comments for this article.
+    logout: logout
+    login:
+        text: You must sing in to post a comment.
+        github: Sing in with your Github account
+        linkedin: Sing in with your Linkedin account
+        google: Sing in with your Google+ account
+        twitter: Sing in with your Twitter account
+        facebook: Sing in with your Facebook account
+rss:
+    description: My Blog. My feeds.
+    language: en-EN
+tags: Tags

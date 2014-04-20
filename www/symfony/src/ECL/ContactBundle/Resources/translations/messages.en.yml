@@ -1,0 +1,20 @@
+contact:
+    title: Contact Me
+    form:
+        name:
+            label: Name
+            placeholder: Your full name
+        email:
+            label: Email
+            placeholder: Your email address
+        subject:
+            label: Subject
+            placeholder: The subject of your message
+        message:
+            label: Message
+            placeholder: The body of your message
+    accomplished:
+        title: Message sent
+        text_1: Hi! Your message has been successfully sent. I will email you back asap.
+        text_2: Regards,
+        text_3: Eduardo

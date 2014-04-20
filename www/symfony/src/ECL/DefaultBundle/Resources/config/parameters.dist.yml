@@ -1,0 +1,31 @@
+parameters:
+    database_driver: 
+    database_host: 
+    database_port: 
+    database_name: 
+    database_user: 
+    database_password: 
+    mailer_transport: 
+    mailer_host: 
+    mailer_user: 
+    mailer_password: 
+    locale: en
+    secret: 
+    database_path: 
+        
+    user_password: 
+
+    github_client_id:     
+    github_client_secret: 
+    
+    linkedin_client_id:     
+    linkedin_client_secret: 
+    
+    facebook_client_id:     
+    facebook_client_secret: 
+    
+    google_client_id:     
+    google_client_secret: 
+    
+    twitter_client_id:     
+    twitter_client_secret: 

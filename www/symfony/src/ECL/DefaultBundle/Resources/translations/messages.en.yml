@@ -1,0 +1,41 @@
+web_developer: Web Developer
+web_developer_header: web developer in Madrid
+translation:
+    to_spanish: Ver en castellano
+    to_english:
+section:
+    home:
+        link: About Me
+        title: About Me
+    curriculum:
+        link: Curriculum Vitae
+        slug: curriculum-vitae
+        title: Curriculum Vitae
+    blog:
+        link: Blog
+        slug: blog
+        title: Blog
+    contact:
+        link: Contact
+        slug: contact
+        title: Contact
+sidebar:
+    social:
+        github: My profile in Github
+        linkedin: My profile in Linkedin
+        twitter: My profile in Twitter
+        gplus: My profile in Google+
+        rss: My feeds
+button:
+    send: Send
+    create: Create
+    save: Save
+fields:
+    name: nombre
+error:
+    404: D'oh! This page is not available.
+    401: D'oh! Your session has expired.
+    403: D'oh! You do not have permission to access this page.
+    423: D'oh! Service Temporarily Unavailable.
+    503: D'oh! This page has been closed.
+    default: D'oh! There was an error.

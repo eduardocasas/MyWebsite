@@ -1,0 +1,20 @@
+contact:
+    title: Contacta Conmigo
+    form:
+        name:
+            label: Nombre
+            placeholder: Tu nombre completo
+        email:
+            label: Email
+            placeholder: Tu dirección de correo electrónico
+        subject:
+            label: Asunto
+            placeholder: El asunto de tu mensaje
+        message:
+            label: Mensaje
+            placeholder: El cuerpo de tu mensaje
+    accomplished:
+        title: Mensaje enviado 
+        text_1: ¡Hola! Tu mensaje ha sido enviado correctamente. Intentaré reponderte lo antes posible.
+        text_2: Un saludo,
+        text_3: Eduardo

@@ -1,0 +1,41 @@
+web_developer: Desarrollador Web
+web_developer_header: desarrollador web en Madrid
+translation:
+    to_spanish: 
+    to_english: Switch to English
+section:
+    home:
+        link: Sobre Mí
+        title: Sobre Mí
+    curriculum:
+        link: Curriculum Vitae
+        slug: curriculum-vitae
+        title: Curriculum Vitae
+    blog:
+        link: Blog
+        slug: blog
+        title: Blog
+    contact:
+        link: Contacto
+        slug: contacto
+        title: Contacto
+sidebar:
+    social:
+        github: Mi perfil en Github
+        linkedin: Mi perfil en Linkedin
+        twitter: Mi perfil en Twitter
+        gplus: Mi perfil en Google+
+        rss: Mis feeds
+button:
+    send: Enviar
+    create: Crear
+    save: Guardar
+fields:
+    name: nombre
+error:
+    404: ¡Ups! Esta página no está disponible.
+    401: ¡Ups! Tu sesión ha caducado.
+    403: ¡Ups! No tienes permiso para acceder a esta página.
+    423: ¡Ups! Esta página ha sido cerrada.
+    503: ¡Ups! Servicio temporalmente no disponible.
+    default: ¡Ups! Se ha producido un error.

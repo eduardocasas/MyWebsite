@@ -1,0 +1,7 @@
+ecl_curriculum_homepage_es:
+    path:  /curriculum-vitae
+    defaults: { _controller: ECLCurriculumBundle:Default:index }
+
+ecl_curriculum_homepage_en:
+    path:  /curriculum-vitae
+    defaults: { _controller: ECLCurriculumBundle:Default:index }

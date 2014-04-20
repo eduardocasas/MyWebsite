@@ -1,0 +1,22 @@
+blog:
+    title: Mi Blog
+article:
+    singular: Artículo
+comments:
+    title: Comentarios
+    form:
+        placeholder: Deja un comentario...
+    update: Comentario editado el
+    empty_message: No existen comentarios para este artículo.
+    logout: salir
+    login:
+        text: Identifícate para escribir un comentario.
+        github: Identifícate con tu cuenta de github
+        linkedin: Identifícate con tu cuenta de Linkedin
+        google: Identifícate con tu cuenta de Google+
+        twitter: Identifícate con tu cuenta de Twitter
+        facebook: Identifícate con tu cuenta de Facebook
+rss:
+    description: Mi Blog. Mis feeds.
+    language: es-ES
+tags: Etiquetas
