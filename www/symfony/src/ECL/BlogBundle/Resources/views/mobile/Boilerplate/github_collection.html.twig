@@ -3,7 +3,7 @@
     <ul>
     {% for item in github_collection %}
         <li>
-            <time datetime="{{item.updated|date('c')}}">{{item.updated|min_long_date}}</time>
+            <time datetime="{{item.updated|date('c')}}">{{item.updated|date("H:i d/m/Y") }}</time>
             <a target="_blank" href="{{attribute (item.link.attributes, 'href')}}">{{item.title|github_truncate}}</a>
         </li>
     {% endfor %}
