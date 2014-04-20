@@ -1,0 +1,20 @@
+#RewriteCond %{HTTP_HOST} !www.eduardocasas.com [NC]
+#RewriteRule (.*)$ http://www.eduardocasas.com/$1 [L,R=301]
+RewriteEngine on
+RewriteBase /
+RewriteRule ^bundles/(.*) web/bundles/$1
+RewriteRule ^css/(.*) web/css/$1
+RewriteRule ^js/(.*) web/js/$1
+RewriteRule ^images/(.*) web/images/$1
+RewriteRule ^google7207b71dd0879c34.html web/google7207b71dd0879c34.html
+RewriteRule ^robots.txt web/robots.txt
+RewriteRule ^curso/(.*) web/curso/$1
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ myapp.php [QSA,L]
+</IfModule>
+# Activa la compresion en el servidor
+#ExpiresActive On
+#ExpiresDefault "access plus 1 year"
+

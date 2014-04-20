@@ -1,0 +1,32 @@
+#main h1
+{
+    font-size: 1.3em;
+    margin-top: 40px;
+    text-shadow: 1px 1px 1px #FFFFFF, 1px 1px 3px #000000;    
+}
+#main p
+{
+    font-size: 0.85em;
+    margin-bottom: 15px;
+}
+#main time
+{
+    font-size: 0.85em;
+    font-style: italic;
+    margin: 12px 0;
+}
+#main h2
+{
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+#main ul, #main ol
+{
+    font-size: 0.85em;
+    margin-left: 30px;
+}
+#main li
+{
+    margin-bottom: 15px;
+    text-align: justify;
+}

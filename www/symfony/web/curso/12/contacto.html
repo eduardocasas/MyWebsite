@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Contacto</title>
+        <meta name="description" content="Eduardo Casas, desarrollador web.
+        Contacta conmigo.">
+    </head>
+    <body>
+        <!-- Cabecera -->
+        <div>
+            <h1>¡Mi blog personal!</h1>
+            <ul>
+                <li><a href="index.html">Portada</a></li>
+                <li><a href="sobre-mi.html">Sobre Mi</a></li>
+                <li><strong>Contacto</strong></li>
+            </ul>
+        </div>
+        <!-- Contenido Principal -->
+        <div>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Tus datos personales</legend>
+                    <label for="name_id">Nombre:</label>
+                    <input type="text" name="name_field" id="name_id" value=""
+                     autofocus="autofocus" required="required">
+                    <label for="edad_id">Edad:</label>
+                    <select id="edad_id">
+                        <option value="20">< 20</option>
+                        <option value="20">20 > 30</option>
+                        <option value="20">> 30</option>
+                    </select>
+                    <label for="developer_id">Soy programador</label>
+                    <input type="checkbox" name="developer_field" id="developer_id">
+                    <p>Sexo:</p>
+                    <label for="male_id">Hombre</label>
+                    <input type="radio" name="gender_field" id="male_id" value="male" checked="checked">
+                    <label for="female_id">Mujer</label>
+                    <input type="radio" name="gender_field" id="female_id" value="female">
+                </fieldset>
+                <!-- Datos de Contacto -->
+                <fieldset>
+                    <legend>Tus datos de contacto</legend>
+                    <label for="email_id">Tu e-mail:</label>
+                    <input type="email" name="email_field" id="email_id">
+                    <label for="web_id">Tu web:</label>
+                    <input type="url" name="web_field" id="web_id">
+                </fieldset>
+                <!-- Datos Mensaje -->
+                <fieldset>
+                    <legend>Tu mensaje</legend>
+                    <label for="title_id">Título del mensaje:</label>
+                    <input type="text" name="title_field" id="title_id" value=""  required="required">
+                    <label for="text_id">Cuerpo del mensaje:</label>
+                    <textarea name="text_field" id="text_id" required="required"></textarea>
+                    <p>Adjuntar Archivo</p>
+                    <input type="file" name="fill_field">
+                </fieldset>
+                <input type="submit" value="enviar">
+            </form>
+        </div>
+        <!-- Pie de Página -->
+        <div>
+            <p>Página desarrollada en <a href="http://validator.w3.org/"
+            target="_blank"><img src="imagenes/html5.png" alt="Logo HTML5"
+            width="30" height="42"></a></p>
+        </div>
+    </body>
+</html>

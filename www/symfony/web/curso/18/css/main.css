@@ -1,0 +1,230 @@
+span#prueba
+{
+color: red;
+}
+
+article, aside, footer, header, nav, section, video, audio, time
+{
+    display: block;
+}
+* 
+{
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+:focus
+{
+    outline:none;
+}
+a
+{
+    color: #6841d9;
+}        
+a:link, a:visited
+{
+    text-decoration:none;
+    outline: none; 
+}
+a:hover
+{
+    color: #222;
+    text-decoration: none;	
+}
+@font-face
+{
+    font-family: 'CalligraffitiRegular';
+    src: url('../fonts/zCalligraffiti-webfont.woff') format('woff');
+}
+p
+{
+    line-height: 150%;
+    text-align: justify;
+}
+.static
+{
+    background-image: url(../imagenes/static.png);
+    background-repeat:  no-repeat;
+}
+
+/* ------------ Wrapper ------------ */
+
+body
+{
+    background: rgb(6,56,109); /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  rgba(6,56,109,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(6,56,109,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg,  rgba(6,56,109,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg,  rgba(6,56,109,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg,  rgba(6,56,109,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(-45deg,  rgba(6,56,109,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+    font-family: arial, verdana;
+    background-attachment: fixed;
+}
+#wrapper
+{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #000, 0 0 30px #000;
+    font-family: arial, verdana;
+    margin: 15px auto;
+    overflow: hidden;
+    padding: 25px 25px 10px 25px;
+    width: 800px;
+}
+    
+/* ------------ Aside ------------ */
+
+#aside
+{
+    float:right;
+    margin-left: 40px;
+    width: 25%;
+}
+#picture
+{
+    background-position: -166px -141px;
+    display: block;
+    height: 190px;
+    width: 167px;
+}
+#aside h3
+{
+    margin-top: 20px;
+}
+#aside ul, #aside ol
+{
+    font-size: 0.85em;
+    margin: 10px 0;
+}
+#aside ul
+{
+    margin-left: 20px;
+}
+#aside ol
+{
+    margin-left: 25px;
+}
+#aside li
+{
+    margin-bottom: 5px;
+}
+
+/* ------------ Header ------------ */
+
+#header
+{
+    border-bottom: 1px solid #000;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#nav
+{
+    list-style-type: none;
+    margin: 10px 0;
+}
+#nav li
+{
+    display: inline;
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+#social
+{
+    float: right;
+}
+#social li
+{
+    display: inline-block;
+}
+#social a
+{
+    display: block;
+    height: 71px;
+    margin-left: 10px;
+    opacity: 0.7;
+    vertical-align: bottom;
+    width: 68px;
+}
+#facebook
+{
+    background-position: -60px 0;
+}
+#twitter
+{
+    background-position: -128px 0;
+}
+#linkedin
+{
+    background-position: -196px 0;
+}
+#google
+{
+    background-position: -265px 0;
+}
+
+/* ------------ Main ------------ */
+
+#main
+{
+    width: 70%;
+}
+
+/* ------------ Footer ------------ */
+
+#footer
+{
+    border-top: 1px solid #000;
+    clear: both;
+    margin-top: 10px;
+    overflow: hidden;
+    padding-top: 10px;
+}
+#footer p
+{
+    font-family: 'CalligraffitiRegular';
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 15px;
+    text-shadow: 1px 1px 1px #FFFFFF, 1px 1px 3px #000000;
+}
+#footer p span
+{
+    opacity: 0.7;
+}
+#footer p a
+{
+    display: inline-block;
+    height: 42px;
+    margin-left: 10px;
+    opacity: 0.7;
+    vertical-align: bottom;
+    width: 30px;
+}
+#footer p a:hover
+{
+    opacity: 1;
+}
+#html5
+{
+    background-position: 0 0;
+}
+#css3
+{
+    background-position: -30px 0;
+}
+#crossbrowser
+{
+    background-position: -113px -71px;
+    float: right;
+    font-family: 'CalligraffitiRegular';
+    font-size: 1.3em;
+    font-weight: bold;
+    height: 50px;
+    opacity: 0.7;
+    padding-top: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #FFFFFF, 1px 1px 3px #000000;
+    width: 220px;
+}

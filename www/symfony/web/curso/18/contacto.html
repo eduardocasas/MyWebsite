@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Contacto</title>
+        <meta name="description" content="Eduardo Casas, desarrollador web.
+        Contacta conmigo.">
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <link rel="stylesheet" href="css/contacto.css" type="text/css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Cabecera -->
+            <header id="header">
+                <ul id="social">
+                    <li><a href="#" target="_blank" title="facebook"
+                    id="facebook" class="static"></a></li>
+                    <li><a href="#" target="_blank" title="twitter"
+                    id="twitter" class="static"></a></li>
+                    <li><a href="#" target="_blank" title="linkedin"
+                    id="linkedin" class="static"></a></li>
+                    <li><a href="#" target="_blank" title="google+"
+                    id="google" class="static"></a></li>
+                </ul>                
+                <h1>¡Mi blog personal!</h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Portada</a></li>
+                        <li><a href="sobre-mi.html">Sobre Mi</a></li>
+                        <li><strong>Contacto</strong></li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- Bloque Lateral -->
+            <aside id="aside">
+                <span id="picture" class="static"></span>
+                <h3>Enlaces de interés</h3>
+                <ul>
+                    <li><a href="http://www.gnu.org/home.es.html" target="_blank">
+                    El sistema operativo GNU</a></li>
+                    <li><a href="http://www.mozilla.org/foundation/"
+                    target="_blank">Mozilla</a></li>
+                    <li><a href="http://blog.eldelweb.com/" target="_blank">
+                    Blogs eldelweb</a></li>
+                    <li><a href="http://www.forosdelweb.com/" target="_blank">
+                    Foros del Web</a></li>
+                    <li><a href="http://www.maestrosdelweb.com/" target="_blank">
+                    Maestros del Web</a></li>
+                </ul>
+                <h3>Noticias más comentadas</h3>
+                <ol>
+                    <li><a href="articulos/videos-audio-html5.html">Víeos y audio
+                    en HTML5</a></li>
+                    <li><a href="articulos/definicion-software-libre.html">La
+                    Definición de Software Libre</a></li>
+                    <li><a href="articulos/5-ventajas-utilizar-html5-diseno-sitios-web.html">
+                    5 ventajas de utilizar HTML5 en el diseño de sitios web</a></li>
+                </ol>
+            </aside>
+            <!-- Contenido Principal -->
+            <article id="main">
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Tus datos personales</legend>
+                        <div>
+                            <label for="name_id">Nombre:</label>
+                            <input type="text" name="name_field" id="name_id"
+                            value="" autofocus="autofocus" required="required">
+                        </div>
+                        <div>
+                            <label for="edad_id">Edad:</label>
+                            <select id="edad_id">
+                                <option value="20">< 20</option>
+                                <option value="20">20 > 30</option>
+                                <option value="20">> 30</option>
+                            </select>
+                        </div>
+                        <div>                            
+                            <label for="developer_id">Soy programador</label>
+                            <input type="checkbox" name="developer_field"
+                            id="developer_id">
+                        </div>
+                        <div>                            
+                            <span>Sexo:</span>
+                            <label for="male_id">Hombre</label>
+                            <input type="radio" name="gender_field" id="male_id"
+                            value="male" checked="checked">
+                            <label for="female_id">Mujer</label>
+                            <input type="radio" name="gender_field"
+                            id="female_id" value="female">
+                        </div>
+                        <div>
+                    </fieldset>
+                    <!-- Datos de Contacto -->
+                    <fieldset>
+                        <legend>Tus datos de contacto</legend>
+                        <div>                        
+                            <label for="email_id">Tu e-mail:</label>
+                            <input type="email" name="email_field" id="email_id">
+                        </div>
+                        <div>                        
+                            <label for="web_id">Tu web:</label>
+                            <input type="url" name="web_field" id="web_id">
+                        </div>
+                    </fieldset>
+                    <!-- Datos Mensaje -->
+                    <fieldset>
+                        <legend>Tu mensaje</legend>
+                        <div>                        
+                            <label for="title_id">Título del mensaje:</label>
+                            <input type="text" name="title_field" id="title_id"
+                            value=""  required="required">
+                        </div>
+                        <div>                        
+                            <label for="text_id">Cuerpo del mensaje:</label>
+                            <textarea name="text_field" id="text_id"
+                            required="required"></textarea>
+                        </div>
+                        <div>                        
+                            <span>Adjuntar Archivo:</span>
+                            <input type="file" name="fill_field">
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="enviar">
+                </form>
+            </article>
+            <!-- Pie de Página -->
+            <footer id="footer">
+                <span class="static" id="crossbrowser">Cross-Browser</span>
+                <p><span>Página desarrollada en</span>
+                <a href="http://validator.w3.org/" target="_blank"
+                   id="html5" title="HTML5" class="static"></a>
+                <a href="http://jigsaw.w3.org/css-validator/" target="_blank"
+                   id="css3" title="CSS3" class="static"></a></p>
+            </footer>
+        </div>
+    </body>
+</html>
