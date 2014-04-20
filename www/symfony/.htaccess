@@ -6,6 +6,8 @@ RewriteRule ^bundles/(.*) web/bundles/$1
 RewriteRule ^css/(.*) web/css/$1
 RewriteRule ^js/(.*) web/js/$1
 RewriteRule ^images/(.*) web/images/$1
+RewriteRule ^favicon.ico web/favicon.ico
+RewriteRule ^apple-touch-icon.png web/apple-touch-icon.png
 RewriteRule ^google7207b71dd0879c34.html web/google7207b71dd0879c34.html
 RewriteRule ^robots.txt web/robots.txt
 RewriteRule ^curso/(.*) web/curso/$1
