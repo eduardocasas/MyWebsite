@@ -7,8 +7,13 @@
         <li><a target="_blank" href="http://es.linkedin.com/in/ecasas" id="my_linkedin"></a></li>
         <li><a target="_blank" href="{% if blog_tag_selected is defined %}{{ url('ecl_blog_rss', { 'tag_slug' : blog_tag_selected}) }}{% else %}{{ url('ecl_blog_rss') }}{% endif %}" id="my_rss"></a></li>
     </ul>
-    {% set params = app.request.requesturi | replace({ (app.request.getBaseURL()): '' }) |split('/') %}
-    {% set slug, locale = params[2], params[1] %}
+    {% if app.environment == 'prod' %}
+        {% set params = app.request.requesturi |split('/') %}
+        {% set slug, locale = params[2], params[1] %}
+    {% else %}
+        {% set params = app.request.requesturi | replace({ (app.request.getBaseURL()): '' }) |split('/') %}
+        {% set slug, locale = params[2], params[1] %}
+    {% endif %}
     <nav id="nav">
         <ul id="language_list">
             <li>

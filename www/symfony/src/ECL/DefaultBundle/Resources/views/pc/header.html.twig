@@ -1,7 +1,12 @@
 <header id="main_header_wrapper">
     <h1>Eduardo Casas <span>{{ 'web_developer_header' | trans }}</span></h1>
-    {% set params = app.request.requesturi | replace({ (app.request.getBaseURL()): '' }) |split('/') %}
-    {% set slug, locale = params[2], params[1] %}
+    {% if app.environment == 'prod' %}
+        {% set params = app.request.requesturi |split('/') %}
+        {% set slug, locale = params[2], params[1] %}
+    {% else %}
+        {% set params = app.request.requesturi | replace({ (app.request.getBaseURL()): '' }) |split('/') %}
+        {% set slug, locale = params[2], params[1] %}
+    {% endif %}
     <nav id="nav">
         <ul>
             <li id="home_nav">
