@@ -2,6 +2,8 @@ RewriteCond %{HTTP_HOST} !www.eduardocasas.com [NC]
 RewriteRule (.*)$ http://www.eduardocasas.com/$1 [L,R=301]
 RewriteEngine on
 RewriteBase /
+RewriteCond %{REQUEST_URI} !^/blog/connect/(.*)
+RewriteCond %{REQUEST_URI} !^/blog/login/(.*)
 RewriteRule ^blog/(.*) es/blog/$1 [L,R=301,NC]
 RewriteRule ^bundles/(.*) web/bundles/$1
 RewriteRule ^css/(.*) web/css/$1
