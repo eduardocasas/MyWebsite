@@ -2,6 +2,7 @@ RewriteCond %{HTTP_HOST} !www.eduardocasas.com [NC]
 RewriteRule (.*)$ http://www.eduardocasas.com/$1 [L,R=301]
 RewriteEngine on
 RewriteBase /
+RewriteRule ^blog$ es/blog [L,R=301,NC]
 RewriteCond %{REQUEST_URI} !^/blog/connect/(.*)
 RewriteCond %{REQUEST_URI} !^/blog/login/(.*)
 RewriteRule ^blog/(.*) es/blog/$1 [L,R=301,NC]
@@ -22,4 +23,3 @@ RewriteRule ^curso/(.*) web/curso/$1
 # Activa la compresion en el servidor
 #ExpiresActive On
 #ExpiresDefault "access plus 1 year"
-

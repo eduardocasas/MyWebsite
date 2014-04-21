@@ -9,6 +9,7 @@ parameters:
     mailer_host: 
     mailer_user: 
     mailer_password: 
+    my_email:
     locale: en
     secret: 
     database_path: 

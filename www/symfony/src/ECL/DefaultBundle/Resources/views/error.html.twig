@@ -7,19 +7,19 @@
     <article id="main_article_wrapper">
         <h1>{{ status_code }}</h1>
         <p>
-            {% if status_code == 404 %}
-                {{ 'error.404' | trans }}
-            {% elseif status_code == 401 %}
-                {{ 'error.401' | trans }}
-            {% elseif status_code == 403 %}
-                {{ 'error.404' | trans }}
-            {% elseif status_code == 423 %}
-                {{ 'error.423' | trans }}
-            {% elseif status_code == 503 %}
-                {{ 'error.503' | trans }}
-            {% else %}
-                {{ 'error.default' | trans }}
-            {% endif %}
+        {% if status_code == 404 %}
+            {{ 'error.404' | trans }}
+        {% elseif status_code == 401 %}
+            {{ 'error.401' | trans }}
+        {% elseif status_code == 403 %}
+            {{ 'error.404' | trans }}
+        {% elseif status_code == 423 %}
+            {{ 'error.423' | trans }}
+        {% elseif status_code == 503 %}
+            {{ 'error.503' | trans }}
+        {% else %}
+            {{ 'error.default' | trans }}
+        {% endif %}
         </p>
     </article>
 {% endblock %}
