@@ -3,6 +3,8 @@ RewriteRule (.*)$ http://www.eduardocasas.com/$1 [L,R=301]
 RewriteEngine on
 RewriteBase /
 RewriteRule ^blog$ es/blog [L,R=301,NC]
+RewriteCond %{REQUEST_URI} !^/blog/connect/(.*)                     |  --------------------------------------------------------------------|  RewriteRule ^blog$ es/blog [L,R=301,NC]                            
+RewriteCond %{REQUEST_URI} !^/blog/login/(.*)
 RewriteRule ^blog/(.*) es/blog/$1 [L,R=301,NC]
 RewriteRule ^bundles/(.*) web/bundles/$1
 RewriteRule ^css/(.*) web/css/$1
