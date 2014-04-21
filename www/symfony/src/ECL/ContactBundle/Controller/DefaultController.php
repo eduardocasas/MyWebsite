@@ -15,8 +15,7 @@ class DefaultController extends Controller
             $data = $form->getData();
             $message = \Swift_Message::newInstance()
             ->setSubject($data['subject'])
-            ->setFrom('eduardoc@eduardocasas.com')
-            ->setTo('eduardo.casas.lopez@gmail.com')
+            ->setTo($this->container->getParameter('my_email'))
             ->setBody('Correo enviado desde la web www.eduardocasas.com
                     
 nombre: '.$data['name'].'
