@@ -15,7 +15,8 @@ class ArticleRepository extends EntityRepository
     
     public function getCollectionByPageTagLanguage($tag, $limit, $page, $language)
     {
-        $dql = "SELECT a.id,a.title,a.slug,a.date,a.thumbnail,a.thumbnailAlt,a.summary
+        $dql = "SELECT a.id,a.title,a.slug,a.date,a.thumbnail,a.thumbnailAlt,a.summary,
+        CASE WHEN (a.language = ".Article::SPANISH_LANGUAGE." OR a.language = ".Article::BOTH_LANGUAGE.") THEN 'es' ELSE 'en' as html_language
         FROM ECLBlogBundle:Article a
         JOIN a.tags t
         WHERE a.active = 1 AND (a.language = :both_language OR a.language = :user_language)";
@@ -49,10 +50,11 @@ class ArticleRepository extends EntityRepository
     {
         list ($day, $month, $year) = explode ('-', $date);
         $alter_date = $year.'-'.$month.'-'.$day.' 00:00:00';
-        $dql = 'SELECT a.id, a.title, a.summary, a.date, a.language, ae.content
+        $dql = "SELECT a.id, a.title, a.summary, a.date, a.language, ae.content,
+                CASE WHEN (a.language = ".Article::SPANISH_LANGUAGE." OR a.language = ".Article::BOTH_LANGUAGE.") THEN 'es' ELSE 'en' as html_language
         FROM ECLBlogBundle:ArticleExtend ae
         JOIN ae.article a
-        WHERE a.slug=:slug AND DATE_DIFF(a.date, :date) = 0 AND a.active = 1';
+        WHERE a.slug=:slug AND DATE_DIFF(a.date, :date) = 0 AND a.active = 1";
         
         return $this
             ->getEntityManager()

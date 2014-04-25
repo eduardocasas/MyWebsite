@@ -21,5 +21,6 @@ RewriteRule ^curso/(.*) web/curso/$1
     RewriteRule ^(.*)$ myapp.php [QSA,L]
 </IfModule>
 # Activa la compresion en el servidor
+AddOutputFilterByType DEFLATE text/css text/javascript application/x-javascript application/javascript text/x-component text/html text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon application/json
 #ExpiresActive On
 #ExpiresDefault "access plus 1 year"

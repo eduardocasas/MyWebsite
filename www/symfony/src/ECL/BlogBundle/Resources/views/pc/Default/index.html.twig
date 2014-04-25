@@ -6,7 +6,7 @@
 {% block main %}
 <section id="main_article_wrapper">
 {% for item in articles %}
-    <article class="article">
+    <article class="article" lang="{{ item.html_language }}">
         <h1><a href="{{ url('ecl_blog_article', { date: item.date|date('d-m-Y'), slug: item.slug } ) }}">{{ item.title }}</a></h1>
     {% if item.thumbnail is not empty %}
         <img src="{{ item.thumbnail }}" alt="{{ item.thumbnailAlt }}">
