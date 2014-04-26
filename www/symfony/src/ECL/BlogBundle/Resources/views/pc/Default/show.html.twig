@@ -11,7 +11,7 @@
 {% endblock %}
 {% block main %}
 <article id="main_article_wrapper">
-    <section id="article" lang="{{ article.html_language }}">
+    <section id="article" {%if app.request.locale != article.html_language %}lang="{{ article.html_language }}"{% endif %}>
         <h1 id="title">{{ article.title }}</h1>
         <time id="article_date" datetime="{{ article.date|date('c') }}" {% if comments is not empty %}class="separator"{% endif %}>{{ article.date|date("d / m / Y") }}</time>
     {% if comments is not empty %}
