@@ -13,7 +13,7 @@ use ECL\BlogBundle\Entity\Article;
 class ArticleRepository extends EntityRepository
 {
     
-    public function getCollectionByPageTagLanguage($tag, $limit, $page, $language)
+    public function getCollectionByPageTagLanguage($language, $tag = null, $limit = null, $page = null)
     {
         $dql = "SELECT a.id,a.title,a.slug,a.date,a.thumbnail,a.thumbnailAlt,a.summary,
         CASE WHEN (a.language = ".Article::SPANISH_LANGUAGE." OR a.language = ".Article::BOTH_LANGUAGE.") THEN 'es' ELSE 'en' as html_language
@@ -63,7 +63,7 @@ class ArticleRepository extends EntityRepository
             ->getSingleResult();
     }
     
-    public function getTotalArticlesNum($tag_slug = null, $language)
+    public function getTotalArticlesNum($language, $tag_slug = null)
     {
         $dql = 'SELECT a.id FROM ECLBlogBundle:Article a
         JOIN a.tags t

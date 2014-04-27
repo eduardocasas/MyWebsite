@@ -3,6 +3,10 @@
 {% block stylesheets %}
 <link rel="stylesheet" href="{{asset('bundles/eclcontact/css/pc/main.css')}}">
 {% endblock %}
+{% block locale %}
+    <link rel="alternate" hreflang="es" href="{{ url('ecl_contact_homepage_es') }}">
+    <link rel="alternate" hreflang="en" href="{{ url('ecl_contact_homepage_en') }}">
+{% endblock %}
 {% block main %}
 <article id="main_article_wrapper">
     <h1 id="title">{{ 'contact.title'|trans }}</h1>

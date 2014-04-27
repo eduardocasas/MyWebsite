@@ -9,6 +9,11 @@
 <script src="{{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/scripts/shCore.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/scripts/shAutoloader.js')}}" type="text/javascript"></script>
 {% endblock %}
+{% block locale %}
+    {% if article.language == both_language_support %}
+        {{parent()}}
+    {% endif %}
+{% endblock %}
 {% block main %}
 <article id="main_article_wrapper">
     <section id="article" {%if app.request.locale != article.html_language %}lang="{{ article.html_language }}"{% endif %}>

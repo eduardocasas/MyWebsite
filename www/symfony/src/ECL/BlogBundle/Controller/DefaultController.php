@@ -65,7 +65,8 @@ class DefaultController extends Controller
                 'article_date' => $date,
                 'article_slug' => $slug,
                 'comments'     => $em->getRepository('ECLBlogBundle:Comment')->getByArticle($article['id']),
-                'form'         => $form->createView()
+                'form'         => $form->createView(),
+                'both_language_support' => Article::BOTH_LANGUAGE
             )
         );
     }
@@ -73,7 +74,7 @@ class DefaultController extends Controller
     public function navAction($page = null, $tag_slug = null)
     {
         $em = $this->getDoctrine()->getManager();
-        $total_num_items = $em->getRepository('ECLBlogBundle:Article')->getTotalArticlesNum($tag_slug, $this->getLocale());
+        $total_num_items = $em->getRepository('ECLBlogBundle:Article')->getTotalArticlesNum($this->getLocale(), $tag_slug);
         $total_num_pages = ceil($total_num_items/self::ITEMS_PER_PAGE);
         if ($total_num_pages > 1) {
             $nav_array = array(
@@ -128,7 +129,7 @@ class DefaultController extends Controller
                 'tag_slug'               => $tag_slug,
                 'blog_tag_selected_name' => ($tag_slug == null) ? null : $em->getRepository('ECLBlogBundle:Tag')->getNameBySlug($tag_slug),
                 'blog_tag_selected'      => $tag_slug,
-                'articles'               => $em->getRepository('ECLBlogBundle:Article')->getCollectionByPageTagLanguage($tag_slug, self::ITEMS_PER_PAGE, $page, $this->getLocale())
+                'articles'               => $em->getRepository('ECLBlogBundle:Article')->getCollectionByPageTagLanguage($this->getLocale(), $tag_slug, self::ITEMS_PER_PAGE, $page)
             )
         );
     }

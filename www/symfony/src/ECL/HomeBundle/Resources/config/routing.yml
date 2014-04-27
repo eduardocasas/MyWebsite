@@ -2,6 +2,10 @@ ecl_home_homepage:
     path:  /
     defaults: { _controller: ECLHomeBundle:Default:index }
     
+ecl_home_sitemap:
+    path:  /sitemap
+    defaults: { _controller: ECLHomeBundle:Default:sitemap }
+    
 ecl_home_backoffice_homepage:
     path:  /backoffice
     defaults: { _controller: ECLHomeBundle:backoffice/Default:index }
