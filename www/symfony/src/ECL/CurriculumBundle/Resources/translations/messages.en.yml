@@ -29,7 +29,7 @@ curriculum:
             text_2: "Other languages: C++ (+Qt), Bash, MATLAB, Fortran"
             text_3: "Version Control Systems: Git, Subversion"
             text_4: "Graphic Design: GIMP, Photoshop"
-            text_5: "Other tools: MediaWiki, Firebug, yuglify, Mantis Bug Tracker, VirtualBox, virtualenv"
+            text_5: "Other tools: NetBeans, MediaWiki, Firebug, yuglify, Mantis Bug Tracker, Bugzilla, VirtualBox, virtualenv"
     section_3: 
         title: Work Experience
         subtitle_1: Spain
