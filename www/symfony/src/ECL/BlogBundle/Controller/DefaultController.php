@@ -18,6 +18,7 @@ class DefaultController extends Controller
     public function commentCreateAction($date, $slug, $article_id)
     {
         if ($this->get('session')->get('name')) {
+            $url = $this->generateURL('ecl_blog_article', array('date' => $date,'slug' => $slug)).'#comments';
             $Comment = new Comment;
             $form = $this->createForm(new CommentType, $Comment);
             $form->bind($this->getRequest());
@@ -26,13 +27,19 @@ class DefaultController extends Controller
                 $Comment->setCreationDate(new \DateTime());
                 $Comment->setActive(true);
                 $Comment->setUser($this->getDoctrine()->getRepository('ECLBlogBundle:User')->find($this->get('session')->get('id')));
-                $Comment->setArticle($this->getDoctrine()->getRepository('ECLBlogBundle:Article')->find($article_id));
+                $Article = $this->getDoctrine()->getRepository('ECLBlogBundle:Article')->find($article_id);
+                $Comment->setArticle($Article);
                 $em->persist($Comment);
                 $em->flush();
+                $this->sendEmailToAdmin(
+                    $this->get('session')->get('name'),
+                    $Article->getTitle(),
+                    $url,
+                    $Comment->getText()
+                );
             }
-            $url = $this->generateURL('ecl_blog_article', array('date' => $date,'slug' => $slug));
 
-            return $this->redirect($url.'#comments');
+            return $this->redirect($url);
         }
     }
 
@@ -143,6 +150,23 @@ class DefaultController extends Controller
     private function getLocale()
     {
         return $this->getRequest()->getLocale();
+    }
+    
+    private function sendEmailToAdmin($user_name, $article_title, $article_url, $comment)
+    {
+        $domain_url = $this->getRequest()->getScheme().'://'.$this->getRequest()->getHost();
+        $message = \Swift_Message::newInstance()
+            ->setSubject($user_name.' ha publicado un comentario en el blog')
+            ->setFrom($this->container->getParameter('my_email_1'))
+            ->setTo($this->container->getParameter('my_email'))
+            ->setBody(
+                '<strong>Usuario:</strong> '.$user_name.
+                    '<br><br><strong>Artículo:</strong> '.$article_title.
+                     '<br><br><strong>url:</strong> '.$domain_url.$article_url.
+                     '<br><br><strong>Comentario:</strong><br><br>'.$comment,
+                'text/html'
+            );
+        $this->get('mailer')->send($message);
     }
 
 }
