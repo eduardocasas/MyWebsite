@@ -1,0 +1,25 @@
+{% extends "ECLDefaultBundle::pc/backoffice_base.html.twig" %}
+{% block title %}{{ parent() }} | Backoffice | Ficheros{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{asset('bundles/eclfile/css/backoffice/index.css')}}">
+{% endblock %}
+{% block javascripts %}
+<script src="{{asset('bundles/eclfile/js/backoffice/index.js')}}"></script>
+<script>
+    var FILE_UPLOAD_URL = '{{ url('ecl_file_backoffice_upload') }}',
+        REMOVE_FILE_URL = '{{ url('ecl_file_backoffice_remove') }}',
+        GET_TREE_URL    = '{{ url('ecl_file_backoffice_tree') }}';
+</script>
+{% endblock %}
+{% block backoffice_main %}
+<article id="main_article_wrapper">
+    <input type="file" id="upload_file_button">
+    <button id="remove" title="Borrar ficheros seleccionados"></button>
+    <span id="progress_bar"><span id="inner_progress_bar"></span></span>
+    <h1 id="title">Ficheros</h1>
+    <div id="file_list_wrapper">
+        {% render(controller("ECLFileBundle:backoffice/Default:getTree"))  %}
+    </div>
+</article>
+{% endblock %}

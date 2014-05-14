@@ -1,3 +1,7 @@
+ecl_file:
+    resource: "@ECLFileBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ecl_default:
     resource: "@ECLDefaultBundle/Resources/config/routing.yml"
         

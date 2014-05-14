@@ -2,10 +2,11 @@
 {
     background-color: #000;
     float: left;
+    border-radius: 5px 5px 0 0;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 8px 10px;
     position: absolute;
-    width: 602px;
+    width: 631px;
 }
     #backoffice_menu li
     {
@@ -23,7 +24,7 @@
         }
 #main_article_wrapper
 {
-    padding-top: 40px;
+    padding-top: 45px;
 }
 #logout_button
 {

@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new ECL\BlogBundle\ECLBlogBundle(),
             new ECL\CurriculumBundle\ECLCurriculumBundle(),
             new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new ECL\FileBundle\ECLFileBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

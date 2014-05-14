@@ -1,0 +1,81 @@
+.upload_button
+{
+    float: right;
+}
+#progress_bar
+{
+    background-color: #eee;
+    border: 1px solid #ddd;
+    display: none;
+    height: 22px;
+    float: right;
+    margin-right: 20px;
+    width: 200px;
+}
+    #inner_progress_bar
+    {
+        background-color: #90b2ff;
+        display: block;
+        height: 100%;
+        width: 0;
+    }
+#remove
+{
+    display: none;
+    float: right;
+    margin: -5px 20px;
+    opacity: 0.5;
+}
+    #remove:before
+    {
+        color: #ff0000;
+        content: "x";
+        float: right;
+        font-size: 2.2em;
+        font-weight: bold;
+    }
+        #remove:hover
+        {
+            opacity: 1;
+        }
+#file_list_wrapper li
+{
+    margin: 5px 0;
+}
+    .year_list ul
+    {
+        display: none;
+    }
+    .month_list
+    {
+        margin-left: 35px;
+    }
+    .file_list
+    {
+        margin-left: 35px;
+    }
+.folder:before
+{
+    background-image: url(/web/bundles/eclfile/images/icons.png);
+    background-position: -224px 0;
+    background-repeat: no-repeat;
+    content: "";
+    display: inline-block;
+    height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 32px;
+}
+        .folder:hover
+        {
+            font-weight: bold;
+        }
+        .open_folder:before,
+        .folder:hover:before
+        {
+            background-position: -256px 0;        
+        }
+.file
+{
+    margin-left: 10px;
+}

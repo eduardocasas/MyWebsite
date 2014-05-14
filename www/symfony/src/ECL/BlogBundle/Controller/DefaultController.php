@@ -9,7 +9,6 @@ use ECL\BlogBundle\Entity\Article;
 use ECL\BlogBundle\Entity\Comment;
 use ECL\BlogBundle\Form\Type\CommentType;
 
-
 class DefaultController extends Controller
 {
     

@@ -1,0 +1,17 @@
+<ul class="year_list">
+{% for year, year_folder in items %}
+    <li><button class="folder">{{ year }}</button>
+        <ul class="month_list" data-year="{{ year }}">
+        {% for month, month_folder in year_folder %}
+            <li rel="folder"><button class="folder">{{ month }}</button>
+                <ul class="file_list" data-month="{{ month }}">
+                {% for item in month_folder %}
+                    <li><input type="checkbox" value="{{ year~'/'~month~'/'~item }}"><a class="file" target="_blank" href="{{ asset('bundles/eclfile/files/'~year~'/'~month~'/'~item )}}">{{ item }}</a></li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
