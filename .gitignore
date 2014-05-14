@@ -10,5 +10,6 @@
 /www/symfony/vendor/
 /www/symfony/bin/
 /www/symfony/composer.phar
+/www/symfony/web/bundles/eclfile/files/
 *.directory
 *~
