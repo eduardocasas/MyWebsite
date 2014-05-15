@@ -1,7 +1,0 @@
-parameters:
-#    ecl_file.example.class: ECL\FileBundle\Example
-
-services:
-#    ecl_file.example:
-#        class: %ecl_file.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
