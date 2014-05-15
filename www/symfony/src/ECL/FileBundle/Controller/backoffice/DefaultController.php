@@ -74,21 +74,21 @@ class DefaultController extends Controller
         $years = Finder\Finder::create()
                  ->directories()
                  ->depth(0)
-                 ->in($_SERVER['DOCUMENT_ROOT'].'/web/'.$this->getFilesFolder());
+                 ->in($this->getFilesFolderFullPath());
         foreach ($years as $year) {
             $year_num = $year->getFilename();
             $files[$year_num] = array();
             $months = Finder\Finder::create()
                  ->directories()
                  ->depth(0)
-                 ->in($_SERVER['DOCUMENT_ROOT'].'/web/'.$this->getFilesFolder().$year_num);
+                 ->in($this->getFilesFolderFullPath().$year_num);
             foreach ($months as $month) {
                 $month_name = $month->getFilename();
                 $files[$year_num][$month_name] = array ();
                 $docs = Finder\Finder::create()
                         ->files()
                         ->depth(0)
-                        ->in($_SERVER['DOCUMENT_ROOT'].'/web/'.$this->getFilesFolder().$year_num.'/'.$month_name);
+                        ->in($this->getFilesFolderFullPath().$year_num.'/'.$month_name);
                 foreach ($docs as $doc) {
                     $files[$year_num][$month_name][] = $doc->getFilename();
                 }
@@ -107,6 +107,11 @@ class DefaultController extends Controller
     private function getMonthsCollection()
     {
         return array( '01','02','03','04','05','06','07','08','09','10','11','12');
+    }
+    
+    private function getFilesFolderFullPath()
+    {
+        return $_SERVER['DOCUMENT_ROOT'].'/'.$this->container->getParameter('web_files_folder').$this->getFilesFolder();
     }
     
     private function getFilesFolder()
