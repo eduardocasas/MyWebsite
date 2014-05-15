@@ -1,5 +1,6 @@
 contact:
     title: Contact Me
+    description: Contact Me.
     form:
         name:
             label: Name

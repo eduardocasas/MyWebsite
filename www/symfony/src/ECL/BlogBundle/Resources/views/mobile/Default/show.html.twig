@@ -1,5 +1,6 @@
 {% extends "ECLDefaultBundle::mobile/base.html.twig" %}
 {% block title %}{{ article.title }}{% endblock %}
+{% block description %}{{ article.summary }}{% endblock %}
 {% block stylesheets %}
 <link rel="stylesheet" href="{{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/styles/shCore.css')}}">
 <link rel="stylesheet" href="{{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/styles/shThemeDefault.css')}}">

@@ -1,5 +1,6 @@
 blog:
     title: Mi Blog
+    description: Mi blog personal dedicado al desarrollo de software.
 article:
     singular: Artículo
 comments:

@@ -1,5 +1,6 @@
 blog:
     title: Mi Blog
+    description: My Software Development Blog.
 article:
     singular: Article
 comments:

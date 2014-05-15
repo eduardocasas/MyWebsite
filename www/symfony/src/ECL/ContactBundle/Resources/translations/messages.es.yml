@@ -1,5 +1,6 @@
 contact:
     title: Contacta Conmigo
+    description: Contacta Conmigo.
     form:
         name:
             label: Nombre

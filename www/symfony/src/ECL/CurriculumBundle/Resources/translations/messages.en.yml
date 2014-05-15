@@ -1,5 +1,6 @@
 curriculum:
     title: My Curriculum Vitae
+    description: My professional resume.
     section_1: 
         title: Personal Data
         text_1: "Name: Eduardo Casas"

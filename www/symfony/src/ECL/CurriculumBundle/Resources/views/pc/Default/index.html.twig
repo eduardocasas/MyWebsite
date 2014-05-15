@@ -1,5 +1,6 @@
 {% extends "ECLDefaultBundle::pc/base.html.twig" %}
 {% block title %}{{ parent() }} | {{ 'section.curriculum.title' | trans }}{% endblock %}
+{% block description %}{{ parent() }} {{ 'curriculum.description' | trans }}{% endblock %}
 {% block stylesheets %}
 <link rel="stylesheet" href="{{asset('bundles/eclcurriculum/css/pc/main.css')}}">
 {% endblock %}

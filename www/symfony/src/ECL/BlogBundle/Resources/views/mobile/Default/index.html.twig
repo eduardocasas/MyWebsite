@@ -1,5 +1,6 @@
 {% extends "ECLDefaultBundle::mobile/base.html.twig" %}
 {% block title %}{{ parent() }} | {{ 'section.blog.title' | trans }}{% if blog_tag_selected  is defined and blog_tag_selected != null %} | {{ blog_tag_selected_name }}{% endif %}{% endblock %}
+{% block description %}{{ 'blog.description' | trans }}{% if blog_tag_selected  is defined and blog_tag_selected != null %} {{ 'tag' | trans }}: {{ blog_tag_selected_name }}{% endif %}.{% endblock %}
 {% block stylesheets %}
 <link rel="stylesheet" href="{{asset('bundles/eclblog/css/mobile/index.css')}}">
 {% endblock %}

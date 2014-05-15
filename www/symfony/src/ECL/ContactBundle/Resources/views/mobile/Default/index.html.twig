@@ -1,5 +1,6 @@
 {% extends "ECLDefaultBundle::mobile/base.html.twig" %}
 {% block title %}{{ parent() }} | {{ 'section.contact.title'|trans }}{% endblock %}
+{% block description %}{{ parent() }} {{ 'contact.description' | trans }}{% endblock %}
 {% block stylesheets %}
 <link rel="stylesheet" href="{{asset('bundles/eclcontact/css/mobile/main.css')}}">
 {% endblock %}
