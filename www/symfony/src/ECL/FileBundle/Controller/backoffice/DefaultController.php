@@ -8,9 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
-    const REL_FILES_FOLDER = 'bundles/eclfile/files/';
-    const FILES_FOLDER = '/web/bundles/eclfile/files/';
-    
+
     private $Filesystem;
     
     public function removeAction()
@@ -56,17 +54,17 @@ class DefaultController extends Controller
 
     private function removeFile($file_path)
     {
-        $this->Filesystem->remove(self::REL_FILES_FOLDER.$file_path);
+        $this->Filesystem->remove($this->getFilesFolder().$file_path);
     }
 
     private function getCurrentFolder()
     {
         $current_year = date('Y');
         $current_month = date('m');
-        $this->Filesystem->mkdir(self::REL_FILES_FOLDER.$current_year, 0755);
-        $this->Filesystem->mkdir(self::REL_FILES_FOLDER.$current_year.'/'.$current_month, 0755);
+        $this->Filesystem->mkdir($this->getFilesFolder().$current_year, 0755);
+        $this->Filesystem->mkdir($this->getFilesFolder().$current_year.'/'.$current_month, 0755);
 
-        return self::REL_FILES_FOLDER.$current_year.'/'.$current_month.'/';
+        return $this->getFilesFolder().$current_year.'/'.$current_month.'/';
     }
 
     private function getFileCollection()
@@ -76,22 +74,21 @@ class DefaultController extends Controller
         $years = Finder\Finder::create()
                  ->directories()
                  ->depth(0)
-                 ->in($_SERVER['DOCUMENT_ROOT'].self::FILES_FOLDER);
+                 ->in($_SERVER['DOCUMENT_ROOT'].'/web/'.$this->getFilesFolder());
         foreach ($years as $year) {
             $year_num = $year->getFilename();
             $files[$year_num] = array();
             $months = Finder\Finder::create()
                  ->directories()
                  ->depth(0)
-                 ->in($_SERVER['DOCUMENT_ROOT'].self::FILES_FOLDER.$year_num);
+                 ->in($_SERVER['DOCUMENT_ROOT'].'/web/'.$this->getFilesFolder().$year_num);
             foreach ($months as $month) {
                 $month_name = $month->getFilename();
                 $files[$year_num][$month_name] = array ();
                 $docs = Finder\Finder::create()
                         ->files()
                         ->depth(0)
-                        ->in($_SERVER['DOCUMENT_ROOT'].self::FILES_FOLDER.
-                          $year_num.'/'.$month_name);
+                        ->in($_SERVER['DOCUMENT_ROOT'].'/web/'.$this->getFilesFolder().$year_num.'/'.$month_name);
                 foreach ($docs as $doc) {
                     $files[$year_num][$month_name][] = $doc->getFilename();
                 }
@@ -110,6 +107,11 @@ class DefaultController extends Controller
     private function getMonthsCollection()
     {
         return array( '01','02','03','04','05','06','07','08','09','10','11','12');
+    }
+    
+    private function getFilesFolder()
+    {
+        return $this->container->getParameter('files_folder');
     }
 
 }
