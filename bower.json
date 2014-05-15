@@ -8,5 +8,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "tinymce": "~4.0.26"
+  }
 }
