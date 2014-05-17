@@ -123,10 +123,14 @@ class DefaultController extends Controller
             $tag_slug = null;
         }
         if ($page == 1) {
-            
             return $this->redirect($this->generateURL('ecl_blog_homepage'), 301);
         }
         $em = $this->getDoctrine()->getManager();
+        try {
+            $articles = $em->getRepository('ECLBlogBundle:Article')->getCollectionByPageTagLanguage($this->getLocale(), $tag_slug, self::ITEMS_PER_PAGE, $page);
+        } catch (NoResultException $e) {
+            throw new NotFoundHttpException();
+        }
 
         return $this->render(
             'ECLBlogBundle:'.$this->get('my.browser')->getFolder().'/Default:index.html.twig',
@@ -135,11 +139,11 @@ class DefaultController extends Controller
                 'tag_slug'               => $tag_slug,
                 'blog_tag_selected_name' => ($tag_slug == null) ? null : $em->getRepository('ECLBlogBundle:Tag')->getNameBySlug($tag_slug),
                 'blog_tag_selected'      => $tag_slug,
-                'articles'               => $em->getRepository('ECLBlogBundle:Article')->getCollectionByPageTagLanguage($this->getLocale(), $tag_slug, self::ITEMS_PER_PAGE, $page)
+                'articles'               => $articles
             )
         );
     }
-    
+
     private function articleLanguageIsAvailable($language)
     {
         return $language == Article::BOTH_LANGUAGE ||
