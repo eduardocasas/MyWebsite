@@ -23,7 +23,9 @@
             {% block main %}{% endblock %}
             {% include 'ECLDefaultBundle::pc/sidebar.html.twig' %}
         </div>
+        {% block sidebar %}
         {% include 'ECLDefaultBundle::pc/footer.html.twig' %}
+        {% endblock %}
         </div>
         <!-- Start of StatCounter Code for Default Guide -->
         <script type="text/javascript">
