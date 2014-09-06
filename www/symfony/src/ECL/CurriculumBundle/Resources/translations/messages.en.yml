@@ -11,19 +11,21 @@ curriculum:
         title: Technical Skills
         subsection_1:
             title: Back-End Development
-            text_1: "Languages: PHP, Python, Java, MySQL"
-            text_2: "Frameworks: Symfony, Zend Framework, Django, Spring"
-            text_3: "Testing: PHPUnit"
-            text_4: "Package managers: Composer, pip, Maven"
-            text_5: "Servers: Apache, Nginx"
+            text_1: "Languages: PHP, Python, Java, Node.js"
+            text_2: "Databases: MySQL, PostgreSQL, MongoDB"
+            text_3: "Frameworks: Symfony, Zend Framework, Django, Spring"
+            text_4: "Testing: PHPUnit"
+            text_5: "Package managers: Composer, pip, Maven"
+            text_6: "Servers: Apache, Nginx"
         subsection_2:
             title: Front-End Development
             text_1: "Languages: HTML, CSS, JavaScript, XML, JSON"
             text_2: "Frameworks: jQuery"
-            text_3: "Cross-Browser Compatibility"
-            text_4: "Template engines: Twig, Thymeleaf"
-            text_5: SEO Skills
-            text_6: "Package manager: Bower"
+            text_3: "Preprocessors: Sass"
+            text_4: "Cross-Browser Compatibility"
+            text_5: "Template engines: Twig, Thymeleaf"
+            text_6: SEO Skills
+            text_7: "Package manager: Bower"
         subsection_3:
             title: Others
             text_1: "Operating systems: Debian GNU/Linux, Microsoft Windows, Android"

@@ -6,24 +6,26 @@ curriculum:
         text_1: "Nombre: Eduardo Casas"
         text_2: "Fecha de nacimiento: 5 de febrero de 1983"
         text_3: "Edad: 31 años"
-        text_4: "Lugar: Madrid"
+        text_4: "Ubicación: Madrid"
     section_2: 
         title: Conocimientos Técnicos 
         subsection_1:
             title: Programación Back-End
-            text_1: "Lenguajes: PHP, Python, Java, MySQL"
-            text_2: "Frameworks: Symfony, Zend Framework, Django, Spring"
-            text_3: "Testing: PHPUnit"
-            text_4: "Gestión de Paquetes: Composer, pip, Maven"
-            text_5: "Servidores: Apache, Nginx"
+            text_1: "Lenguajes: PHP, Python, Java, Node.js"
+            text_2: "Bases de datos: MySQL, PostgreSQL, MongoDB"
+            text_3: "Frameworks: Symfony, Zend Framework, Django, Spring"
+            text_4: "Testing: PHPUnit"
+            text_5: "Gestión de Paquetes: Composer, pip, Maven"
+            text_6: "Servidores: Apache, Nginx"
         subsection_2:
             title: Programación Front-End
             text_1: "Lenguajes: HTML, CSS, JavaScript, XML, JSON"
             text_2: "Frameworks: jQuery"
-            text_3: "Compatibilidad Cross-Browser"
-            text_4: "Motor de plantillas: Twig, Thymeleaf"
-            text_5: Técnicas SEO
-            text_6: "Gestión de Paquetes: Bower"
+            text_3: "Preprocesadores: Sass"
+            text_4: "Compatibilidad Cross-Browser"
+            text_5: "Motor de plantillas: Twig, Thymeleaf"
+            text_6: Técnicas SEO
+            text_7: "Gestión de Paquetes: Bower"
         subsection_3:
             title: Otros 
             text_1: "Sistemas Operativos: Debian GNU/Linux, Microsoft Windows, Android"
