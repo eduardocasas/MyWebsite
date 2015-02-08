@@ -5,7 +5,7 @@ curriculum:
         title: Datos Personales
         text_1: "Nombre: Eduardo Casas"
         text_2: "Fecha de nacimiento: 5 de febrero de 1983"
-        text_3: "Edad: 31 años"
+        text_3: "Edad: 32 años"
         text_4: "Ubicación: Madrid"
     section_2: 
         title: Conocimientos Técnicos 
@@ -15,24 +15,33 @@ curriculum:
             text_2: "Bases de datos: MySQL, PostgreSQL, MongoDB"
             text_3: "Frameworks: Symfony, Zend Framework, Django, Spring"
             text_4: "Testing: PHPUnit"
-            text_5: "Gestión de Paquetes: Composer, pip, Maven"
-            text_6: "Servidores: Apache, Nginx"
+            text_5: "Gestión de Paquetes: Composer, pip (+virtualenv), Maven, npm"
         subsection_2:
             title: Programación Front-End
             text_1: "Lenguajes: HTML, CSS, JavaScript, XML, JSON"
             text_2: "Frameworks: jQuery"
             text_3: "Preprocesadores: Sass"
-            text_4: "Compatibilidad Cross-Browser"
-            text_5: "Motor de plantillas: Twig, Thymeleaf"
-            text_6: Técnicas SEO
-            text_7: "Gestión de Paquetes: Bower"
+            text_4: "Motor de plantillas: Twig, Thymeleaf"
+            text_5: "Compatibilidad Cross-Browser"
+            text_6: "Responsive Design"
+            text_7: "Técnicas SEO"
+            text_8: "Gestión de Paquetes: Bower"
         subsection_3:
+            title: Administrador de Sistemas
+            text_1: "Lenguajes: Bash, Python"
+            text_2: "Sistemas Operativos: Debian GNU/Linux, Microsoft Windows"
+            text_3: "Servidores web: Apache, Nginx, Gunicorn"
+            text_4: "Virtualización: Oracle VM VirtualBox"
+            text_5: "Paneles de control: Ajenti, cPanel"
+            text_6: "Monitorización: Nagios"
+            text_7: "Administración de Bases de datos: CLI, MySQL Workbench, pgAdmin, phpMyAdmin"
+            text_8: "Otras herramientas: Google Apps for Work, FileZilla"
+        subsection_4:
             title: Otros 
-            text_1: "Sistemas Operativos: Debian GNU/Linux, Microsoft Windows, Android"
-            text_2: "Otros lenguajes: C++ (+Qt), Bash, MATLAB, Fortran"
-            text_3: "Control de Versiones: Git, Subversion"
-            text_4: "Diseño Gráfico: GIMP, Photoshop"
-            text_5: "Otras herramientas: NetBeans, MediaWiki, Firebug, yuglify, Mantis Bug Tracker, Bugzilla, VirtualBox, virtualenv"
+            text_1: "Otros lenguajes: C++ (+Qt), MATLAB, Fortran"
+            text_2: "Control de Versiones: Git, Subversion"
+            text_3: "Diseño Gráfico: GIMP, Photoshop"
+            text_4: "Otras herramientas: NetBeans, MediaWiki, Firebug, yuglify, Mantis Bug Tracker, Bugzilla"
     section_3: 
         title: Experiencia laboral 
         subtitle_1: España

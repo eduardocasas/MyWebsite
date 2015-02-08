@@ -4,8 +4,6 @@ namespace ECL\ContactBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Symfony\Component\Validator\Constraints\Email;
-use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Collection;
 
@@ -15,6 +13,7 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('name', 'text', array(
+                'label' => 'contact.form.name.label',
                 'attr' => array(
                     'autofocus'   => 'autofocus',
                     'placeholder' => 'contact.form.name.placeholder',
@@ -22,18 +21,21 @@ class ContactType extends AbstractType
                 )
             ))
             ->add('email', 'email', array(
+                'label' => 'contact.form.email.label',
                 'attr' => array(
                     'placeholder' => 'contact.form.email.placeholder',
                     'required'    => true
                 )
             ))
             ->add('subject', 'text', array(
+                'label' => 'contact.form.subject.label',
                 'attr' => array(
                     'placeholder' => 'contact.form.subject.placeholder',
                     'required'    => true
                 )
             ))
             ->add('message', 'textarea', array(
+                'label' => 'contact.form.message.label',
                 'attr' => array(
                     'placeholder' => 'contact.form.message.placeholder',
                     'required'    => true
