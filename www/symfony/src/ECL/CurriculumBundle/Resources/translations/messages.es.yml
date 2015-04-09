@@ -13,19 +13,22 @@ curriculum:
             title: Programación Back-End
             text_1: "Lenguajes: PHP, Python, Java, Node.js"
             text_2: "Bases de datos: MySQL, PostgreSQL, MongoDB"
-            text_3: "Frameworks: Symfony, Zend Framework, Django, Spring"
+            text_3: "Frameworks: Symfony, Zend Framework, Django, Spring, Express"
             text_4: "Testing: PHPUnit"
-            text_5: "Gestión de Paquetes: Composer, pip (+virtualenv), Maven, npm"
+            text_5: "Gestión de paquetes: Composer, pip (+virtualenv), Maven, npm"
+            text_6: "RESTful APIs"
         subsection_2:
             title: Programación Front-End
             text_1: "Lenguajes: HTML, CSS, JavaScript, XML, JSON"
-            text_2: "Frameworks: jQuery"
+            text_2: "Frameworks: jQuery, AngularJS"
             text_3: "Preprocesadores: Sass"
-            text_4: "Motor de plantillas: Twig, Thymeleaf"
+            text_4: "Motor de plantillas: Twig, Thymeleaf, Jade"
             text_5: "Compatibilidad Cross-Browser"
             text_6: "Responsive Design"
             text_7: "Técnicas SEO"
-            text_8: "Gestión de Paquetes: Bower"
+            text_8: "Automatizador de tareas: Gulp"
+            text_9: "Testing: Postman"
+            text_10: "Gestión de paquetes: Bower"
         subsection_3:
             title: Administrador de Sistemas
             text_1: "Lenguajes: Bash, Python"
@@ -34,8 +37,9 @@ curriculum:
             text_4: "Virtualización: Oracle VM VirtualBox"
             text_5: "Paneles de control: Ajenti, cPanel"
             text_6: "Monitorización: Nagios"
-            text_7: "Administración de Bases de datos: CLI, MySQL Workbench, pgAdmin, phpMyAdmin"
-            text_8: "Otras herramientas: Google Apps for Work, FileZilla"
+            text_7: "Administración de Bases de datos: CLI, MySQL Workbench, pgAdmin, phpMyAdmin, Robomongo"
+            text_8: "Gestor de procesos: PM2"
+            text_9: "Otras herramientas: Google Apps for Work, FileZilla"
         subsection_4:
             title: Otros 
             text_1: "Otros lenguajes: C++ (+Qt), MATLAB, Fortran"
