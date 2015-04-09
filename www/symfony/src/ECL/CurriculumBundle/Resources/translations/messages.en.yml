@@ -43,7 +43,7 @@ curriculum:
         subsection_4:
             title: Others
             text_1: "Other languages: C++ (+Qt), MATLAB, Fortran"
-            text_2: "Version Control Systems: Git, Subversion"
+            text_2: "Version Control Systems: Git (+GitHub +GitLab +Bitbucket), Subversion"
             text_3: "Graphic Design: GIMP, Photoshop"
             text_4: "Other tools: NetBeans, MediaWiki, Firebug, yuglify, Mantis Bug Tracker, Bugzilla"
     section_3: 
