@@ -9,6 +9,8 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
     <url><loc>{{ url('ecl_home_homepage') }}</loc></url>
     <!-- Curriculum -->
     <url><loc>{% if app.request.locale == 'en' %}{{ url('ecl_curriculum_homepage_en') }}{% else %}{{ url('ecl_curriculum_homepage_es') }}{% endif %}</loc></url>
+    <!-- Projects -->
+    <url><loc>{% if app.request.locale == 'en' %}{{ url('ecl_project_homepage_en') }}{% else %}{{ url('ecl_project_homepage_es') }}{% endif %}</loc></url>
     <!-- Blog -->
     <url><loc>{{ url('ecl_blog_homepage', { _locale: app.request.locale } ) }}</loc></url>
     {% for page in 2..pages %}
