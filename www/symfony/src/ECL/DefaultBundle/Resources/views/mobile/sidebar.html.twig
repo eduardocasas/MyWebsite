@@ -46,6 +46,13 @@
                     <a href="{% if locale == 'en' %}{{ url('ecl_curriculum_homepage_en') }}{% else %}{{ url('ecl_curriculum_homepage_es') }}{% endif %}">{{ 'section.curriculum.link'|trans }}</a>
                 {% endif %}
             </li>
+            <li id="project_nav">
+                {% if slug == 'section.project.slug'|trans %}
+                    <h2>{{ 'section.project.link'|trans }}</h2>
+                {% else %}
+                    <a href="{% if locale == 'en' %}{{ url('ecl_project_homepage_en') }}{% else %}{{ url('ecl_project_homepage_es') }}{% endif %}">{{ 'section.project.link'|trans }}</a>
+                {% endif %}
+            </li>
             <li id="contact_nav">
                 {% if slug == 'section.contact.slug'|trans and status_code is not defined  %}
                     <h2>{{ 'section.contact.link'|trans }}</h2>

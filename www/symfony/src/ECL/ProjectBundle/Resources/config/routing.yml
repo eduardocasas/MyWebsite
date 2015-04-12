@@ -1,0 +1,23 @@
+ecl_project_homepage_en_redirect:
+    path:  /en/proyectos
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        _locale: en
+        route: ecl_project_homepage_en
+        permanent: true
+        
+ecl_project_homepage_es_redirect:
+    path:  /es/proyects
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        _locale: es
+        route: ecl_project_homepage_es
+        permanent: true
+        
+ecl_project_homepage_es:
+    path:  /{_locale}/proyectos
+    defaults: { _controller: ECLProjectBundle:Default:index }
+
+ecl_project_homepage_en:
+    path:  /{_locale}/projects
+    defaults: { _controller: ECLProjectBundle:Default:index }

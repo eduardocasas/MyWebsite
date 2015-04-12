@@ -1,3 +1,7 @@
+ecl_project:
+    resource: "@ECLProjectBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ecl_file:
     resource: "@ECLFileBundle/Resources/config/routing.yml"
     prefix:   /

@@ -12,6 +12,10 @@ section:
         link: Curriculum Vitae
         slug: curriculum-vitae
         title: Curriculum Vitae
+    project:
+        link: Proyectos
+        slug: proyectos
+        title: Proyectos Personales
     blog:
         link: Blog
         slug: blog

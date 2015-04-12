@@ -1,0 +1,30 @@
+project:
+    title: Proyectos personales
+    description: Resumen de todos mis proyectos personales.
+    section_1: 
+        alt: StatHub Aplicación Web
+        title: StatHub. Otro contandor de visitas para aplicaciones web.
+        text_1: 'Lenguaje (servidor): <a href="https://www.python.org/" target="_blank">Python</a>'
+        text_2: 'Framework (servidor): <a href="https://www.djangoproject.com/" target="_blank">Django</a>'
+        text_3: 'Framework (front): <a href="https://jquery.com/" target="_blank">jQuery</a>'
+        text_4: 'Base de Datos: <a href="http://www.postgresql.org.es/" target="_blank">PostgreSQL</a>'
+        text_5: 'Servidor web: <a href="http://nginx.org/" target="_blank">NGINX</a>'
+        text_6: 'SO: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
+    section_2: 
+        alt: LuaIssueTracker Aplicación Web
+        title: Lua Issue Tracker. Un gestor de incidencias moderno, sencillo y gratuito.
+        text_1: 'Lenguaje (servidor): <a href="https://nodejs.org/" target="_blank">Node.js</a>'
+        text_2: 'Framework (servidor): <a href="http://expressjs.com/" target="_blank">Express</a>'
+        text_3: 'Framework (front): <a href="https://jquery.com/" target="_blank">jQuery</a>'
+        text_4: 'Base de Datos: <a href="https://www.mongodb.org/" target="_blank">mongoDB</a>'
+        text_5: 'Servidor web: <a href="http://nginx.org/" target="_blank">NGINX</a>'
+        text_6: 'SO: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
+    section_3: 
+        alt: EduardoCasas Aplicación Web
+        title: Mi Página Personal
+        text_1: 'Lenguaje (servidor): <a href="http://php.net/" target="_blank">PHP</a>'
+        text_2: 'Framework (servidor): <a href="http://symfony.com/" target="_blank">Symfony</a>'
+        text_3: 'Framework (front): <a href="https://jquery.com/" target="_blank">jQuery</a>'
+        text_4: 'Base de Datos: <a href="http://www.mysql.com/" target="_blank">MySQL</a>'
+        text_5: 'Servidor web: <a href="http://httpd.apache.org/" target="_blank">Apache</a>'
+        text_6: 'SO: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
