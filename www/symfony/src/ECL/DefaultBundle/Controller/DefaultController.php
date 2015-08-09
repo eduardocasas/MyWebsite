@@ -10,8 +10,8 @@ class DefaultController extends Controller
     {
         return $this->redirect(
             $this->generateUrl('ecl_home_homepage',
-            array('_locale' => $this->getRequest()->getPreferredLanguage(array('en', 'es'))))
-        );
+            ['_locale' => $this->getRequest()->getPreferredLanguage(['en', 'es'])]
+        ));
     }
 
 }

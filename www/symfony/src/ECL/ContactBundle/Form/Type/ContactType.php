@@ -12,57 +12,47 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', 'text', array(
+            ->add('name', 'text', [
                 'label' => 'contact.form.name.label',
-                'attr' => array(
-                    'autofocus'   => 'autofocus',
+                'attr' => [
+                    'autofocus' => 'autofocus',
                     'placeholder' => 'contact.form.name.placeholder',
-                    'required'    => true
-                )
-            ))
-            ->add('email', 'email', array(
+                    'required' => true
+                ]
+            ])
+            ->add('email', 'email', [
                 'label' => 'contact.form.email.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'contact.form.email.placeholder',
-                    'required'    => true
-                )
-            ))
-            ->add('subject', 'text', array(
+                    'required' => true
+                ]
+            ])
+            ->add('subject', 'text', [
                 'label' => 'contact.form.subject.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'contact.form.subject.placeholder',
-                    'required'    => true
-                )
-            ))
-            ->add('message', 'textarea', array(
+                    'required' => true
+                ]
+            ])
+            ->add('message', 'textarea', [
                 'label' => 'contact.form.message.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'contact.form.message.placeholder',
                     'required'    => true
-                )
-            ));
+                ]
+            ]);
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $collectionConstraint = new Collection(array(
-            'name' => array(
-                new NotBlank(array('message' => 'Name should not be blank.'))
-            ),
-            'email' => array(
-                new NotBlank(array('message' => 'Email should not be blank.'))
-            ),
-            'subject' => array(
-                new NotBlank(array('message' => 'Subject should not be blank.'))
-            ),
-            'message' => array(
-                new NotBlank(array('message' => 'Message should not be blank.'))
-            )
-        ));
+        $collectionConstraint = new Collection([
+            'name' => [new NotBlank(['message' => 'Name should not be blank.'])],
+            'email' => [new NotBlank(['message' => 'Email should not be blank.'])],
+            'subject' => [new NotBlank(['message' => 'Subject should not be blank.'])],
+            'message' => [new NotBlank(['message' => 'Message should not be blank.'])]
+        ]);
 
-        $resolver->setDefaults(array(
-            'constraints' => $collectionConstraint
-        ));
+        $resolver->setDefaults(['constraints' => $collectionConstraint]);
     }
 
     public function getName()

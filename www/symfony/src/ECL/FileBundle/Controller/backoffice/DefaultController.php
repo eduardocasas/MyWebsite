@@ -33,10 +33,7 @@ class DefaultController extends Controller
 
     public function getTreeAction()
     {
-        return $this->render(
-            'ECLFileBundle:backoffice:tree.html.twig',
-            array('items' => $this->getFileCollection())
-        );
+        return $this->render('ECLFileBundle:backoffice:tree.html.twig', ['items' => $this->getFileCollection()]);
     }
 
     public function indexAction()
@@ -69,22 +66,22 @@ class DefaultController extends Controller
 
     private function getFileCollection()
     {
-        $files = array();
-        $collection = array();
+        $files = [];
+        $collection = [];
         $years = Finder\Finder::create()
                  ->directories()
                  ->depth(0)
                  ->in($this->getFilesFolderFullPath());
         foreach ($years as $year) {
             $year_num = $year->getFilename();
-            $files[$year_num] = array();
+            $files[$year_num] = [];
             $months = Finder\Finder::create()
                  ->directories()
                  ->depth(0)
                  ->in($this->getFilesFolderFullPath().$year_num);
             foreach ($months as $month) {
                 $month_name = $month->getFilename();
-                $files[$year_num][$month_name] = array ();
+                $files[$year_num][$month_name] = [];
                 $docs = Finder\Finder::create()
                         ->files()
                         ->depth(0)
@@ -106,7 +103,7 @@ class DefaultController extends Controller
     
     private function getMonthsCollection()
     {
-        return array( '01','02','03','04','05','06','07','08','09','10','11','12');
+        return ['01','02','03','04','05','06','07','08','09','10','11','12'];
     }
     
     private function getFilesFolderFullPath()

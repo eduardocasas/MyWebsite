@@ -59,7 +59,7 @@ class ArticleRepository extends EntityRepository
         return $this
             ->getEntityManager()
             ->createQuery($dql)
-            ->setParameters(array ('slug' => $slug, 'date' => $alter_date))
+            ->setParameters(['slug' => $slug, 'date' => $alter_date])
             ->getSingleResult();
     }
     

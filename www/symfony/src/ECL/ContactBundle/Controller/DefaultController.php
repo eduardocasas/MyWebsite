@@ -42,7 +42,7 @@ email: '.$data['email'].'
         $this->get('session')->remove('email_sent');
 
         return $this->render(
-            'ECLContactBundle:'.$this->get('my.browser')->getFolder().'/Default:info.html.twig'
+            'ECLContactBundle:Default:info.html.twig'
         );
     }
 
@@ -51,8 +51,8 @@ email: '.$data['email'].'
         $form = $this->createForm(new ContactType);
 
         return $this->render(
-            'ECLContactBundle:'.$this->get('my.browser')->getFolder().'/Default:index.html.twig',
-            array('form' => $form->createView())
+            'ECLContactBundle:Default:index.html.twig',
+            ['form' => $form->createView()]
         );
     }
     

@@ -15,13 +15,10 @@ class CommentsController extends Controller
         }
         $form = $this->createForm(new BackofficeCommentType, $entity);
 
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/comment:edit.html.twig',
-            array(
-                'entity' => $entity,
-                'form'   => $form->createView()
-            )
-        );
+        return $this->render('ECLBlogBundle:backoffice/comment:edit.html.twig', [
+            'entity' => $entity,
+            'form' => $form->createView()
+        ]);
     }
     
     public function processEditAction($id)
@@ -38,19 +35,13 @@ class CommentsController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl(
-                'ecl_blog_backoffice_comments',
-                array('id' => $id)
-            ));
+            return $this->redirect($this->generateUrl('ecl_blog_backoffice_comments', ['id' => $id]));
         }
 
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/comment:edit.html.twig',
-            array(
-                'entity'    => $entity,
-                'edit_form' => $editForm->createView()
-            )
-        );
+        return $this->render('ECLBlogBundle:backoffice/comment:edit.html.twig', [
+            'entity' => $entity,
+            'edit_form' => $editForm->createView()
+        ]);
     }
 
     public function deleteAction($id)
@@ -64,12 +55,9 @@ class CommentsController extends Controller
     
     public function indexAction()
     {
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/comment:index.html.twig',
-            array(
-                'comments' => $this->getDoctrine()->getManager()->getRepository('ECLBlogBundle:Comment')->getAll()
-            )
-        );
+        return $this->render('ECLBlogBundle:backoffice/comment:index.html.twig', [
+            'comments' => $this->getDoctrine()->getManager()->getRepository('ECLBlogBundle:Comment')->getAll()
+        ]);
     }
 
 }

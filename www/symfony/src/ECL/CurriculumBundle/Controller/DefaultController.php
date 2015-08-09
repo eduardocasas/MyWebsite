@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('ECLCurriculumBundle:'.$this->get('my.browser')->getFolder().'/Default:index.html.twig', array());
+        return $this->render('ECLCurriculumBundle:Default:index.html.twig');
     }
 }

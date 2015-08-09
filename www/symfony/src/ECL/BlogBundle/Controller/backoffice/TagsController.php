@@ -13,10 +13,10 @@ class TagsController extends Controller
         $entity = new Tag;
         $form = $this->createForm(new TagType, $entity);
 
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/tag:create.html.twig',
-            array('entity' => $entity, 'form' => $form->createView())
-        );
+        return $this->render('ECLBlogBundle:backoffice/tag:create.html.twig', [
+            'entity' => $entity,
+            'form' => $form->createView()
+        ]);
     }
     
     public function processCreateAction()
@@ -29,16 +29,12 @@ class TagsController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl(
-                'ecl_blog_backoffice_tags',
-                array('id' => $entity->getId())
-            ));
+            return $this->redirect($this->generateUrl('ecl_blog_backoffice_tags', [
+                'id' => $entity->getId()
+            ]));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView()
-        );
+        return ['entity' => $entity, 'form'   => $form->createView()];
     }
 
     public function editAction($id)
@@ -50,13 +46,10 @@ class TagsController extends Controller
         }
         $form = $this->createForm(new TagType, $entity);
 
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/tag:edit.html.twig',
-            array(
-                'entity' => $entity,
-                'form'   => $form->createView()
-            )
-        );
+        return $this->render('ECLBlogBundle:backoffice/tag:edit.html.twig', [
+            'entity' => $entity,
+            'form' => $form->createView()
+        ]);
     }
     
     public function processEditAction($id)
@@ -72,19 +65,13 @@ class TagsController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl(
-                'ecl_blog_backoffice_tags',
-                array('id' => $id)
-            ));
+            return $this->redirect($this->generateUrl('ecl_blog_backoffice_tags', ['id' => $id]));
         }
 
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/tag:edit.html.twig',
-            array(
-                'entity'    => $entity,
-                'edit_form' => $editForm->createView()
-            )
-        );
+        return $this->render('ECLBlogBundle:backoffice/tag:edit.html.twig', [
+            'entity' => $entity,
+            'edit_form' => $editForm->createView()
+        ]);
     }
 
     public function deleteAction($id)
@@ -98,12 +85,9 @@ class TagsController extends Controller
     
     public function indexAction()
     {
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/tag:index.html.twig',
-            array(
-                'tags' => $this->getDoctrine()->getManager()->getRepository('ECLBlogBundle:Tag')->findAll()
-            )
-        );
+        return $this->render('ECLBlogBundle:backoffice/tag:index.html.twig', [
+            'tags' => $this->getDoctrine()->getManager()->getRepository('ECLBlogBundle:Tag')->findAll()
+        ]);
     }
 
 }

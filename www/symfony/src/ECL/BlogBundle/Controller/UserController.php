@@ -15,7 +15,7 @@ class UserController extends Controller
         $Session->remove('name');
         $Session->remove('picture');
 
-        return $this->redirect($this->generateURL('ecl_blog_article', array('date' => $date,'slug' => $slug)).'#comments');
+        return $this->redirect($this->generateURL('ecl_blog_article', ['date' => $date,'slug' => $slug]).'#comments');
     }
     
     public function loginGithubAction($date, $slug)
@@ -54,7 +54,7 @@ class UserController extends Controller
     
     private function login($url_login, $date, $slug)
     {
-        (new Session)->set('url_redirect', $this->generateURL('ecl_blog_article', array('date' => $date,'slug' => $slug)).'#comments');
+        (new Session)->set('url_redirect', $this->generateURL('ecl_blog_article', ['date' => $date,'slug' => $slug]).'#comments');
         return $this->redirect($this->generateURL($url_login));
     }
 

@@ -3,6 +3,3 @@ services:
         class: ECL\DefaultBundle\Twig\TextExtension
         tags:
             - { name: twig.extension }
-    my.browser:
-        class: ECL\DefaultBundle\Service\Browser
-        arguments: [@service_container]

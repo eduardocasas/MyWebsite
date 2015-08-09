@@ -10,19 +10,12 @@ class ArticleExtendType extends AbstractType
     
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add(
-            'content',
-            'textarea',
-            array('label' => 'Contenido:', 'required' => false)
-        );
-                
+        $builder->add('content', 'textarea', ['label' => 'Contenido:', 'required' => false]);
     }
     
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'ECL\BlogBundle\Entity\ArticleExtend',
-        ));
+        $resolver->setDefaults(['data_class' => 'ECL\BlogBundle\Entity\ArticleExtend']);
     }
 
     public function getName()

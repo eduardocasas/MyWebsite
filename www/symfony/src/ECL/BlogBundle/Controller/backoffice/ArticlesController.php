@@ -14,10 +14,9 @@ class ArticlesController extends Controller
         $entity = new Article;
         $form = $this->createForm(new ArticleType, $entity);
 
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/article:create.html.twig',
-            array('entity' => $entity, 'form' => $form->createView())
-        );
+        return $this->render('ECLBlogBundle:backoffice/article:create.html.twig', [
+            'entity' => $entity, 'form' => $form->createView()
+        ]);
     }
     
     public function processCreateAction()
@@ -35,16 +34,10 @@ class ArticlesController extends Controller
             $em->persist($ArticleExtend);
             $em->flush();
 
-            return $this->redirect($this->generateUrl(
-                'ecl_blog_backoffice_articles',
-                array('id' => $Article->getId())
-            ));
+            return $this->redirect($this->generateUrl('ecl_blog_backoffice_articles', ['id' => $Article->getId()]));
         }
 
-        return array(
-            'entity' => $Article,
-            'form'   => $form->createView()
-        );
+        return ['entity' => $Article, 'form' => $form->createView()];
     }
 
     public function editAction($id)
@@ -55,13 +48,10 @@ class ArticlesController extends Controller
         }
         $form = $this->createForm(new ArticleType, $entity);
 
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/article:edit.html.twig',
-            array(
-                'entity' => $entity,
-                'form'   => $form->createView()
-            )
-        );
+        return $this->render('ECLBlogBundle:backoffice/article:edit.html.twig', [
+            'entity' => $entity,
+            'form'   => $form->createView()
+        ]);
     }
     
     public function processEditAction($id)
@@ -77,19 +67,13 @@ class ArticlesController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl(
-                'ecl_blog_backoffice_articles',
-                array('id' => $id)
-            ));
+            return $this->redirect($this->generateUrl('ecl_blog_backoffice_articles', ['id' => $id]));
         }
 
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/article:edit.html.twig',
-            array(
-                'entity'    => $entity,
-                'edit_form' => $editForm->createView()
-            )
-        );
+        return $this->render('ECLBlogBundle:backoffice/article:edit.html.twig', [
+            'entity' => $entity,
+            'edit_form' => $editForm->createView()
+        ]);
     }
 
     public function deleteAction($id)
@@ -103,12 +87,9 @@ class ArticlesController extends Controller
     
     public function indexAction()
     {
-        return $this->render(
-            'ECLBlogBundle:pc/backoffice/article:index.html.twig',
-            array(
-                'articles' => $this->getDoctrine()->getManager()->getRepository('ECLBlogBundle:Article')->findAll()
-            )
-        );
+        return $this->render('ECLBlogBundle:backoffice/article:index.html.twig', [
+            'articles' => $this->getDoctrine()->getManager()->getRepository('ECLBlogBundle:Article')->findAll()
+        ]);
     }
 
 }

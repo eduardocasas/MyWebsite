@@ -1,0 +1,12 @@
+{% extends "ECLDefaultBundle::backoffice_base.html.twig" %}
+{% block title %}{{ parent() }} | Backoffice{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{asset('bundles/eclhome/css/backoffice/index.css')}}">
+{% endblock %}
+{% block backoffice_main %}
+    <article id="main_article_wrapper">
+    <h1 id="title">Backoffice</h1>
+    <p>Resumen</p>
+    </article>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "ECLDefaultBundle::base.html.twig" %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('bundles/ecldefault/css/backoffice/main.css')}}">
+{% endblock %}
+{% block main %}
+<nav id="backoffice_menu">
+    <ul>
+        <li><a href="{{ url('ecl_home_backoffice_homepage') }}">Resumen</a></li>
+        <li class="separator"><a href="{{ url('ecl_blog_backoffice_articles') }}">Artículos</a></li>
+        <li class="separator"><a href="{{ url('ecl_blog_backoffice_tags') }}">Tags</a></li>
+        <li class="separator"><a href="{{ url('ecl_blog_backoffice_comments') }}">Comentarios</a></li>
+        <li class="separator"><a href="{{ url('ecl_file_backoffice') }}">Ficheros</a></li>
+        <li id="logout_button"><a href="{{ url('logout') }}">logout</a></li>
+    </ul>
+</nav>
+{% block backoffice_main %}{% endblock %}
+{% endblock %}

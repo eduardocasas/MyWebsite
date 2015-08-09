@@ -11,13 +11,10 @@ class RssController extends Controller
     public function indexAction($tag_slug = null)
     {
         $em = $this->getDoctrine()->getManager();
-        return $this->render(
-            'ECLBlogBundle:rss:index.xml.twig',
-            array(
-                'tag'      => $em->getRepository('ECLBlogBundle:Tag')->findOneBy(array('slug' => $tag_slug)),
-                'articles' => $em->getRepository('ECLBlogBundle:Article')->getCollectionByPageTagLanguage($this->getLocale(), $tag_slug, self::ITEMS_PER_PAGE)
-            )
-        );
+        return $this->render('ECLBlogBundle:rss:index.xml.twig', [
+            'tag' => $em->getRepository('ECLBlogBundle:Tag')->findOneBy(['slug' => $tag_slug]),
+            'articles' => $em->getRepository('ECLBlogBundle:Article')->getCollectionByPageTagLanguage($this->getLocale(), $tag_slug, self::ITEMS_PER_PAGE)
+        ]);
     }
     
     private function getLocale()

@@ -22,16 +22,15 @@ class DefaultController extends Controller
         }
 
         return $this->render(
-            'ECLHomeBundle:pc/backoffice/Default:login.html.twig',
-            array(
+            'ECLHomeBundle:backoffice/Default:login.html.twig', [
                 'last_username' => $session->get(SecurityContext::LAST_USERNAME),
-                'error'         => $error,
-            )
+                'error' => $error,
+            ]
         );
     }
     
     public function indexAction()
     {
-        return $this->render('ECLHomeBundle:pc/backoffice/Default:index.html.twig', array());
+        return $this->render('ECLHomeBundle:backoffice/Default:index.html.twig');
     }
 }

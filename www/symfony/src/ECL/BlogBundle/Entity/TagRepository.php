@@ -19,7 +19,7 @@ class TagRepository extends EntityRepository
         FROM ECLBlogBundle:Tag t
         JOIN t.articles a";
         $query = $this->getEntityManager()->createQuery($dql);
-        $collection = array();
+        $collection = [];
         foreach ($query->getResult() as $item) {
             $collection[$item['id']][] = $item;
         }

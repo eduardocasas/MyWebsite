@@ -1,0 +1,27 @@
+{% extends "ECLDefaultBundle::backoffice_base.html.twig" %}
+{% block title %}{{ parent() }} | Backoffice | Tags | Editar{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{asset('bundles/eclblog/css/backoffice/tag.css')}}">
+{% endblock %}
+{% block backoffice_main %}
+<article id="main_article_wrapper">
+    <h1 id="title">Tags</h1>
+    <form action="{{ path('ecl_blog_backoffice_tag_process_edit', { 'id': entity.id }) }}" method="post" id="create_tag_form">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        <fieldset>
+            {{ form_label(form.name) }}
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.slug) }}
+            {{ form_errors(form.slug) }}
+            {{ form_widget(form.slug) }}
+        </fieldset>
+        <input type="submit" class="submit_button" value="{{ 'button.save'|trans}}">
+        {{ form_end(form) }}
+    </form>
+</article>
+{% endblock %}

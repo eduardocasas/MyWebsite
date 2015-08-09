@@ -9,9 +9,7 @@ class TextExtension extends Twig_Extension
     
     public function getFilters()
     {
-        return array(
-            'github_truncate' => new Twig_Filter_Method($this, 'githubTruncate')
-        );
+        return ['github_truncate' => new Twig_Filter_Method($this, 'githubTruncate')];
     }
     
     public function githubTruncate($string)

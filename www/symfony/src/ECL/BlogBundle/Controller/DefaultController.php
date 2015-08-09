@@ -17,7 +17,7 @@ class DefaultController extends Controller
     public function commentCreateAction($date, $slug, $article_id)
     {
         if ($this->get('session')->get('name')) {
-            $url = $this->generateURL('ecl_blog_article', array('date' => $date,'slug' => $slug)).'#comments';
+            $url = $this->generateURL('ecl_blog_article', ['date' => $date,'slug' => $slug]).'#comments';
             $Comment = new Comment;
             $form = $this->createForm(new CommentType, $Comment);
             $form->bind($this->getRequest());
@@ -58,23 +58,20 @@ class DefaultController extends Controller
         $entity = new Comment;
         $form = $this->createForm(new CommentType, $entity);
 
-        return $this->render(
-            'ECLBlogBundle:'.$this->get('my.browser')->getFolder().'/Default:show.html.twig',
-            array(
-                'user_logged'  => $session->get('user_is_logged'),
-                'user_id'      => $session->get('id'),
-                'user_name'    => $session->get('nick'),
-                'user_email'   => $session->get('email'),
-                'logged_api'   => $session->get('api'),
-                'tags'         => $em->getRepository('ECLBlogBundle:Tag')->getByArticle($article['id']),
-                'article'      => $article,
-                'article_date' => $date,
-                'article_slug' => $slug,
-                'comments'     => $em->getRepository('ECLBlogBundle:Comment')->getByArticle($article['id']),
-                'form'         => $form->createView(),
-                'both_language_support' => Article::BOTH_LANGUAGE
-            )
-        );
+        return $this->render( 'ECLBlogBundle:Default:show.html.twig', [
+            'user_logged' => $session->get('user_is_logged'),
+            'user_id' => $session->get('id'),
+            'user_name' => $session->get('nick'),
+            'user_email' => $session->get('email'),
+            'logged_api' => $session->get('api'),
+            'tags' => $em->getRepository('ECLBlogBundle:Tag')->getByArticle($article['id']),
+            'article' => $article,
+            'article_date' => $date,
+            'article_slug' => $slug,
+            'comments' => $em->getRepository('ECLBlogBundle:Comment')->getByArticle($article['id']),
+            'form' => $form->createView(),
+            'both_language_support' => Article::BOTH_LANGUAGE
+        ]);
     }
 
     public function navAction($page = null, $tag_slug = null)
@@ -83,13 +80,13 @@ class DefaultController extends Controller
         $total_num_items = $em->getRepository('ECLBlogBundle:Article')->getTotalArticlesNum($this->getLocale(), $tag_slug);
         $total_num_pages = ceil($total_num_items/self::ITEMS_PER_PAGE);
         if ($total_num_pages > 1) {
-            $nav_array = array(
-                'first'     => null,
-                'last'      => null,
-                'previous'  => null,
-                'next'      => null,
+            $nav_array = [
+                'first' => null,
+                'last' => null,
+                'previous' => null,
+                'next' => null,
                 'last_page' => $total_num_pages
-            );
+            ];
             if ($page != null) {
                 $nav_array['first'] = true;
                 if ($page > 2) {
@@ -106,10 +103,9 @@ class DefaultController extends Controller
                 }
             }
 
-            return $this->render(
-                'ECLBlogBundle:'.$this->get('my.browser')->getFolder().'/Default:nav.html.twig',
-                array('nav_array' => $nav_array, 'tag_slug' => $tag_slug)
-            );            
+            return $this->render('ECLBlogBundle:Default:nav.html.twig', [
+                'nav_array' => $nav_array, 'tag_slug' => $tag_slug
+            ]);
         } else {
 
             return new Response();
@@ -133,16 +129,13 @@ class DefaultController extends Controller
             throw new NotFoundHttpException();
         }
 
-        return $this->render(
-            'ECLBlogBundle:'.$this->get('my.browser')->getFolder().'/Default:index.html.twig',
-            array(
-                'page'                   => $page,
-                'tag_slug'               => $tag_slug,
-                'blog_tag_selected_name' => $tag_name,
-                'blog_tag_selected'      => $tag_slug,
-                'articles'               => $em->getRepository('ECLBlogBundle:Article')->getCollectionByPageTagLanguage($this->getLocale(), $tag_slug, self::ITEMS_PER_PAGE, $page)
-            )
-        );
+        return $this->render('ECLBlogBundle:Default:index.html.twig', [
+            'page' => $page,
+            'tag_slug' => $tag_slug,
+            'blog_tag_selected_name' => $tag_name,
+            'blog_tag_selected' => $tag_slug,
+            'articles' => $em->getRepository('ECLBlogBundle:Article')->getCollectionByPageTagLanguage($this->getLocale(), $tag_slug, self::ITEMS_PER_PAGE, $page)
+        ]);
     }
     
     private function articleLanguageIsAvailable($language)

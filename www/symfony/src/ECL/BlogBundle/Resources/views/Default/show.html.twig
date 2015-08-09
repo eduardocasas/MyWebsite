@@ -1,0 +1,107 @@
+{% extends "ECLDefaultBundle::base.html.twig" %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block description %}{{ article.summary }}{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/styles/shCore.css')}}">
+<link rel="stylesheet" href="{{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/styles/shThemeDefault.css')}}">
+<link rel="stylesheet" href="{{asset('bundles/eclblog/css/item.css')}}">
+{% endblock %}
+{% block javascripts %}
+<script src="{{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/scripts/shCore.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/scripts/shAutoloader.js')}}" type="text/javascript"></script>
+{% endblock %}
+{% block locale %}
+    {% if article.language == both_language_support %}
+        {{parent()}}
+    {% endif %}
+{% endblock %}
+{% block main %}
+<article id="main_article_wrapper">
+    <section id="article" {%if app.request.locale != article.html_language %}lang="{{ article.html_language }}"{% endif %}>
+        <h1 id="title">{{ article.title }}</h1>
+        <time id="article_date" datetime="{{ article.date|date('c') }}" {% if comments is not empty %}class="separator"{% endif %}>{{ article.date|date("d / m / Y") }}</time>
+    {% if comments is not empty %}
+        <a href="#comments" id="comments_link">{{'comments.title'|trans}}: {{ comments|length }}</a>
+    {% endif %}
+        <ul id="tag_list">
+    {% for tag in tags %}
+            <li class="name_field"><a href="{{ url('ecl_blog_homepage', { tag_slug: tag.slug } ) }}">{{ tag.name }}</a></li>
+    {% endfor %}
+        </ul>
+        <div id="article_content">{{ article.content|raw}}</div>
+    </section>
+    <span id="comments"></span>
+    <h2 id="comments_title">{{'comments.title'|trans}}</h2>
+    <section id="comments_form">
+    {% if app.session.get('name') != '' %}
+        <form action="{{ path('ecl_blog_comment_process_create', { date: article_date, slug: article_slug, article_id: article.id } ) }}" method="post" id="create_comment_form">
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            <fieldset>
+                {{ form_label(form.text) }}
+                {{ form_errors(form.text) }}
+                {{ form_widget(form.text) }}
+            </fieldset>
+            <input type="submit" class="submit_button" value="{{ 'button.send'|trans}}">
+            <a id="user_name" href="{{app.session.get('url') }}" target="_blank">
+            {% if app.session.get('picture') == null %}
+                <span class="no_picture"></span>
+            {% else %}
+                <img src="{{ app.session.get('picture') }}" width="50" height="50" alt="{{app.session.get('name') }}">
+            {% endif %}
+            {{app.session.get('name') }}</a>
+            <a href="{{ path('hwi_oauth_logout', { date: article_date, slug: article_slug } ) }}" id="logout">{{ 'comments.logout'|trans }}</a>
+            {{ form_end(form) }}
+        </form>
+    {% else %}
+        <div id="comment_login_wrapper">
+            <p>{{ 'comments.login.text'|trans }}</p>
+            <ul>
+                <li><a href="{{ url('user_login_github', { date: article_date, slug: article_slug } ) }}" id="login_github" title="{{ 'comments.login.github'|trans }}"></a></li>
+                <li><a href="{{ url('user_login_linkedin', { date: article_date, slug: article_slug } ) }}" id="login_linkedin" title="{{ 'comments.login.linkedin'|trans }}"></a></li>
+                <li><a href="{{ url('user_login_google', { date: article_date, slug: article_slug } ) }}" id="login_google" title="{{ 'comments.login.google'|trans }}"><span></span></a></li>
+                <li><a href="{{ url('user_login_twitter', { date: article_date, slug: article_slug } ) }}" id="login_twitter" title="{{ 'comments.login.twitter'|trans }}"></a></li>
+                <li><a href="{{ url('user_login_facebook', { date: article_date, slug: article_slug } ) }}" id="login_facebook" title="{{ 'comments.login.facebook'|trans }}"></a></li>
+            </ul>
+        </div>
+    {% endif %}
+    </section>
+    <section id="comment_list">
+    {% if comments is empty %}
+        <p id="no_comments_message">{{ 'comments.empty_message'|trans }}</p>
+    {% endif %}
+    {% for item in comments %}
+        <article>
+            <header>
+                <a href="{{ item.url }}" target="_blank">
+                {% if item.picture == null %}
+                    <span class="no_picture"></span>
+                {% else %}
+                    <img src="{{ item.picture }}" width="50" height="50" alt="{{ item.name }}">
+                {% endif %}
+                {{ item.name }}</a>
+                <time>{{ item.creationDate|date('d-m-Y') }}</time>
+            </header>
+            <p>{{ item.text | raw | nl2br }}</p>
+        {% if item.updateDate != null %}
+            <footer>
+                {{ 'comments.update'|trans}}
+                <time>{{ item.updateDate|date('d-m-Y') }}</time>
+            </footer>
+        {% endif %}
+        </article>
+    {% endfor %}
+    </section>
+</article>
+<script type="text/javascript">
+    SyntaxHighlighter.autoloader(
+        'html xml  {{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/scripts/shBrushXml.js')}}',
+        'css  {{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/scripts/shBrushCss.js')}}',
+        'js  {{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/scripts/shBrushJScript.js')}}',
+        'php  {{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/scripts/shBrushPhp.js')}}',
+        'cpp  {{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/scripts/shBrushCpp.js')}}',
+        'bash  {{asset('bundles/ecldefault/vendor/syntaxhighlighter/pkg/scripts/shBrushBash.js')}}'
+    );
+    SyntaxHighlighter.all();
+</script>
+{% endblock %}

@@ -147,7 +147,7 @@ class OAuthUserProvider implements OAuthAwareUserProviderInterface, UserProvider
             $result = $this->doctrine
             ->getManager()
             ->createQuery($dql)
-            ->setParameters(array('identifier' => $identifier))
+            ->setParameters(['identifier' => $identifier])
             ->getSingleScalarResult();
         } catch (NoResultException $ex) {
             $result = false;

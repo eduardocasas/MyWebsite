@@ -221,7 +221,7 @@ class User extends OAuthUser
         
     public function getRoles()
     {
-        return array();
+        return [];
     }
     
     public function __toString() {}

@@ -1,0 +1,71 @@
+{% extends "ECLDefaultBundle::backoffice_base.html.twig" %}
+{% block title %}{{ parent() }} | Backoffice | Artículos | Crear {% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{asset('bundles/eclblog/css/backoffice/article.css')}}">
+{% endblock %}
+{% block javascripts %}
+ <script src="{{asset('bundles/ecldefault/vendor/bower_components/tinymce/tinymce.jquery.min.js')}}" type="text/javascript"></script>
+ <script src="{{asset('bundles/ecldefault/js/backoffice/init_tinymce.js')}}" type="text/javascript"></script>
+ <script src="{{asset('bundles/eclblog/js/backoffice/form.js')}}" type="text/javascript"></script>
+{% endblock %}
+{% block backoffice_main %}
+<article id="main_article_wrapper">
+    <h1 id="title">Crear Artículo</h1>
+    <form action="{{ path('ecl_blog_backoffice_articles_process_create') }}" method="post" id="create_article_form">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        <fieldset>
+            {{ form_label(form.active) }}
+            {{ form_errors(form.active) }}
+            {{ form_widget(form.active) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.language) }}
+            {{ form_errors(form.language) }}
+            {{ form_widget(form.language) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.title) }}
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.title) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.slug) }}
+            {{ form_errors(form.slug) }}
+            {{ form_widget(form.slug) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.thumbnail) }}
+            {{ form_errors(form.thumbnail) }}
+            {{ form_widget(form.thumbnail) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.thumbnail_alt) }}
+            {{ form_errors(form.thumbnail_alt) }}
+            {{ form_widget(form.thumbnail_alt) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.summary) }}
+            {{ form_errors(form.summary) }}
+            {{ form_widget(form.summary) }}
+        </fieldset>
+        {{ form_label(form.tags) }}
+        <div id="tag_fieldset">
+            {% for product in form.tags %}
+            <fieldset>
+                {{ form_widget(product) }}
+                {{ form_label(product) }}
+            </fieldset>            
+            {% endfor %}
+        </div>
+        <fieldset>
+            {{ form_label(form.article_extend.content) }}
+            {{ form_errors(form.article_extend.content) }}
+            {{ form_widget(form.article_extend.content) }}
+        </fieldset>
+        <input type="submit" class="submit_button" value="{{ 'button.create'|trans}}">
+        {{ form_end(form) }}
+    </form>
+</article>
+{% endblock %}

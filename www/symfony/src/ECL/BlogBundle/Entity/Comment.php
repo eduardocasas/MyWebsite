@@ -218,7 +218,7 @@ class Comment
         return preg_replace(
             '@(https?://([-\w\.]+)+(:\d+)?(/([\S/_\.-]*(\?\S+)?)?)?)@',
             '<a href="$1">$1</a>',
-            str_replace(array("&", "<", ">"), array("&amp;", "&lt;", "&gt;"), $text)
+            str_replace(["&", "<", ">"], ["&amp;", "&lt;", "&gt;"], $text)
         );
     }
 

@@ -12,19 +12,18 @@ class BackofficeCommentType extends AbstractType
         $builder->add(
             'active',
             'checkbox',
-            array('label' => 'Activo:', 'required' => false)
+            ['label' => 'Activo:', 'required' => false]
         )
         ->add(
             'text',
-            'textarea',
-            array(
-                'attr' => array(
+            'textarea', [
+                'attr' => [
                     'autofocus' => 'autofocus',
                     'placeholder' => 'comments.form.placeholder'
-                ),
+                ],
                 'label' => 'Texto:',
                 'required' => true
-            )
+            ]
         );
     }
 
