@@ -3,10 +3,10 @@
     <channel>
         <title>Eduardo Casas | {% if tag != null %}{{ tag.name }}{% endif %} Rss</title>
         <link>http://{{ app.request.host }}</link>
-        <description>Eduardo Casas, {{'web_developer'|trans}}. {{'rss.description'|trans}}</description>
+        <description>Eduardo Casas, {{ 'web_developer'|trans }}. {{ 'rss.description'|trans }}</description>
         <pubDate>{{ "now"|date('r') }}</pubDate>
         <atom:link href=".xml" rel="self" type="application/rss+xml" />
-        <language>{{'rss.language'|trans}}</language>
+        <language>{{ 'rss.language'|trans }}</language>
         {% for item in articles %}
             <item>
                 <title>{{ item.title }}</title>

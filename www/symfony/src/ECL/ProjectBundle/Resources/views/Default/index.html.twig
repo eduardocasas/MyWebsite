@@ -2,7 +2,7 @@
 {% block title %}{{ parent() }} | {{ 'section.project.title' | trans }}{% endblock %}
 {% block description %}{{ parent() }} {{ 'project.description' | trans }}{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="{{asset('bundles/eclproject/css/main.css')}}">
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/project/index.css') }}">
 {% endblock %}
 {% block main %}
 <article id="main_article_wrapper">
@@ -10,7 +10,7 @@
     <div>
         <h2 id="title">{{ 'project.section_1.title'|trans }}</h2>
         <p>URL: <a href="https://www.stathub.org/{{ app.request.locale }}/" target="_blank">https://www.stathub.org/{{ app.request.locale }}/</a></p>
-        <img src="{{ asset('bundles/eclproject/img/stathub.png') }}" alt="{{ 'project.section_1.alt'|trans }}">
+        <img src="{{ asset('bundles/ecl/img/stathub.png') }}" alt="{{ 'project.section_1.alt'|trans }}">
         <section>
             <ul>
                 <li>{{ 'project.section_1.text_1'|trans|raw }}</li>
@@ -25,7 +25,7 @@
     <div>
         <h2 id="title">{{ 'project.section_2.title'|trans }}</h2>
         <p>URL: <a href="https://www.luaissuetracker.com/{{ app.request.locale }}/" target="_blank">https://www.luaissuetracker.com/{{ app.request.locale }}/</a></p>
-        <img src="{{ asset('bundles/eclproject/img/lua-issue-tracker.png') }}" alt="{{ 'project.section_2.alt'|trans }}">
+        <img src="{{ asset('bundles/ecl/img/lua-issue-tracker.png') }}" alt="{{ 'project.section_2.alt'|trans }}">
         <section>
             <ul>
                 <li>{{ 'project.section_2.text_1'|trans|raw }}</li>
@@ -40,7 +40,7 @@
     <div>
         <h2 id="title">{{ 'project.section_3.title'|trans }}</h2>
         <p>URL: <a href="http://www.eduardocasas.com/{{ app.request.locale }}/" target="_blank">http://www.eduardocasas.com/{{ app.request.locale }}/</a></p>
-        <img src="{{ asset('bundles/eclproject/img/eduardo-casas.png') }}" alt="{{ 'project.section_3.alt'|trans }}">
+        <img src="{{ asset('bundles/ecl/img/eduardo-casas.png') }}" alt="{{ 'project.section_3.alt'|trans }}">
         <section>
             <ul>
                 <li>{{ 'project.section_3.text_1'|trans|raw }}</li>

@@ -6,7 +6,7 @@
             <li rel="folder"><button class="folder">{{ month }}</button>
                 <ul class="file_list" data-month="{{ month }}">
                 {% for item in month_folder %}
-                    <li><input type="checkbox" value="{{ year~'/'~month~'/'~item }}"><a class="file" target="_blank" href="{{ asset('bundles/eclfile/files/'~year~'/'~month~'/'~item )}}">{{ item }}</a></li>
+                    <li><input type="checkbox" value="{{ year~'/'~month~'/'~item }}"><a class="file" target="_blank" href="{{ asset('bundles/ecl/files/'~year~'/'~month~'/'~item ) }}">{{ item }}</a></li>
                 {% endfor %}
                 </ul>
             </li>

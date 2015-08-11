@@ -2,7 +2,7 @@
 {% block title %}{{ parent() }} | {{ 'section.contact.title'|trans }}{% endblock %}
 {% block description %}{{ parent() }} {{ 'contact.description' | trans }}{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="{{asset('bundles/eclcontact/css/main.css')}}">
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/contact/index.css') }}">
 {% endblock %}
 {% block locale %}
     <link rel="alternate" hreflang="es" href="{{ url('ecl_contact_homepage_es') }}">
@@ -34,7 +34,7 @@
             {{ form_errors(form.message) }}
             {{ form_widget(form.message) }}
         </fieldset>
-        <input type="submit" class="submit_button" value="{{ 'button.send'|trans}}">
+        <input type="submit" class="submit_button" value="{{ 'button.send'|trans }}">
         {{ form_end(form) }}
     </form>
 </article>

@@ -1,4 +1,5 @@
 parameters:
+    version: ~
     database_driver: 
     database_host: 
     database_port: 

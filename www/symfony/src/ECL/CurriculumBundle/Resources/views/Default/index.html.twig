@@ -2,7 +2,7 @@
 {% block title %}{{ parent() }} | {{ 'section.curriculum.title' | trans }}{% endblock %}
 {% block description %}{{ parent() }} {{ 'curriculum.description' | trans }}{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="{{asset('bundles/eclcurriculum/css/main.css')}}">
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/curriculum/index.css') }}">
 {% endblock %}
 {% block main %}
 <article id="main_article_wrapper">

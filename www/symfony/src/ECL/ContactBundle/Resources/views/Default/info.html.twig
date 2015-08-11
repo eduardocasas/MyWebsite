@@ -2,11 +2,11 @@
 {% block title %}{{ parent() }} | {{ 'section.contact.title'|trans }}{% endblock %}
 {% block description %}{{ parent() }} {{ 'contact.description' | trans }}{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="{{asset('bundles/eclcontact/css/main.css')}}">
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/contact/info.css') }}">
 {% endblock %}
 {% block main %}
 <article id="main_article_wrapper">
-    <img id="message_sent_image" src="{{asset('bundles/ecldefault/images/ok.png')}}" alt="message sent">
+    <img id="message_sent_image" src="{{ asset('bundles/ecl/img/ok.png') }}" alt="message sent">
     <h1 id="title">{{ 'contact.accomplished.title'|trans }}</h1>
     <p>{{ 'contact.accomplished.text_1'|trans }}</p>
     <p>{{ 'contact.accomplished.text_2'|trans }}</p>

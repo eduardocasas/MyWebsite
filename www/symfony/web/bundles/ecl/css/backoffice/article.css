@@ -1,0 +1,81 @@
+/* ------------- index ------------- */
+#create_article_button {
+  float: right; }
+
+#article_list {
+  border-collapse: collapse;
+  margin: 20px auto; }
+
+#article_list .delete_field a,
+#article_list .edit_field a {
+  background-image: url(/web/bundles/ecl/img/actions.png);
+  background-repeat: no-repeat;
+  display: block;
+  margin: 5px; }
+
+#article_list .delete_field a {
+  background-position: -110px 0;
+  height: 22px;
+  width: 20px; }
+
+#article_list .edit_field a {
+  background-position: -44px 0;
+  height: 22px;
+  width: 22px; }
+
+#article_list .name_field {
+  text-align: left;
+  padding: 5px 10px; }
+
+#article_list th.name_field {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom: none; }
+
+#article_list td {
+  background-color: #fff;
+  border: 1px solid #ddd; }
+
+/* ------------- create/edit ------------- */
+#create_article_form {
+  margin: 30px auto 40px; }
+
+#create_article_form fieldset {
+  margin: 10px 0; }
+
+#create_article_form label {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  text-align: right;
+  vertical-align: top;
+  width: 60px; }
+
+#create_article_form input[type=text],
+#create_article_form textarea {
+  padding: 4px 5px;
+  width: 450px; }
+
+#article_form_summary {
+  height: 80px; }
+
+#create_article_form label[for=article_form_article_extend_content] {
+  display: block;
+  margin-bottom: 10px; }
+
+#tag_fieldset {
+  display: block;
+  margin: -20px 45px 0 75px;
+  max-height: 180px;
+  overflow: auto; }
+
+#tag_fieldset label {
+  margin-left: 10px;
+  text-align: left; }
+
+#article_form_article_extend_content {
+  height: 300px; }
+
+#create_article_form input[type=submit] {
+  margin: 20px 0 0 240px; }
+
+/*# sourceMappingURL=article.css.map */

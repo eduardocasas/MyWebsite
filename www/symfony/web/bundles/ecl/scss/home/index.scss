@@ -1,0 +1,17 @@
+#main_article_wrapper {
+    a {
+        color: #645df6;
+        &:hover {
+            color: #2b2696;
+            text-decoration: none;
+        }
+    }
+    ul {
+        list-style-type: disc;
+        margin-left: 25px;
+    }
+    li {
+        margin-bottom: 6px;
+        padding-left: 6px;
+    }
+}

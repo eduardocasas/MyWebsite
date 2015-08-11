@@ -2,14 +2,14 @@
 {% block title %}{{ parent() }} | Backoffice | Ficheros{% endblock %}
 {% block stylesheets %}
 {{ parent() }}
-<link rel="stylesheet" href="{{asset('bundles/eclfile/css/backoffice/index.css')}}">
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/backoffice/file.css') }}">
 {% endblock %}
 {% block javascripts %}
-<script src="{{asset('bundles/eclfile/js/backoffice/index.js')}}"></script>
+<script src="{{ asset('bundles/ecl/js/backoffice/file.js') }}"></script>
 <script>
-    var FILE_UPLOAD_URL = '{{ url('ecl_file_backoffice_upload') }}',
-        REMOVE_FILE_URL = '{{ url('ecl_file_backoffice_remove') }}',
-        GET_TREE_URL    = '{{ url('ecl_file_backoffice_tree') }}';
+    var FILE_UPLOAD_URL = '{{ url('ecl_file_backoffice_upload') }}';
+    var REMOVE_FILE_URL = '{{ url('ecl_file_backoffice_remove') }}';
+    var GET_TREE_URL    = '{{ url('ecl_file_backoffice_tree') }}';
 </script>
 {% endblock %}
 {% block backoffice_main %}

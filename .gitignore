@@ -2,10 +2,10 @@
 /www/symfony/src/ECL/DefaultBundle/Resources/config/providers.yml
 /www/symfony/app/cache/*
 /www/symfony/app/logs/*
-/www/symfony/web/bundles/ecldefault/vendor/bower_components/*
+/www/symfony/web/bundles/vendor/bower_components/*
 !/www/symfony/app/cache/.gitkeep
 !/www/symfony/app/logs/.gitkeep
-!/www/symfony/web/bundles/ecldefault/vendor/bower_components/.gitkeep
+!/www/symfony/web/bundles/vendor/bower_components/.gitkeep
 /www/symfony/build/
 /www/symfony/vendor/
 /www/symfony/bin/

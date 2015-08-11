@@ -2,7 +2,7 @@
 {% block title %}{{ parent() }} | Backoffice | Tags | Editar{% endblock %}
 {% block stylesheets %}
 {{ parent() }}
-<link rel="stylesheet" href="{{asset('bundles/eclblog/css/backoffice/tag.css')}}">
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/backoffice/tag.css') }}">
 {% endblock %}
 {% block backoffice_main %}
 <article id="main_article_wrapper">
@@ -20,7 +20,7 @@
             {{ form_errors(form.slug) }}
             {{ form_widget(form.slug) }}
         </fieldset>
-        <input type="submit" class="submit_button" value="{{ 'button.save'|trans}}">
+        <input type="submit" class="submit_button" value="{{ 'button.save'|trans }}">
         {{ form_end(form) }}
     </form>
 </article>
