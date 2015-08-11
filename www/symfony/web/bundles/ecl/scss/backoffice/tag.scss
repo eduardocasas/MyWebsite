@@ -1,69 +1,57 @@
 /* ------------- index ------------- */
 
-#create_tag_button
-{
+#create_tag_button {
     float: right;
 }
-#tag_list
-{
+#tag_list {
     border-collapse: collapse;
     margin: 20px auto;
+    .delete_field a,
+    .edit_field a {
+        background-image: url(/web/bundles/ecl/img/actions.png);
+        background-repeat: no-repeat;
+        display: block;
+        margin: 5px;
+    }
+    .delete_field a {
+        background-position: -110px 0;
+        height: 22px;
+        width: 20px;
+    }
+    .edit_field a {
+        background-position: -44px 0;
+        height: 22px;
+        width: 22px;
+    }
+    .name_field {
+        text-align: left;
+        padding: 5px 10px;
+    }
+    th.name_field {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom: none;
+    }
+    td {
+        background-color: #fff;
+        border: 1px solid #ddd
+    }
 }
-        #tag_list .delete_field a,
-        #tag_list .edit_field a
-        {
-            background-image: url(/web/bundles/ecl/img/actions.png);
-            background-repeat: no-repeat;
-            display: block;
-            margin: 5px;
-        }
-            #tag_list .delete_field a
-            {
-                background-position: -110px 0;
-                height: 22px;
-                width: 20px;
-            }
-            #tag_list .edit_field a
-            {
-                background-position: -44px 0;
-                height: 22px;
-                width: 22px;
-            }
-        #tag_list .name_field
-        {
-            text-align: left;
-            padding: 5px 10px;
-        }
-            #tag_list th.name_field
-            {
-                background-color: #fff;
-                border: 1px solid #ddd;
-                border-bottom: none;
-            }
-        #tag_list td
-        {
-            background-color: #fff;
-            border: 1px solid #ddd
-        }
         
 /* ------------- create ------------- */
 
-#create_tag_form
-{
+#create_tag_form {
     margin: 50px auto 40px;
-}
-    #create_tag_form fieldset
-    {
+    fieldset {
         margin: 10px 0;
     }
-    #create_tag_form label
-    {
+    label {
         display: inline-block;
         margin: 0 10px 0 145px;
         text-align: right;
         width: 80px;
     }
-    #create_tag_form input[type=submit]
-    {
+    input[type=submit] {
         margin: 20px 0 0 240px;
     }
+}

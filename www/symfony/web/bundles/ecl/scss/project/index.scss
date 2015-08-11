@@ -1,29 +1,31 @@
-#main_article_wrapper div {
-    overflow: hidden;
-    margin-top: 40px;
-}
-#main_article_wrapper section {
-    float: left;
-}
-#main_article_wrapper h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-#main_article_wrapper img {
-    border: 1px solid #aaa;
-    float: left;
-    margin: 0 10px 0 0;
-}
-#main_article_wrapper ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-#main_article_wrapper li {
-    margin-bottom: 10px;
-}
-#main_article_wrapper a {
-    font-weight: bold;
-}
-#main_article_wrapper p {
-    clear: both;
+#main_article_wrapper {
+    div {
+        overflow: hidden;
+        margin-top: 40px;
+    }
+    section {
+        float: left;
+    }
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    img {
+        border: 1px solid #aaa;
+        float: left;
+        margin: 0 10px 0 0;
+    }
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    a {
+        font-weight: bold;
+    }
+    p {
+        clear: both;
+    }
 }
