@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <title>{% block title %}Eduardo Casas | {{ 'web_developer' | trans }}{% endblock %}</title>
         <meta name="description" content="{% block description %}{{ 'main_description' | trans }}{% endblock %}">
+        <meta name="author" content="Eduardo Casas">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     {% block locale %}
         {% set params = app.request.attributes.get('_route_params')|merge(app.request.query.all()) %}
         <link rel="alternate" hreflang="es" href="{{ app.request.getSchemeAndHttpHost()~path(app.request.attributes.get('_route'), params|merge({'_locale': 'es'})) }}">

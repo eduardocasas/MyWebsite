@@ -2,13 +2,14 @@
 {% block title %}{{ article.title }}{% endblock %}
 {% block description %}{{ article.summary }}{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('bundles/vendor/syntaxhighlighter/pkg/styles/shCore.css') }}">
-<link rel="stylesheet" href="{{ asset('bundles/vendor/syntaxhighlighter/pkg/styles/shThemeDefault.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/vendor/bower_components/SyntaxHighlighter/styles/shCore.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/vendor/bower_components/SyntaxHighlighter/styles/shThemeDefault.css') }}">
 <link rel="stylesheet" href="{{ asset('bundles/ecl/css/blog/article.css') }}">
 {% endblock %}
 {% block javascripts %}
-<script src="{{ asset('bundles/vendor/syntaxhighlighter/pkg/scripts/shCore.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('bundles/vendor/syntaxhighlighter/pkg/scripts/shAutoloader.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/vendor/bower_components/SyntaxHighlighter/scripts/XRegExp.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/vendor/bower_components/SyntaxHighlighter/scripts/shCore.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/vendor/bower_components/SyntaxHighlighter/scripts/shAutoloader.js') }}" type="text/javascript"></script>
 {% endblock %}
 {% block locale %}
     {% if article.language == both_language_support %}
@@ -95,12 +96,12 @@
 </article>
 <script type="text/javascript">
     SyntaxHighlighter.autoloader(
-        'html xml  {{ asset('bundles/vendor/syntaxhighlighter/pkg/scripts/shBrushXml.js') }}',
-        'css  {{ asset('bundles/vendor/syntaxhighlighter/pkg/scripts/shBrushCss.js') }}',
-        'js  {{ asset('bundles/vendor/syntaxhighlighter/pkg/scripts/shBrushJScript.js') }}',
-        'php  {{ asset('bundles/vendor/syntaxhighlighter/pkg/scripts/shBrushPhp.js') }}',
-        'cpp  {{ asset('bundles/vendor/syntaxhighlighter/pkg/scripts/shBrushCpp.js') }}',
-        'bash  {{ asset('bundles/vendor/syntaxhighlighter/pkg/scripts/shBrushBash.js') }}'
+        'html xml  {{ asset('bundles/vendor/bower_components/SyntaxHighlighter/scripts/shBrushXml.js') }}',
+        'css  {{ asset('bundles/vendor/bower_components/SyntaxHighlighter/scripts/shBrushCss.js') }}',
+        'js  {{ asset('bundles/vendor/bower_components/SyntaxHighlighter/scripts/shBrushJScript.js') }}',
+        'php  {{ asset('bundles/vendor/bower_components/SyntaxHighlighter/scripts/shBrushPhp.js') }}',
+        'cpp  {{ asset('bundles/vendor/bower_components/SyntaxHighlighter/scripts/shBrushCpp.js') }}',
+        'bash  {{ asset('bundles/vendor/bower_components/SyntaxHighlighter/scripts/shBrushBash.js') }}'
     );
     SyntaxHighlighter.all();
 </script>

@@ -266,6 +266,9 @@ body {
         margin: 0 20px 0 10px;
     }
 }
+#display_sidebar_button {
+    display: none;
+}
 
 /* --------- main --------- */
 
@@ -417,4 +420,64 @@ body {
 }
 #eduardocasas {
     float: right;
+}
+
+
+/* ---------------- Responsive Design ---------------- */
+
+@media (max-width: $section_wrapper_width+$sidebar_width+10) {
+    #content,
+    #main_article_wrapper {
+        box-sizing: border-box;
+        width: 100% !important;
+    }
+    #main_article_wrapper {
+        background-color: inherit;
+        border: none;
+        padding: 0 20px;
+    }
+    #nav,
+    #default_sidebar_wrapper {
+        display: none;
+    }
+    #main_header_wrapper {
+        h1 {
+            font-size: 1.5em;
+            span {
+               margin: 0;
+            }
+        }
+    }
+    .onscroll {
+        opacity: 1;
+    }
+    #display_sidebar_button {
+        display: block;
+        float: right;
+        margin: 15px 15px 0 15px;
+        width: 20px;
+        span {
+            display: block;
+            border-top: 3px solid $link_color;
+            margin-top: 4px;
+            width: 16px;
+        }
+    }
+    #default_sidebar_wrapper {
+        background-color: $main_block_background;
+        left: 0;
+        position: fixed;
+        top: $header_height;
+    }
+    #main_footer_wrapper {
+        margin-top: 0;
+        li {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .separator:after {
+            content:"";
+            padding: 0;
+        }
+    }
 }

@@ -7,6 +7,11 @@
         {% set params = app.request.requesturi | replace({ (app.request.getBaseURL()): '' }) |split('/') %}
         {% set slug, locale = params[2], params[1] %}
     {% endif %}
+    <button id="display_sidebar_button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>    
     <nav id="nav">
         <ul>
             <li id="home_nav">
