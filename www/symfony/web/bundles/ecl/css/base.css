@@ -221,16 +221,19 @@ body {
   z-index: 90; }
   #main_header_wrapper h1 {
     display: inline-block;
+    float: left;
     font-size: 1.8em;
     margin: 15px 0 10px 20px; }
-    #main_header_wrapper h1 span {
-      color: #777;
-      display: inline-block;
-      font-size: 0.65em;
-      margin-left: 20px;
-      text-shadow: none; }
   #main_header_wrapper .loading {
     margin: 10px 10px 10px 10px; }
+
+#subtitle {
+  color: #777;
+  display: inline-block;
+  float: left;
+  font-size: 1.2em;
+  margin: 21px 0 10px 20px;
+  text-shadow: none; }
 
 .onscroll {
   box-shadow: 0 0 15px #000;
@@ -411,18 +414,27 @@ body {
   #default_sidebar_wrapper {
     display: none; }
 
-  #main_header_wrapper h1 {
-    font-size: 1.5em; }
-    #main_header_wrapper h1 span {
-      margin: 0; }
+  #main_header_wrapper {
+    box-sizing: border-box;
+    padding-top: 15px; }
+    #main_header_wrapper h1 {
+      font-size: 1.3em;
+      margin-top: 0;
+      margin-bottom: 5px; }
+
+  #subtitle {
+    font-size: 1em;
+    margin-right: 50px;
+    margin-top: 5px; }
 
   .onscroll {
     opacity: 1; }
 
   #display_sidebar_button {
     display: block;
-    float: right;
-    margin: 15px 15px 0 15px;
+    position: fixed;
+    right: 0;
+    margin: 0 15px 0 15px;
     width: 20px; }
     #display_sidebar_button span {
       display: block;

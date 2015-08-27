@@ -1,5 +1,11 @@
 <header id="main_header_wrapper">
-    <h1>Eduardo Casas <span>{{ 'web_developer_header' | trans }}</span></h1>
+    <button id="display_sidebar_button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <h1>Eduardo Casas</h1>
+    <strong id="subtitle">{{ 'web_developer_header' | trans }}</strong>
     {% if app.environment == 'prod' %}
         {% set params = app.request.requesturi |split('/') %}
         {% set slug, locale = params[2], params[1] %}
@@ -7,11 +13,6 @@
         {% set params = app.request.requesturi | replace({ (app.request.getBaseURL()): '' }) |split('/') %}
         {% set slug, locale = params[2], params[1] %}
     {% endif %}
-    <button id="display_sidebar_button">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>    
     <nav id="nav">
         <ul>
             <li id="home_nav">
