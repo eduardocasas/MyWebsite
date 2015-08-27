@@ -11,5 +11,6 @@
 /www/symfony/bin/
 /www/symfony/composer.phar
 /www/symfony/web/bundles/ecl/files/
+/ssl/
 *.directory
 *~
