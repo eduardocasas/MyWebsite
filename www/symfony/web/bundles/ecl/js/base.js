@@ -18,6 +18,6 @@ $(document).ready(function() {
             headerWrapper.removeClass('onscroll');
         }
     });
-    $('#display_sidebar_button').click(function() { $('#default_sidebar_wrapper').toggle() });
+    $('#display_sidebar_button').click(function() { $('#default_sidebar_wrapper, #nav').toggle() });
 
 });

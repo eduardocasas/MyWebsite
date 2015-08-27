@@ -1,6 +1,6 @@
 <sidebar id="default_sidebar_wrapper">
-    <div class="sidebar_section">
-    <img src="{{ asset('bundles/ecl/img/profile/main.jpg') }}" alt="{{ 'web_developer' | trans }} Eduardo Casas" width="216" height="216">
+    <div class="sidebar_section" id="picture_sidebar_section">
+    <img src="{{ asset('bundles/ecl/img/profile/main.jpg') }}" alt="{{ 'web_developer' | trans }} Eduardo Casas" width="100%">
     <ul id="my_social">
         <li><a target="_blank" href="https://github.com/eduardocasas" id="my_github" title="{{ 'sidebar.social.github'|trans }}"></a></li>
         <li><a target="_blank" href="https://plus.google.com/u/0/+EduardoCasasLopez/" id="my_gplus" title="{{ 'sidebar.social.gplus'|trans }}"></a></li>
@@ -9,10 +9,10 @@
         <li><a target="_blank" href="{% if blog_tag_selected is defined %}{{ url('ecl_blog_rss', { 'tag_slug' : blog_tag_selected}) }}{% else %}{{ url('ecl_blog_rss') }}{% endif %}" id="my_rss" title="{{ 'sidebar.social.rss'|trans }}{% if blog_tag_selected is defined and blog_tag_selected != null %} ({{ blog_tag_selected_name }}){% endif %}"></a></li>
     </ul>
     </div>
-    <div class="sidebar_section">
+    <div class="sidebar_section" id="tags_sidebar_section">
     {% render(controller("ECLBlogBundle:Boilerplate:tagCollection", { 'blog_tag_selected' : blog_tag_selected is defined ? blog_tag_selected : null } ))  %}
     </div>
-    <div class="sidebar_section">
+    <div class="sidebar_section" id="github_sidebar_section">
     {% render(controller("ECLBlogBundle:Boilerplate:githubCollection"))  %}
     </div>
 </sidebar>

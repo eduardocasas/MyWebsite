@@ -242,6 +242,8 @@ body {
 #nav {
   float: right;
   margin: 15px 25px 0; }
+  #nav ul {
+    display: inline-block; }
   #nav li {
     display: inline-block;
     font-family: "league-gothic";
@@ -312,6 +314,9 @@ body {
     border-radius: 5px;
     display: block;
     margin: 35px auto 10px; }
+
+#picture_sidebar_section {
+  padding: 0 36px; }
 
 #my_social {
   margin-bottom: 25px;
@@ -414,6 +419,30 @@ body {
   #default_sidebar_wrapper {
     display: none; }
 
+  #nav {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #eee;
+    float: none;
+    height: 59px;
+    margin: 0;
+    position: fixed;
+    top: 59px;
+    width: 100%; }
+    #nav ul {
+      display: block;
+      text-align: center;
+      margin: 5px 0; }
+    #nav #main_nav {
+      margin: 10px 0 5px; }
+    #nav li {
+      font-size: 1.2em;
+      margin: 0 5px; }
+    #nav .separator:before {
+      content: none;
+      margin: 0; }
+    #nav .blog_tag_nav {
+      display: none; }
+
   #main_header_wrapper {
     box-sizing: border-box;
     padding-top: 15px; }
@@ -424,6 +453,7 @@ body {
 
   #subtitle {
     font-size: 1em;
+    font-weight: normal;
     margin-right: 50px;
     margin-top: 4px; }
 
@@ -446,7 +476,29 @@ body {
     background-color: #f7f7f7;
     left: 0;
     position: fixed;
-    top: 59px; }
+    top: 118px;
+    width: 50%; }
+
+  #default_sidebar_wrapper .sidebar_section {
+    border-radius: 0; }
+
+  #picture_sidebar_section {
+    padding: 0 10px;
+    max-width: 235px;
+    margin: 0 auto; }
+    #picture_sidebar_section img {
+      margin-top: 20px; }
+
+  #tags_sidebar_section {
+    position: fixed;
+    left: 50%;
+    top: 118px;
+    width: 50%; }
+    #tags_sidebar_section section {
+      margin-top: 20px; }
+
+  #github_sidebar_section {
+    display: none; }
 
   #main_footer_wrapper {
     margin-top: 0; }

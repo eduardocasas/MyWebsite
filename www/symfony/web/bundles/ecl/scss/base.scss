@@ -238,6 +238,9 @@ body {
 #nav {
     float: right;
     margin: 15px 25px 0;
+    ul {
+        display: inline-block;
+    }
     li {
         display: inline-block;
         font-family: "league-gothic";
@@ -321,6 +324,9 @@ body {
         display: block;
         margin: 35px auto 10px;
     }
+}
+#picture_sidebar_section {
+    padding: 0 36px;
 }
 #my_social {
     margin-bottom: 25px;
@@ -442,6 +448,35 @@ body {
     #default_sidebar_wrapper {
         display: none;
     }
+    #nav {
+        background-color: $main_block_background;
+        border-bottom: $main_block_border;        
+        float: none;
+        height: $header_height;
+        margin: 0;
+        position: fixed;
+        top: $header_height;
+        width: 100%;
+        ul {
+            display: block;
+            text-align: center;
+            margin: 5px 0;
+        }
+        #main_nav {
+            margin: 10px 0 5px;
+        }
+        li {
+            font-size: 1.2em;
+            margin: 0 5px;
+        }
+        .separator:before {
+            content: none;
+            margin: 0;
+        }
+        .blog_tag_nav {
+            display: none;
+        }
+    }
     #main_header_wrapper {
         box-sizing: border-box;
         padding-top: 15px;
@@ -453,6 +488,7 @@ body {
     }
     #subtitle {
         font-size: 1em;
+        font-weight: normal;
         margin-right: 50px;
         margin-top: 4px;
     }
@@ -476,8 +512,32 @@ body {
         background-color: $main_block_background;
         left: 0;
         position: fixed;
-        top: $header_height;
+        top: 2*$header_height;
+        width: 50%;
     }
+    #default_sidebar_wrapper .sidebar_section {
+        border-radius: 0;
+    }    
+    #picture_sidebar_section {
+        padding: 0 10px;
+        max-width: 235px;
+        margin: 0 auto;
+        img {
+            margin-top: 20px;
+        }
+    }    
+    #tags_sidebar_section {
+        position: fixed;
+        left: 50%;
+        top: 2*$header_height;
+        width: 50%;
+        section {
+            margin-top: 20px;
+        }
+    }
+    #github_sidebar_section {
+        display: none;
+    }    
     #main_footer_wrapper {
         margin-top: 0;
         li {
