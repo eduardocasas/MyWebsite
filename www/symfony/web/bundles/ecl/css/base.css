@@ -551,6 +551,12 @@ body {
     margin: 20px 10px !important;
     padding: 20px 0 !important; }
 
+  #comment_form_text {
+    box-sizing: border-box; }
+
+  #create_comment_form .submit_button {
+    margin-right: 10px; }
+
   #comment_list article {
     margin: 10px !important;
     padding: 10px !important; } }
