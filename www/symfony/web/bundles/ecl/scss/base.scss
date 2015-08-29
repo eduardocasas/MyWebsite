@@ -443,6 +443,11 @@ body {
         background-color: inherit;
         border: none;
         padding: 0 20px;
+        .article {
+            background-color: inherit;
+            border: none;
+            border-bottom: $main_block_border;
+        }
     }
     #nav,
     #default_sidebar_wrapper {
@@ -537,7 +542,11 @@ body {
     }
     #github_sidebar_section {
         display: none;
-    }    
+    }
+    #pages {
+        margin: 0 !important;
+        padding: 10px 0 !important;
+    }
     #main_footer_wrapper {
         margin-top: 0;
         li {
@@ -548,5 +557,51 @@ body {
             content:"";
             padding: 0;
         }
+    }
+    
+    /* ---------------- Contact Form Responsive Design ---------------- */
+    
+    #contact_form {
+        margin-top: 0 !important;
+        label {
+            display: block !important;
+            margin-bottom: 10px !important;
+            text-align: left !important;
+        }
+        input[type=submit] {
+            margin: 0 auto 15px !important;
+        }
+    }
+    #contact_subject,
+    #contact_message {
+        box-sizing: border-box;
+        width: 100% !important;
+    }
+    
+    /* ---------------- Blog Responsive Design ---------------- */
+    
+    #main_article_wrapper {
+        .article {
+            background-color: inherit;
+            border: none;
+            border-bottom: $main_block_border;
+        }
+    }
+    #article {
+        background-color: inherit !important;
+        border: none !important;
+        padding: 0 20px !important;
+    }
+    #comments_title {
+        margin-top: 10px !important;
+    }
+    #no_comments_message,
+    #comments_form {
+        margin: 20px 10px !important;
+        padding: 20px 0 !important;
+    }
+    #comment_list article {
+        margin: 10px !important;
+        padding: 10px !important;
     }
 }

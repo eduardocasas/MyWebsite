@@ -1,3 +1,5 @@
+@import 'partials/_parameters';
+
 #main_article_wrapper {
     background-color: inherit;
     border: none;
@@ -8,8 +10,8 @@
 /* -------------- Article Data -------------- */
 
 #article {
-    background-color: #f7f7f7;
-    border: 1px solid #f0f0f0;
+    background-color: $main_block_background;
+    border: $main_block_border;
     padding: 20px;
     .separator:after {
         content: "|";
