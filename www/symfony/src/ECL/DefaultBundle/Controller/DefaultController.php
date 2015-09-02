@@ -11,7 +11,7 @@ class DefaultController extends Controller
         return $this->redirect(
             $this->generateUrl('ecl_home_homepage',
             ['_locale' => $this->getRequest()->getPreferredLanguage(['en', 'es'])]
-        ));
+        ), 301);
     }
 
 }
