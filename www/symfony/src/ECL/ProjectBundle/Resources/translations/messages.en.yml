@@ -28,3 +28,12 @@ project:
         text_4: 'Database: <a href="http://www.mysql.com/" target="_blank">MySQL</a>'
         text_5: 'Web Server: <a href="http://httpd.apache.org/" target="_blank">Apache</a>'
         text_6: 'OS: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
+    section_4:
+        alt: Respira Madrid Website
+        title: Respira Madrid
+        text_1: 'Server Language: <a href="http://php.net/" target="_blank">PHP</a>'
+        text_2: 'Server Framework: <a href="http://symfony.com/" target="_blank">Symfony</a>'
+        text_3: 'Front Framework: <a href="https://jquery.com/" target="_blank">jQuery</a>'
+        text_4: 'Database: <a href="http://www.mysql.com/" target="_blank">MySQL</a>'
+        text_5: 'Web Server: <a href="http://httpd.apache.org/" target="_blank">NGINX</a>'
+        text_6: 'OS: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'

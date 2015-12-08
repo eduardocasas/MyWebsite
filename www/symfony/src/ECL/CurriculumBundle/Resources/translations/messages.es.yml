@@ -15,11 +15,11 @@ curriculum:
             text_2: "Bases de datos: MySQL, PostgreSQL, MongoDB"
             text_3: "Frameworks: Symfony, Zend Framework, Django, Spring, Express"
             text_4: "Testing: PHPUnit"
-            text_5: "Gestión de paquetes: Composer, pip (+virtualenv), Maven, npm"
+            text_5: "Gestión de paquetes: Composer, pip (+virtualenv), Maven, Gradle, npm"
             text_6: "RESTful APIs"
         subsection_2:
             title: Programación Front-End
-            text_1: "Lenguajes: HTML, CSS, JavaScript, XML, JSON"
+            text_1: "Lenguajes: HTML, CSS, JavaScript, XML, JSON, Markdown"
             text_2: "Frameworks: jQuery, AngularJS"
             text_3: "Preprocesadores: Sass"
             text_4: "Motor de plantillas: Twig, Thymeleaf, Jade"
