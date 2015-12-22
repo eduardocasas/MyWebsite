@@ -1,0 +1,45 @@
+blog_rss:
+    path:  /blog/rss/{tag_slug}
+    defaults: { _controller: AppBundle:blog/Rss:index, tag_slug: null }
+    
+user_login_github:
+    path:   /user/login/github/{date}/{slug}
+    defaults: { _controller: AppBundle:blog/User:loginGithub }
+
+user_login_linkedin:
+    path:   /user/login/linkedin/{date}/{slug}
+    defaults: { _controller: AppBundle:blog/User:loginLinkedin }
+
+user_login_google:
+    path:   /user/login/google/{date}/{slug}
+    defaults: { _controller: AppBundle:blog/User:loginGoogle }
+    
+user_login_facebook:
+    path:   /user/login/facebook/{date}/{slug}
+    defaults: { _controller: AppBundle:blog/User:loginFacebook }
+    
+user_login_twitter:
+    path:   /user/login/twitter/{date}/{slug}
+    defaults: { _controller: AppBundle:blog/User:loginTwitter }
+    
+article_redirect:
+    path:   /user/redirect
+    defaults: { _controller: AppBundle:blog/User:redirectToArticle }
+    
+hwi_oauth_logout:
+    path:   /blog/{date}/{slug}/logout
+    defaults: { _controller: AppBundle:blog/User:logout }
+    
+blog:
+    path:  /blog/{tag_slug}/{page}
+    defaults: { _controller: AppBundle:blog/Default:index, tag_slug: null, page: null }
+    requirements:
+        page:  \d+   
+
+blog_article:
+    path:  /blog/{date}/{slug}
+    defaults: { _controller: AppBundle:blog/Default:show }
+    
+blog_comment_process_create:
+    path:  /blog/{date}/{slug}/{article_id}/comment/create
+    defaults: { _controller: AppBundle:blog/Default:commentCreate }

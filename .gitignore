@@ -1,5 +1,5 @@
-/www/symfony/src/ECL/DefaultBundle/Resources/config/parameters.yml
-/www/symfony/src/ECL/DefaultBundle/Resources/config/providers.yml
+/www/symfony/app/config/parameters.yml
+/www/symfony/app/config/providers.yml
 /www/symfony/app/cache/*
 /www/symfony/app/logs/*
 /www/symfony/web/bundles/vendor/bower_components/*

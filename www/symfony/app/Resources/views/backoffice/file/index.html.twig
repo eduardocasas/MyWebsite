@@ -1,0 +1,25 @@
+{% extends "backoffice/base.html.twig" %}
+{% block title %}{{ parent() }} | Backoffice | Ficheros{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/backoffice/file.css') }}">
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('bundles/ecl/js/backoffice/file.js') }}"></script>
+<script>
+    var FILE_UPLOAD_URL = '{{ url('file_upload') }}';
+    var REMOVE_FILE_URL = '{{ url('file_remove') }}';
+    var GET_TREE_URL = '{{ url('file_tree') }}';
+</script>
+{% endblock %}
+{% block backoffice_main %}
+<article id="main_article_wrapper">
+    <input type="file" id="upload_file_button">
+    <button id="remove" title="Borrar ficheros seleccionados"></button>
+    <span id="progress_bar"><span id="inner_progress_bar"></span></span>
+    <h1 id="title">Ficheros</h1>
+    <div id="file_list_wrapper">
+        {% render(controller("AppBundle:backoffice/File:getTree"))  %}
+    </div>
+</article>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/backoffice/base.css') }}">
+{% endblock %}
+{% block main %}
+<nav id="backoffice_menu">
+    <ul>
+        <li><a href="{{ url('backoffice') }}">Resumen</a></li>
+        <li class="separator"><a href="{{ url('blog_backoffice_articles') }}">Artículos</a></li>
+        <li class="separator"><a href="{{ url('blog_backoffice_tags') }}">Tags</a></li>
+        <li class="separator"><a href="{{ url('blog_backoffice_comments') }}">Comentarios</a></li>
+        <li class="separator"><a href="{{ url('file') }}">Ficheros</a></li>
+        <li id="logout_button"><a href="{{ url('logout') }}">logout</a></li>
+    </ul>
+</nav>
+{% block backoffice_main %}{% endblock %}
+{% endblock %}

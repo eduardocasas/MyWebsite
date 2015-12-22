@@ -1,0 +1,14 @@
+<section id="tag_boilerplate_list">
+    <h1>{{ 'tags'|trans }}:</h1>
+    <ul>
+    {% for item in tags %}
+        <li>
+        {% if blog_tag_selected != null and blog_tag_selected ==  item.slug %}
+            <strong>{{ item.name }}</strong>
+        {% else %}
+            <a href="{{ url('blog', { tag_slug: item.slug } ) }}">{{ item.name }}</a>
+        {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</section>

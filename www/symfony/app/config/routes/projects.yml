@@ -1,0 +1,27 @@
+project_en_redirect:
+    path:  /en/proyectos
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        _locale: en
+        route: project_en
+        permanent: true
+        
+project_es_redirect:
+    path:  /es/proyects
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        _locale: es
+        route: project_es
+        permanent: true
+        
+project_es:
+    path:  /{_locale}/proyectos
+    defaults: { _controller: AppBundle:projects\Default:index }
+    requirements:
+        _locale: en|es
+
+project_en:
+    path:  /{_locale}/projects
+    defaults: { _controller: AppBundle:projects\Default:index }
+    requirements:
+        _locale: en|es

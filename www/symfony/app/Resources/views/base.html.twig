@@ -1,13 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale }}">
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta charset="UTF-8">
+        <title>{% block title %}Eduardo Casas | {{ 'web_developer' | trans }}{% endblock %}</title>
+        <meta name="description" content="{% block description %}{{ 'main_description' | trans }}{% endblock %}">
+        <meta name="author" content="Eduardo Casas">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    {% block locale %}
+        {% set params = app.request.attributes.get('_route_params')|merge(app.request.query.all()) %}
+        <link rel="alternate" hreflang="es" href="{{ app.request.getSchemeAndHttpHost()~path(app.request.attributes.get('_route'), params|merge({'_locale': 'es'})) }}">
+        <link rel="alternate" hreflang="en" href="{{ app.request.getSchemeAndHttpHost()~path(app.request.attributes.get('_route'), params|merge({'_locale': 'en'})) }}">
+    {% endblock %}
+        <link rel="stylesheet" href="{{ asset('bundles/ecl/css/base.css') }}">
+    {% block stylesheets %}{% endblock %}
+        <script src="{{ asset('bundles/vendor/bower_components/jquery/dist/jquery.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/ecl/js/base.js') }}" type="text/javascript"></script>
+    {% block javascripts %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div id="content">
+            <header id="main_header_wrapper">
+                <button id="display_sidebar_button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1>Eduardo Casas</h1>
+                <strong id="subtitle">{{ 'web_developer_header' | trans }}</strong>
+                {% if app.environment == 'prod' %}
+                    {% set params = app.request.requesturi |split('/') %}
+                    {% set slug, locale = params[2], params[1] %}
+                {% else %}
+                    {% set params = app.request.requesturi | replace({ (app.request.getBaseURL()): '' }) |split('/') %}
+                    {% set slug, locale = params[2], params[1] %}
+                {% endif %}
+                <nav id="nav">
+                    <ul id="main_nav">
+                        <li id="home_nav">
+                            {% if slug == '' and status_code is not defined %}
+                                <h2>{{ 'section.home.link'|trans }}</h2>
+                            {% else %}
+                                <a href="{{ url('home') }}">{{ 'section.home.link'|trans }}</a>
+                            {% endif %}
+                        </li>
+                        <li id="curriculum_nav">
+                            {% if slug == 'section.curriculum.slug'|trans %}
+                                <h2>{{ 'section.curriculum.link'|trans }}</h2>
+                            {% else %}
+                                <a href="{% if locale == 'en' %}{{ url('curriculum_en') }}{% else %}{{ url('curriculum_es') }}{% endif %}">{{ 'section.curriculum.link'|trans }}</a>
+                            {% endif %}
+                        </li>
+                        <li id="project_nav">
+                            {% if slug == 'section.project.slug'|trans %}
+                                <h2>{{ 'section.project.link'|trans }}</h2>
+                            {% else %}
+                                <a href="{% if locale == 'en' %}{{ url('project_en') }}{% else %}{{ url('project_es') }}{% endif %}">{{ 'section.project.link'|trans }}</a>
+                            {% endif %}
+                        </li>
+                        <li id="blog_nav">
+                        {% if slug == 'section.blog.slug'|trans and status_code is not defined  %}
+                            {% if blog_tag_selected is defined and blog_tag_selected != null %}
+                            <a href="{{ url('blog', { _locale: app.request.locale } ) }}">{{ 'section.blog.link'|trans }}</a> <h2 class="blog_tag_nav">| {{ blog_tag_selected_name }}</h2>
+                            {% elseif article is defined %}
+                            <a href="{{ url('blog', { _locale: app.request.locale } ) }}">{{ 'section.blog.link'|trans }}</a> <h2 class="blog_tag_nav">| {{ 'article.singular'|trans }}</h2>
+                            {% else %}        
+                            <h2>{{ 'section.blog.link'|trans }}</h2>
+                            {% endif %}
+                        {% else %}
+                            <a href="{{ url('blog', { _locale: app.request.locale } ) }}">{{ 'section.blog.link'|trans }}</a>
+                        {% endif %}
+                        </li>
+                        <li id="contact_nav">
+                            {% if slug == 'section.contact.slug'|trans and status_code is not defined  %}
+                                <h2>{{ 'section.contact.link'|trans }}</h2>
+                            {% else %}
+                                <a href="{% if locale == 'en' %}{{ url('contact_en') }}{% else %}{{ url('contact_es') }}{% endif %}">{{ 'section.contact.link'|trans }}</a>
+                            {% endif %}
+                        </li>
+                    </ul>            
+                    <ul id="language_nav">
+                        <li class="separator">
+                            {% if params[1] == 'es' and status_code is not defined  %}
+                                <strong>es</strong>
+                            {% else %}
+                                <a href="{{app.request.uri | replace({'/en/': '/es/'}) }}" title="{{ 'translation.to_spanish'|trans }}">es</a>
+                            {% endif %}
+                        </li>
+                        <li>
+                            {% if locale == 'en' and status_code is not defined  %}
+                                <strong>en</strong>
+                            {% else %}
+                                <a href="{{app.request.uri | replace({'/es/': '/en/'}) }}" title="{{ 'translation.to_english'|trans }}">en</a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <div id="main_wrapper">
+                {% block main %}{% endblock %}
+                <sidebar id="default_sidebar_wrapper">
+                    <div class="sidebar_section" id="picture_sidebar_section">
+                    <img src="{{ asset('bundles/ecl/img/profile/main.jpg') }}" alt="{{ 'web_developer' | trans }} Eduardo Casas" width="100%">
+                    <ul id="my_social">
+                        <li><a target="_blank" href="https://github.com/eduardocasas" id="my_github" title="{{ 'sidebar.social.github'|trans }}"></a></li>
+                        <li><a target="_blank" href="https://plus.google.com/u/0/+EduardoCasasLopez/" id="my_gplus" title="{{ 'sidebar.social.gplus'|trans }}"></a></li>
+                        <li><a target="_blank" href="https://twitter.com/eduardo_casas" id="my_twitter" title="{{ 'sidebar.social.twitter'|trans }}"></a></li>
+                        <li><a target="_blank" href="http://es.linkedin.com/in/ecasas" id="my_linkedin" title="{{ 'sidebar.social.linkedin'|trans }}"></a></li>
+                        <li><a target="_blank" href="{% if blog_tag_selected is defined %}{{ url('blog_rss', { 'tag_slug' : blog_tag_selected}) }}{% else %}{{ url('blog_rss') }}{% endif %}" id="my_rss" title="{{ 'sidebar.social.rss'|trans }}{% if blog_tag_selected is defined and blog_tag_selected != null %} ({{ blog_tag_selected_name }}){% endif %}"></a></li>
+                    </ul>
+                    </div>
+                    <div class="sidebar_section" id="tags_sidebar_section">
+                    {% render(controller("AppBundle:blog/Boilerplate:tagCollection", { 'blog_tag_selected' : blog_tag_selected is defined ? blog_tag_selected : null } ))  %}
+                    </div>
+                    <div class="sidebar_section" id="github_sidebar_section">
+                    {% render(controller("AppBundle:blog/Boilerplate:githubCollection"))  %}
+                    </div>
+                </sidebar>
+            </div>
+            {% block sidebar %}
+            <footer id="main_footer_wrapper">
+                <ul>
+                    <li class="separator">License: <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 Unported</a></li>
+                    <li class="separator">Powered by <a target="_blank" href="http://symfony.com/" target="_blank">Symfony (2.3)</a></li>
+                    <li>Fork me on <a href="https://github.com/eduardocasas/mywebsite" target="_blank">GitHub</a></li>
+                </ul>
+            </footer>
+            {% endblock %}
+        </div>
+        <!-- Start of StatHub Code -->
+        <script type="text/javascript">
+            var project = 16;
+        </script>
+        <script type="text/javascript" src="https://www.stathub.org/web/js/counter.js"></script>
+        <noscript><img src="https://www.stathub.org/record/insert/" alt="MyStats"></noscript>
+        <!-- End of StatHub Code -->
     </body>
 </html>

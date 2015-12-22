@@ -1,0 +1,32 @@
+{% extends "backoffice/base.html.twig" %}
+{% block title %}{{ parent() }} | Backoffice | Artículos | Editar {% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/backoffice/comment.css') }}">
+{% endblock %}
+{% block javascripts %}
+ <script src="{{ asset('bundles/vendor/bower_components/tinymce/tinymce.jquery.min.js') }}" type="text/javascript"></script>
+ <script src="{{ asset('bundles/ecl/service/init_tinymce.js') }}" type="text/javascript"></script>
+ <script src="{{ asset('bundles/ecl/js/backoffice/form.js') }}" type="text/javascript"></script>
+{% endblock %}
+{% block backoffice_main %}
+<article id="main_article_wrapper">
+    <h1 id="title">Editar Artículo</h1>
+    <form action="{{ path('blog_backoffice_comments_process_edit', { 'id': entity.id }) }}" method="post" id="edit_comment_form">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        <fieldset>
+            {{ form_label(form.active) }}
+            {{ form_errors(form.active) }}
+            {{ form_widget(form.active) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.text) }}
+            {{ form_errors(form.text) }}
+            {{ form_widget(form.text) }}
+        </fieldset>
+        <input type="submit" class="submit_button" value="{{ 'button.save'|trans }}">
+        {{ form_end(form) }}
+    </form>
+</article>
+{% endblock %}

@@ -1,31 +1,35 @@
-ecl_project:
-    resource: "@ECLProjectBundle/Resources/config/routing.yml"
-    prefix:   /
+home_routes:
+    resource: "routes/home.yml"
+    
+social_routes:
+    resource: "routes/social.yml"
 
-ecl_file:
-    resource: "@ECLFileBundle/Resources/config/routing.yml"
-    prefix:   /
+sitemap:
+    path:  /{_locale}/sitemap
+    defaults: { _controller: AppBundle:Sitemap:index }
+    requirements:
+        _locale: en|es
 
-ecl_default:
-    resource: "@ECLDefaultBundle/Resources/config/routing.yml"
+contact_routes:
+    resource: "routes/contact.yml"
+    
+projects_routes:
+    resource: "routes/projects.yml"
+    
+curriculum_routes:
+    resource: "routes/curriculum.yml"
+    prefix: /{_locale}
+    requirements:
+        _locale: en|es
         
-ecl_curriculum:
-    resource: "@ECLCurriculumBundle/Resources/config/routing.yml"
+blog_routes:
+    resource: "routes/blog.yml"
     prefix: /{_locale}
     requirements:
         _locale: en|es
-
-ecl_blog:
-    resource: "@ECLBlogBundle/Resources/config/routing.yml"
-    prefix: /{_locale}
-    requirements:
-        _locale: en|es
-
-ecl_contact:
-    resource: "@ECLContactBundle/Resources/config/routing.yml"
-
-ecl_home:
-    resource: "@ECLHomeBundle/Resources/config/routing.yml"
+        
+backoffice_routes:
+    resource: "routes/backoffice.yml"
     prefix: /{_locale}
     requirements:
         _locale: en|es

@@ -1,0 +1,71 @@
+{% extends "base.html.twig" %}
+{% block title %}{{ parent() }} | {{ 'section.project.title' | trans }}{% endblock %}
+{% block description %}{{ parent() }} {{ 'project.description' | trans }}{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/project/index.css') }}">
+{% endblock %}
+{% block main %}
+<article id="main_article_wrapper">
+    <h1 id="title">{{ 'project.title'|trans }}</h1>
+    <div>
+        <h2 id="title">{{ 'project.section_1.title'|trans }}</h2>
+        <p>URL: <a href="https://www.stathub.org/{{ app.request.locale }}/" target="_blank">https://www.stathub.org/{{ app.request.locale }}/</a></p>
+        <img src="{{ asset('bundles/ecl/img/stathub.png') }}" alt="{{ 'project.section_1.alt'|trans }}">
+        <section>
+            <ul>
+                <li>{{ 'project.section_1.text_1'|trans|raw }}</li>
+                <li>{{ 'project.section_1.text_2'|trans|raw }}</li>
+                <li>{{ 'project.section_1.text_3'|trans|raw }}</li>
+                <li>{{ 'project.section_1.text_4'|trans|raw }}</li>
+                <li>{{ 'project.section_1.text_5'|trans|raw }}</li>
+                <li>{{ 'project.section_1.text_6'|trans|raw }}</li>
+            </ul>
+        </section>
+    </div>
+    <div>
+        <h2 id="title">{{ 'project.section_2.title'|trans }}</h2>
+        <p>URL: <a href="https://www.luaissuetracker.com/{{ app.request.locale }}/" target="_blank">https://www.luaissuetracker.com/{{ app.request.locale }}/</a></p>
+        <img src="{{ asset('bundles/ecl/img/lua-issue-tracker.png') }}" alt="{{ 'project.section_2.alt'|trans }}">
+        <section>
+            <ul>
+                <li>{{ 'project.section_2.text_1'|trans|raw }}</li>
+                <li>{{ 'project.section_2.text_2'|trans|raw }}</li>
+                <li>{{ 'project.section_2.text_3'|trans|raw }}</li>
+                <li>{{ 'project.section_2.text_4'|trans|raw }}</li>
+                <li>{{ 'project.section_2.text_5'|trans|raw }}</li>
+                <li>{{ 'project.section_2.text_6'|trans|raw }}</li>
+            </ul>
+        </section>
+    </div>
+    <div>
+        <h2 id="title">{{ 'project.section_3.title'|trans }}</h2>
+        <p>URL: <a href="https://www.eduardocasas.com/{{ app.request.locale }}/" target="_blank">https://www.eduardocasas.com/{{ app.request.locale }}/</a></p>
+        <img src="{{ asset('bundles/ecl/img/eduardo-casas.png') }}" alt="{{ 'project.section_3.alt'|trans }}">
+        <section>
+            <ul>
+                <li>{{ 'project.section_3.text_1'|trans|raw }}</li>
+                <li>{{ 'project.section_3.text_2'|trans|raw }}</li>
+                <li>{{ 'project.section_3.text_3'|trans|raw }}</li>
+                <li>{{ 'project.section_3.text_4'|trans|raw }}</li>
+                <li>{{ 'project.section_3.text_5'|trans|raw }}</li>
+                <li>{{ 'project.section_3.text_6'|trans|raw }}</li>
+            </ul>
+        </section>
+    </div>
+    <div>
+        <h2 id="title">{{ 'project.section_4.title'|trans }}</h2>
+        <p>URL: <a href="https://www.respiramadrid.es" target="_blank">https://www.respiramadrid.es</a></p>
+        <img src="{{ asset('bundles/ecl/img/respiramadrid.png') }}" alt="{{ 'project.section_4.alt'|trans }}">
+        <section>
+            <ul>
+                <li>{{ 'project.section_4.text_1'|trans|raw }}</li>
+                <li>{{ 'project.section_4.text_2'|trans|raw }}</li>
+                <li>{{ 'project.section_4.text_3'|trans|raw }}</li>
+                <li>{{ 'project.section_4.text_4'|trans|raw }}</li>
+                <li>{{ 'project.section_4.text_5'|trans|raw }}</li>
+                <li>{{ 'project.section_4.text_6'|trans|raw }}</li>
+            </ul>
+        </section>
+    </div>
+</article>
+{% endblock %}

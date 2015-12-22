@@ -1,5 +1,0 @@
-services:
-    ecl.twig.text_extension:
-        class: ECL\DefaultBundle\Twig\TextExtension
-        tags:
-            - { name: twig.extension }

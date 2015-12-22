@@ -1,6 +1,0 @@
-services:
-    hwi_oauth.user.provider.entity:
-        class: HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider
-    my.oauth_aware.user_provider.service:
-        class: ECL\BlogBundle\Service\OAuthUserProvider
-        arguments: [@session, @doctrine, @service_container]

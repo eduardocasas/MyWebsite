@@ -1,0 +1,10 @@
+services:
+    ecl.twig.text_extension:
+        class: AppBundle\Twig\TextExtension
+        tags:
+            - { name: twig.extension }
+    hwi_oauth.user.provider.entity:
+        class: HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider
+    my.oauth_aware.user_provider.service:
+        class: AppBundle\Service\OAuthUserProvider
+        arguments: [@session, @doctrine, @service_container]

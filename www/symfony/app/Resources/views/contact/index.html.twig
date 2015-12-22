@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+{% block title %}{{ parent() }} | {{ 'section.contact.title'|trans }}{% endblock %}
+{% block description %}{{ parent() }} {{ 'contact.description' | trans }}{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/contact/index.css') }}">
+{% endblock %}
+{% block locale %}
+    <link rel="alternate" hreflang="es" href="{{ url('contact_es') }}">
+    <link rel="alternate" hreflang="en" href="{{ url('contact_en') }}">
+{% endblock %}
+{% block main %}
+<article id="main_article_wrapper">
+    <h1 id="title">{{ 'contact.title'|trans }}</h1>
+    <form action="{{ path('contact_submit') }}" method="post" id="contact_form">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        <fieldset>
+            {{ form_label(form.name) }}
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.email) }}
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.subject) }}
+            {{ form_errors(form.subject) }}
+            {{ form_widget(form.subject) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.message) }}
+            {{ form_errors(form.message) }}
+            {{ form_widget(form.message) }}
+        </fieldset>
+        <input type="submit" class="submit_button" value="{{ 'button.send'|trans }}">
+        {{ form_end(form) }}
+    </form>
+</article>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+{% block title %}{{ parent() }} | {{ 'section.blog.title' | trans }}{% if blog_tag_selected  is defined and blog_tag_selected != null %} | {{ blog_tag_selected_name }}{% endif %}{% endblock %}
+{% block description %}{{ 'blog.description' | trans }}{% if blog_tag_selected  is defined and blog_tag_selected != null %} {{ 'tag' | trans }}: {{ blog_tag_selected_name }}{% endif %}.{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('bundles/ecl/css/blog/index.css') }}">
+{% endblock %}
+{% block main %}
+<section id="main_article_wrapper">
+{% for item in articles %}
+    <article class="article" {% if app.request.locale != item.html_language %}lang="{{ item.html_language }}"{% endif %}>
+        <h1><a href="{{ url('blog_article', { date: item.date|date('d-m-Y'), slug: item.slug } ) }}">{{ item.title }}</a></h1>
+    {% if item.thumbnail is not empty %}
+        <img src="{{ item.thumbnail }}" alt="{{ item.thumbnailAlt }}">
+    {% endif %}
+        <time datetime="{{ item.date|date('c') }}">{{ item.date|date("d / m / Y") }}</time>
+        <ul>
+        {% for tag in item.tags %}
+            <li class="name_field"><a href="{{ url('blog', { tag_slug: tag.slug } ) }}">{{ tag.name }}</a></li>
+        {% endfor %}
+        </ul>
+        <p>{{ item.summary }}</p>
+    </article>
+{% endfor %}
+{% render(controller('AppBundle:blog/Default:nav', { page: page, tag_slug: tag_slug })) %}
+</section>
+{% endblock %}
