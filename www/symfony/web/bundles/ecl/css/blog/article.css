@@ -1,6 +1,8 @@
 /* --------- dimmensions --------- */
 /* --------- colors --------- */
 /* --------- borders --------- */
+/* --------- Images --------- */
+/* --------- Fonts --------- */
 #main_article_wrapper {
   background-color: inherit;
   border: none;
@@ -114,7 +116,7 @@
   #comment_login_wrapper li {
     display: inline-block; }
   #comment_login_wrapper a {
-    background-image: url(/web/bundles/ecl/img/social_login.png);
+    background-image: url(/bundles/ecl/img/social_login.png?2015-01-15);
     background-repeat: none;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;

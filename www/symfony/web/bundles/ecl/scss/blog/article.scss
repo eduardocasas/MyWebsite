@@ -1,4 +1,5 @@
 @import 'partials/_parameters';
+@import 'partials/_resources';
 
 #main_article_wrapper {
     background-color: inherit;
@@ -133,7 +134,7 @@
         display: inline-block;
     }
     a {
-        background-image: url(/web/bundles/ecl/img/social_login.png);
+        background-image: $url_img_login;
         background-repeat: none;
         border-radius: 10px;
         box-shadow: 0 0 10px #000;

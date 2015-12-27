@@ -5,8 +5,8 @@
 /* --------- Fonts --------- */
 @font-face {
   font-family: "league-gothic";
-  src: url(/web/bundles/ecl/fonts/league_gothic/league_gothic-webfont.eot);
-  src: url(/web/bundles/ecl/fonts/league_gothic/league_gothic-webfont.eot?#iefix) format("embedded-opentype"), url(/web/bundles/ecl/fonts/league_gothic/league_gothic-webfont.ttf) format("truetype"), url(/web/bundles/ecl/fonts/league_gothic/league_gothic-webfont.woff) format("woff");
+  src: url(/bundles/ecl/fonts/league_gothic/league_gothic-webfont.eot);
+  src: url(/bundles/ecl/fonts/league_gothic/league_gothic-webfont.eot?#iefix) format("embedded-opentype"), url(/bundles/ecl/fonts/league_gothic/league_gothic-webfont.ttf) format("truetype"), url(/bundles/ecl/fonts/league_gothic/league_gothic-webfont.woff) format("woff");
   font-weight: normal;
   font-style: normal; }
 article,
@@ -324,7 +324,7 @@ body {
   #my_social li {
     display: inline-block; }
   #my_social a {
-    background-image: url(/web/bundles/ecl/img/social_icons.png?2015-01-15);
+    background-image: url(/bundles/ecl/img/social_icons.png?2015-01-15);
     background-repeat: no-repeat;
     border-radius: 5px;
     display: block;
