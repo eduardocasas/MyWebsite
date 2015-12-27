@@ -98,7 +98,7 @@
   padding: 20px; }
 
 .no_picture {
-  background: url(/web/bundles/ecl/img/no-picture.jpg) no-repeat;
+  background: url(/bundles/ecl/img/no-picture.jpg?2015-01-15) no-repeat;
   display: inline-block;
   height: 50px;
   width: 50px; }
