@@ -1,3 +1,5 @@
+/* --------- Images --------- */
+/* --------- Fonts --------- */
 /* ------------- index ------------- */
 #create_article_button {
   float: right; }
@@ -8,7 +10,7 @@
 
 #article_list .delete_field a,
 #article_list .edit_field a {
-  background-image: url(/web/bundles/ecl/img/actions.png);
+  background-image: url(/bundles/ecl/img/actions.png?2015-01-15);
   background-repeat: no-repeat;
   display: block;
   margin: 5px; }

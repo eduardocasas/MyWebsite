@@ -1,3 +1,5 @@
+@import 'partials/_resources';
+
 /* ------------- index ------------- */
 
 #create_article_button {
@@ -9,7 +11,7 @@
 }
         #article_list .delete_field a,
         #article_list .edit_field a {
-            background-image: url(/web/bundles/ecl/img/actions.png);
+            background-image: $url_img_actions;
             background-repeat: no-repeat;
             display: block;
             margin: 5px;

@@ -1,3 +1,5 @@
+/* --------- Images --------- */
+/* --------- Fonts --------- */
 .upload_button {
   float: right; }
 
@@ -43,7 +45,7 @@
   margin-left: 35px; }
 
 .folder:before {
-  background-image: url(/web/bundles/ecl/img/icons.png);
+  background-image: url(/bundles/ecl/img/icons.png?2015-01-15);
   background-position: -224px 0;
   background-repeat: no-repeat;
   content: "";

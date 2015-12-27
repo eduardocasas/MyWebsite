@@ -1,10 +1,12 @@
+/* --------- Images --------- */
+/* --------- Fonts --------- */
 /* ------------- index ------------- */
 #comment_list {
   border-collapse: collapse;
   margin: 20px auto; }
   #comment_list .delete_field a,
   #comment_list .edit_field a {
-    background-image: url(/web/bundles/ecl/img/actions.png);
+    background-image: url(/bundles/ecl/img/actions.png?2015-01-15);
     background-repeat: no-repeat;
     display: block;
     margin: 5px; }

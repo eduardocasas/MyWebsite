@@ -1,3 +1,5 @@
+@import 'partials/_resources';
+
 /* ------------- index ------------- */
 
 #comment_list {
@@ -5,7 +7,7 @@
     margin: 20px auto;
     .delete_field a,
     .edit_field a {
-        background-image: url(/web/bundles/ecl/img/actions.png);
+        background-image: $url_img_actions;
         background-repeat: no-repeat;
         display: block;
         margin: 5px;
