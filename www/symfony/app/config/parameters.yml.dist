@@ -19,7 +19,6 @@ parameters:
     secret: 
     database_path: 
     files_folder:
-    web_files_folder:
     user_password: 
     github_client_id:     
     github_client_secret: 

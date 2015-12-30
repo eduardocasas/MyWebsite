@@ -3,14 +3,15 @@
 namespace AppBundle\Controller\home;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
     
-    public function redirectRootAction()
+    public function redirectRootAction(Request $request)
     {
         return $this->redirect(
-            $this->generateUrl('home', ['_locale' => $this->getRequest()->getPreferredLanguage(['en', 'es'])]),
+            $this->generateUrl('home', ['_locale' => $request->getPreferredLanguage(['en', 'es'])]),
             301
         );
     }

@@ -3,15 +3,16 @@
 namespace AppBundle\Controller\contact;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\Type\contact\ContactType;
 
 class DefaultController extends Controller
 {
     
-    public function submitAction()
+    public function submitAction(Request $request)
     {
         $form = $this->createForm(new ContactType);
-        $form->bind($this->getRequest());
+        $form->bind($request);
         if ($form->isValid()) {
             $data = $form->getData();
             $message = \Swift_Message::newInstance()
@@ -28,17 +29,17 @@ email: '.$data['email'].'
             $this->get('mailer')->send($message);
             $this->get('session')->set('email_sent', true);
 
-            return $this->redirect($this->generateUrl('contact_info_'.$this->getLocale()));
+            return $this->redirect($this->generateUrl('contact_info_'.$request->getLocale()));
         }
 
-        return $this->redirect($this->generateUrl('contact_'.$this->getLocale()));
+        return $this->redirect($this->generateUrl('contact_'.$request->getLocale()));
     }
     
-    public function infoAction()
+    public function infoAction(Request $request)
     {
         if (!$this->get('session')->has('email_sent')) {
             
-            return $this->redirect($this->generateUrl('contact_'.$this->getLocale()));
+            return $this->redirect($this->generateUrl('contact_'.$request->getLocale()));
         }
         $this->get('session')->remove('email_sent');
 
@@ -52,9 +53,4 @@ email: '.$data['email'].'
         return $this->render('contact/index.html.twig', ['form' => $form->createView()]);
     }
     
-    private function getLocale()
-    {
-        return $this->getRequest()->getLocale();
-    }
-
 }

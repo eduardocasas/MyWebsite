@@ -3,6 +3,7 @@
 namespace AppBundle\Controller\backoffice\blog;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\Type\blog\BackofficeCommentType;
 
 class CommentsController extends Controller
@@ -22,7 +23,7 @@ class CommentsController extends Controller
         ]);
     }
     
-    public function processEditAction($id)
+    public function processEditAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository('AppBundle:Comment')->find($id);
@@ -30,7 +31,7 @@ class CommentsController extends Controller
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
         $editForm = $this->createForm(new BackofficeCommentType, $entity);
-        $editForm->bind($this->getRequest());
+        $editForm->bind($request);
         if ($editForm->isValid()) {
             $entity->setUpdateDate(new \DateTime());
             $em->persist($entity);
@@ -50,7 +51,8 @@ class CommentsController extends Controller
         $em = $this->getDoctrine()->getManager();
         $comment = $em->getRepository('AppBundle:Comment')->find($id);
         $em->remove($comment);
-        $em->flush(); 
+        $em->flush();
+
         return $this->redirect($this->generateUrl('blog_backoffice_comments'));
     }
     

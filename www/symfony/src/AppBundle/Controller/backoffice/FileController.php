@@ -6,16 +6,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Finder;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class FileController extends Controller
 {
 
     private $Filesystem;
     
-    public function removeAction()
+    public function removeAction(Request $request)
     {
         $this->Filesystem = new Filesystem;
-        foreach ($this->getRequest()->get('file') as $post) {
+        foreach ($request->get('file') as $post) {
             $this->removeFile($post['file'][0]);
         }
 
@@ -109,7 +110,7 @@ class FileController extends Controller
     
     private function getFilesFolderFullPath()
     {
-        return $_SERVER['DOCUMENT_ROOT'].'/'.$this->container->getParameter('web_files_folder').$this->getFilesFolder();
+        return $_SERVER['DOCUMENT_ROOT'].'/'.$this->getFilesFolder();
     }
     
     private function getFilesFolder()

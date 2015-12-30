@@ -61,7 +61,7 @@ class ArticleType extends AbstractType
             'entity', [
                 'label' => 'Tags:', 
                 'class' => 'AppBundle:Tag',
-                'property' => 'name',
+                'choice_label' => 'name',
                 'multiple' => true,
                 'expanded' => true
             ]

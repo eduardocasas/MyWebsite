@@ -3,6 +3,7 @@
 namespace AppBundle\Controller\backoffice\blog;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Article;
 use AppBundle\Entity\ArticleExtend;
 use AppBundle\Form\Type\blog\ArticleType;
@@ -20,13 +21,13 @@ class ArticlesController extends Controller
         ]);
     }
     
-    public function processCreateAction()
+    public function processCreateAction(Request $request)
     {
         $Article = new Article;
         $ArticleExtend = new ArticleExtend;
         $Article->setArticleExtend($ArticleExtend);
         $form = $this->createForm(new ArticleType, $Article);
-        $form->bind($this->getRequest());
+        $form->bind($request);
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $Article->setDate(new \DateTime());
@@ -55,7 +56,7 @@ class ArticlesController extends Controller
         ]);
     }
     
-    public function processEditAction($id)
+    public function processEditAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository('AppBundle:Article')->find($id);
@@ -63,7 +64,7 @@ class ArticlesController extends Controller
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
         $editForm = $this->createForm(new ArticleType, $entity);
-        $editForm->bind($this->getRequest());
+        $editForm->bind($request);
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();

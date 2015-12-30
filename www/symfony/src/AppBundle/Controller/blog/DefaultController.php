@@ -4,6 +4,7 @@ namespace AppBundle\Controller\blog;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Doctrine\ORM\NoResultException;
 use AppBundle\Entity\Article;
@@ -15,13 +16,13 @@ class DefaultController extends Controller
     
     const ITEMS_PER_PAGE = 8;
 
-    public function commentCreateAction($date, $slug, $article_id)
+    public function commentCreateAction(Request $request, $date, $slug, $article_id)
     {
         if ($this->get('session')->get('name')) {
             $url = $this->generateURL('blog_article', ['date' => $date,'slug' => $slug]).'#comments';
             $Comment = new Comment;
             $form = $this->createForm(new CommentType, $Comment);
-            $form->bind($this->getRequest());
+            $form->bind($request);
             if ($form->isValid()) {
                 $em = $this->getDoctrine()->getManager();
                 $Comment->setCreationDate(new \DateTime());
@@ -32,6 +33,7 @@ class DefaultController extends Controller
                 $em->persist($Comment);
                 $em->flush();
                 $this->sendEmailToAdmin(
+                    $request,
                     $this->get('session')->get('name'),
                     $Article->getTitle(),
                     $url,
@@ -43,14 +45,13 @@ class DefaultController extends Controller
         }
     }
 
-    public function showAction($date, $slug)
+    public function showAction(Request $request, $date, $slug)
     {
-        $request = $this->getRequest();
         $session = $request->getSession();
         $em = $this->getDoctrine()->getManager();
         try {
             $article = $em->getRepository('AppBundle:Article')->getArticleByDateAndSlug($date,$slug);
-            if (!$this->articleLanguageIsAvailable($article['language'])) {
+            if (!$this->articleLanguageIsAvailable($request, $article['language'])) {
                 return $this->redirect($this->generateURL('blog'), 301);
             }
         } catch (NoResultException $e) {
@@ -75,10 +76,10 @@ class DefaultController extends Controller
         ]);
     }
 
-    public function navAction($page = null, $tag_slug = null)
+    public function navAction(Request $request, $page = null, $tag_slug = null)
     {
         $em = $this->getDoctrine()->getManager();
-        $total_num_items = $em->getRepository('AppBundle:Article')->getTotalArticlesNum($this->getLocale(), $tag_slug);
+        $total_num_items = $em->getRepository('AppBundle:Article')->getTotalArticlesNum($request->getLocale(), $tag_slug);
         $total_num_pages = ceil($total_num_items/self::ITEMS_PER_PAGE);
         if ($total_num_pages > 1) {
             $nav_array = [
@@ -113,7 +114,7 @@ class DefaultController extends Controller
         }
     }
     
-    public function indexAction($tag_slug = null, $page = null)
+    public function indexAction(Request $request, $tag_slug = null, $page = null)
     {
         if (is_numeric($tag_slug)) {
             $page = $tag_slug;
@@ -135,24 +136,19 @@ class DefaultController extends Controller
             'tag_slug' => $tag_slug,
             'blog_tag_selected_name' => $tag_name,
             'blog_tag_selected' => $tag_slug,
-            'articles' => $em->getRepository('AppBundle:Article')->getCollectionByPageTagLanguage($this->getLocale(), $tag_slug, self::ITEMS_PER_PAGE, $page)
+            'articles' => $em->getRepository('AppBundle:Article')->getCollectionByPageTagLanguage($request->getLocale(), $tag_slug, self::ITEMS_PER_PAGE, $page)
         ]);
     }
     
-    private function articleLanguageIsAvailable($language)
+    private function articleLanguageIsAvailable($request, $language)
     {
         return $language == Article::BOTH_LANGUAGE ||
-               $language == $this->getDoctrine()->getManager()->getRepository('AppBundle:Article')->getLanguageId($this->getLocale());
+               $language == $this->getDoctrine()->getManager()->getRepository('AppBundle:Article')->getLanguageId($request->getLocale());
     }
     
-    private function getLocale()
+    private function sendEmailToAdmin($request, $user_name, $article_title, $article_url, $comment)
     {
-        return $this->getRequest()->getLocale();
-    }
-    
-    private function sendEmailToAdmin($user_name, $article_title, $article_url, $comment)
-    {
-        $domain_url = $this->getRequest()->getScheme().'://'.$this->getRequest()->getHost();
+        $domain_url = $request->getScheme().'://'.$request->getHost();
         $message = \Swift_Message::newInstance()
             ->setSubject($user_name.' ha publicado un comentario en el blog')
             ->setFrom($this->container->getParameter('my_email_1'))
