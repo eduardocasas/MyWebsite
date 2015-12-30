@@ -2,14 +2,14 @@
 namespace AppBundle\Twig;
 
 use Twig_Extension;
-use Twig_Filter_Method;
+use Twig_SimpleFilter;
 
 class TextExtension extends Twig_Extension
 {
     
     public function getFilters()
     {
-        return ['github_truncate' => new Twig_Filter_Method($this, 'githubTruncate')];
+        return [new Twig_SimpleFilter('github_truncate', [$this, 'githubTruncate'])];
     }
     
     public function githubTruncate($string)

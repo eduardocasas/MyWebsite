@@ -1,4 +1,13 @@
 services:
+    memcached:
+        class: Memcached
+        calls:
+            - [ addServers, [ %memcached.servers% ]]
+
+    doctrine.cache.memcached:
+        class: Doctrine\Common\Cache\MemcachedCache
+        calls:
+            - [setMemcached, [@memcached]]    
     ecl.twig.text_extension:
         class: AppBundle\Twig\TextExtension
         tags:

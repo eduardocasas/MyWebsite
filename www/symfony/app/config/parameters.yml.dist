@@ -1,4 +1,7 @@
 parameters:
+    memcached.servers:
+        - { host: 127.0.0.1, port: 11211 }
+        - { host: 127.0.0.2, port: 11211 }
     version: ~
     database_driver: 
     database_host: 
@@ -17,20 +20,14 @@ parameters:
     database_path: 
     files_folder:
     web_files_folder:
-        
     user_password: 
-
     github_client_id:     
     github_client_secret: 
-    
     linkedin_client_id:     
     linkedin_client_secret: 
-    
     facebook_client_id:     
     facebook_client_secret: 
-    
     google_client_id:     
-    google_client_secret: 
-    
+    google_client_secret:     
     twitter_client_id:     
     twitter_client_secret: 

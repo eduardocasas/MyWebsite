@@ -111,10 +111,10 @@
                     </ul>
                     </div>
                     <div class="sidebar_section" id="tags_sidebar_section">
-                    {% render(controller("AppBundle:blog/Boilerplate:tagCollection", { 'blog_tag_selected' : blog_tag_selected is defined ? blog_tag_selected : null } ))  %}
+                    {{ render(controller("AppBundle:blog/Boilerplate:tagCollection", { 'blog_tag_selected' : blog_tag_selected is defined ? blog_tag_selected : null } )) }}
                     </div>
                     <div class="sidebar_section" id="github_sidebar_section">
-                    {% render(controller("AppBundle:blog/Boilerplate:githubCollection"))  %}
+                    {{ render(controller("AppBundle:blog/Boilerplate:githubCollection")) }}
                     </div>
                 </sidebar>
             </div>
