@@ -720,12 +720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hwi/HWIOAuthBundle.git",
-                "reference": "86b5a876224b8a26707813aa94d3637886aa2041"
+                "reference": "d008f958e99b4d45a69f7c2bdb895db28e54d521"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hwi/HWIOAuthBundle/zipball/86b5a876224b8a26707813aa94d3637886aa2041",
-                "reference": "86b5a876224b8a26707813aa94d3637886aa2041",
+                "url": "https://api.github.com/repos/hwi/HWIOAuthBundle/zipball/d008f958e99b4d45a69f7c2bdb895db28e54d521",
+                "reference": "d008f958e99b4d45a69f7c2bdb895db28e54d521",
                 "shasum": ""
             },
             "require": {
@@ -852,7 +852,7 @@
                 "yandex",
                 "youtube"
             ],
-            "time": "2015-12-04 12:33:38"
+            "time": "2015-12-29 16:34:21"
         },
         {
             "name": "incenteev/composer-parameter-handler",

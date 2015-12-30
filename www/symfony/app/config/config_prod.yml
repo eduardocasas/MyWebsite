@@ -6,19 +6,16 @@ imports:
 #        cache: apc
 
 doctrine:
-    metadata_cache_driver:
-        type: service
-        id: doctrine.cache.memcached
-    query_cache_driver:
-        type: service
-        id: doctrine.cache.memcached
-    result_cache_driver:
-        type: service
-        id: doctrine.cache.memcached
-#    orm:
-#        metadata_cache_driver: apc
-#        result_cache_driver: apc
-#        query_cache_driver: apc
+    orm:
+        metadata_cache_driver:
+            type: service
+            id: doctrine.cache.memcached
+        query_cache_driver:
+            type: service
+            id: doctrine.cache.memcached
+        result_cache_driver:
+            type: service
+            id: doctrine.cache.memcached
 
 monolog:
     handlers:
