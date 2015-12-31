@@ -1,9 +1,12 @@
 services:
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }    
     memcached:
         class: Memcached
         calls:
             - [ addServers, [ %memcached.servers% ]]
-
     doctrine.cache.memcached:
         class: Doctrine\Common\Cache\MemcachedCache
         calls:
