@@ -11,6 +11,8 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
     <url><loc>{% if app.request.locale == 'en' %}{{ url('curriculum_en') }}{% else %}{{ url('curriculum_es') }}{% endif %}</loc></url>
     <!-- Projects -->
     <url><loc>{% if app.request.locale == 'en' %}{{ url('project_en') }}{% else %}{{ url('project_es') }}{% endif %}</loc></url>
+    <!-- Contact -->
+    <url><loc>{% if app.request.locale == 'en' %}{{ url('contact_en') }}{% else %}{{ url('contact_es') }}{% endif %}</loc></url>
     <!-- Blog -->
     <url><loc>{{ url('blog', { _locale: app.request.locale } ) }}</loc></url>
     {% for page in 2..pages %}
@@ -27,6 +29,4 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         <lastmod>{{ article.date|date('c') }}</lastmod>
     </url>
     {% endfor %}
-    <!-- Contact -->
-    <url><loc>{% if app.request.locale == 'en' %}{{ url('contact_en') }}{% else %}{{ url('contact_es') }}{% endif %}</loc></url>
 </urlset>

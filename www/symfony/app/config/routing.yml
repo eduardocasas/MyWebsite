@@ -5,7 +5,7 @@ social_routes:
     resource: "routes/social.yml"
 
 sitemap:
-    path:  /{_locale}/sitemap
+    path:  /{_locale}/sitemap.xml
     defaults: { _controller: AppBundle:Sitemap:index }
     requirements:
         _locale: en|es
