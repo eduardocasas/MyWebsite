@@ -9,9 +9,12 @@ class BoilerplateController extends Controller
     
     public function tagCollectionAction($blog_tag_selected = null)
     {
+        if (!$this->get('memcached')->get('tagCollection')) {
+            $this->get('memcached')->set('tagCollection', $this->getDoctrine()->getManager()->getRepository('AppBundle:Tag')->findAll());
+        }
         return $this->render('blog/boilerplate/tag_collection.html.twig', [
             'blog_tag_selected' => $blog_tag_selected,
-            'tags' => $this->getDoctrine()->getManager()->getRepository('AppBundle:Tag')->findAll()
+            'tags' => $this->get('memcached')->get('tagCollection')
         ]);
     }
     
