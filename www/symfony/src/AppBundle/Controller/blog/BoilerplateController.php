@@ -17,8 +17,11 @@ class BoilerplateController extends Controller
     
     public function githubCollectionAction()
     {
+        if (!$this->get('memcached')->get('githubCollection')) {
+            $this->get('memcached')->set('githubCollection', file_get_contents('https://github.com/eduardocasas.atom'));
+        }
         return $this->render('blog/boilerplate/github_collection.html.twig', [
-            'github_collection' => simplexml_load_file('https://github.com/eduardocasas.atom')->entry
+            'github_collection' => simplexml_load_string($this->get('memcached')->get('githubCollection'))->entry
         ]);
     }
     

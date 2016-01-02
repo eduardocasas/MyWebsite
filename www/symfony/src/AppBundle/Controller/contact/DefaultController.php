@@ -48,9 +48,7 @@ email: '.$data['email'].'
 
     public function indexAction()
     {
-        $form = $this->createForm(new ContactType);
-
-        return $this->render('contact/index.html.twig', ['form' => $form->createView()]);
+        return $this->render('contact/index.html.twig', ['form' => $this->createForm(new ContactType)->createView()]);
     }
     
 }
