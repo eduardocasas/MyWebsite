@@ -21,9 +21,21 @@ monolog:
     handlers:
         main:
             type:         fingers_crossed
-            action_level: error
-            handler:      nested
-        nested:
-            type:  stream
-            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            action_level: notice
+            handler:      grouped
+        grouped:
+            type:    group
+            members: [streamed, buffered]
+        streamed:
+            type:  rotating_file
+            path:  "%kernel.logs_dir%/%kernel.environment%/%kernel.environment%.log"
             level: debug
+        buffered:
+            type:    buffer
+            handler: swift
+        swift:
+            type:       swift_mailer
+            from_email: %mailer_user%
+            to_email:   %mailer_user%
+            subject:    %mailer_prefix_site%An Error Occurred
+            level:      debug

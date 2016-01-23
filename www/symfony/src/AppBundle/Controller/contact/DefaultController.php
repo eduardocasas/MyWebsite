@@ -16,10 +16,10 @@ class DefaultController extends Controller
         if ($form->isValid()) {
             $data = $form->getData();
             $message = \Swift_Message::newInstance()
-            ->setSubject($data['subject'])
-            ->setFrom($this->container->getParameter('my_email_1'))
-            ->setTo($this->container->getParameter('my_email'))
-            ->setBody('Correo enviado desde la web www.eduardocasas.com
+            ->setSubject($this->container->getParameter('mailer_prefix_site').'Correo enviado desde la web')
+            ->setFrom($this->container->getParameter('mailer_user'))
+            ->setTo($this->container->getParameter('mailer_user'))
+            ->setBody('asunto: '.$data['subject'].'
                     
 nombre: '.$data['name'].'
     

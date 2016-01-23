@@ -150,9 +150,9 @@ class DefaultController extends Controller
     {
         $domain_url = $request->getScheme().'://'.$request->getHost();
         $message = \Swift_Message::newInstance()
-            ->setSubject($user_name.' ha publicado un comentario en el blog')
-            ->setFrom($this->container->getParameter('my_email_1'))
-            ->setTo($this->container->getParameter('my_email'))
+            ->setSubject($this->container->getParameter('mailer_prefix_site').$user_name.' ha comentado un artículo')
+            ->setFrom($this->container->getParameter('mailer_user'))
+            ->setTo($this->container->getParameter('mailer_user'))
             ->setBody(
                 '<strong>Usuario:</strong> '.$user_name.
                     '<br><br><strong>Artículo:</strong> '.$article_title.

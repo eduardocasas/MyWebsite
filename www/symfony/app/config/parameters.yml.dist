@@ -13,8 +13,7 @@ parameters:
     mailer_host: 
     mailer_user: 
     mailer_password: 
-    my_email:
-    my_email_1:
+    mailer_prefix_site: "[www.eduardocasas.com]"
     locale: en
     secret: 
     database_path: 
