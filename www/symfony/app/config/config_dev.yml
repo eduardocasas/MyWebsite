@@ -17,6 +17,8 @@ monolog:
             type:         fingers_crossed
             action_level: notice
             handler:      grouped
+            excluded_404s:
+                - ^/
         grouped:
             type:    group
             members: [streamed, buffered]
