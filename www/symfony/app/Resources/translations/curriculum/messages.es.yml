@@ -14,7 +14,7 @@ curriculum:
             text_1: "Lenguajes: PHP, Python, Java, Node.js"
             text_2: "Bases de datos: MySQL, PostgreSQL, MongoDB"
             text_3: "Frameworks: Symfony, Zend Framework, Django, Spring, Express"
-            text_4: "Testing: PHPUnit"
+            text_4: "Testing: PHPUnit (+Selenium)"
             text_5: "Gestión de paquetes: Composer, pip (+virtualenv), Maven, Gradle, npm"
             text_6: "RESTful APIs"
         subsection_2:
