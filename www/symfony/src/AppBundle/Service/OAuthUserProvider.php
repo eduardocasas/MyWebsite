@@ -4,6 +4,7 @@ use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthAwareUserProviderInterface;
 use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Doctrine\ORM\NoResultException;
 use AppBundle\Entity\User;
 use AppBundle\Entity\GithubUser;
@@ -19,12 +20,14 @@ class OAuthUserProvider implements OAuthAwareUserProviderInterface, UserProvider
     protected $doctrine;
     protected $admins;
     private $user_api;
+    private $request;
     
-    public function __construct($session, $doctrine, $service_container)
+    public function __construct($session, $doctrine, $service_container, RequestStack $requestStack)
     {
         $this->session = $session;
         $this->doctrine = $doctrine;
         $this->container = $service_container;
+        $this->request = $requestStack->getCurrentRequest();
     }
     
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
