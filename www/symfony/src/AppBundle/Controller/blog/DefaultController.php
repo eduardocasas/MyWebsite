@@ -21,8 +21,8 @@ class DefaultController extends Controller
         if ($this->get('session')->get('name')) {
             $url = $this->generateURL('blog_article', ['date' => $date,'slug' => $slug]).'#comments';
             $Comment = new Comment;
-            $form = $this->createForm(new CommentType, $Comment);
-            $form->bind($request);
+            $form = $this->createForm(CommentType::class, $Comment);
+            $form->handleRequest($request);
             if ($form->isValid()) {
                 $em = $this->getDoctrine()->getManager();
                 $Comment->setCreationDate(new \DateTime());
@@ -58,7 +58,7 @@ class DefaultController extends Controller
             throw new NotFoundHttpException();
         }
         $entity = new Comment;
-        $form = $this->createForm(new CommentType, $entity);
+        $form = $this->createForm(CommentType::class, $entity);
 
         return $this->render( 'blog/show.html.twig', [
             'user_logged' => $session->get('user_is_logged'),

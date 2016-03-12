@@ -15,7 +15,7 @@ class CommentsController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
-        $form = $this->createForm(new BackofficeCommentType, $entity);
+        $form = $this->createForm(BackofficeCommentType::class, $entity);
 
         return $this->render('backoffice/blog/comment/edit.html.twig', [
             'entity' => $entity,
@@ -30,8 +30,8 @@ class CommentsController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
-        $editForm = $this->createForm(new BackofficeCommentType, $entity);
-        $editForm->bind($request);
+        $editForm = $this->createForm(BackofficeCommentType::class, $entity);
+        $editForm->handleRequest($request);
         if ($editForm->isValid()) {
             $entity->setUpdateDate(new \DateTime());
             $em->persist($entity);

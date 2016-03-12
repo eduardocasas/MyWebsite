@@ -34,7 +34,7 @@ blog:
     path:  /blog/{tag_slug}/{page}
     defaults: { _controller: AppBundle:blog/Default:index, tag_slug: null, page: null }
     requirements:
-        page:  \d+   
+        page:  \d+
 
 blog_article:
     path:  /blog/{date}/{slug}

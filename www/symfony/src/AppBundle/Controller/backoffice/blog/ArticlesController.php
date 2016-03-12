@@ -14,7 +14,7 @@ class ArticlesController extends Controller
     public function createAction()
     {
         $entity = new Article;
-        $form = $this->createForm(new ArticleType, $entity);
+        $form = $this->createForm(ArticleType::class, $entity);
 
         return $this->render('backoffice/blog/article/create.html.twig', [
             'entity' => $entity, 'form' => $form->createView()
@@ -26,8 +26,8 @@ class ArticlesController extends Controller
         $Article = new Article;
         $ArticleExtend = new ArticleExtend;
         $Article->setArticleExtend($ArticleExtend);
-        $form = $this->createForm(new ArticleType, $Article);
-        $form->bind($request);
+        $form = $this->createForm(ArticleType::class, $Article);
+        $form->handleRequest($request);
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $Article->setDate(new \DateTime());
@@ -48,7 +48,7 @@ class ArticlesController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
-        $form = $this->createForm(new ArticleType, $entity);
+        $form = $this->createForm(ArticleType::class, $entity);
 
         return $this->render('backoffice/blog/article/edit.html.twig', [
             'entity' => $entity,
@@ -63,8 +63,8 @@ class ArticlesController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
-        $editForm = $this->createForm(new ArticleType, $entity);
-        $editForm->bind($request);
+        $editForm = $this->createForm(ArticleType::class, $entity);
+        $editForm->handleRequest($request);
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();

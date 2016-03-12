@@ -11,8 +11,8 @@ class DefaultController extends Controller
     
     public function submitAction(Request $request)
     {
-        $form = $this->createForm(new ContactType);
-        $form->bind($request);
+        $form = $this->createForm(ContactType::class);
+        $form->handleRequest($request);
         if ($form->isValid()) {
             $data = $form->getData();
             $message = \Swift_Message::newInstance()
@@ -55,7 +55,9 @@ Mensaje:
 
     public function indexAction()
     {
-        return $this->render('contact/index.html.twig', ['form' => $this->createForm(new ContactType)->createView()]);
+        return $this->render('contact/index.html.twig', [
+            'form' => $this->createForm(ContactType::class)->createView()
+        ]);
     }
     
 }

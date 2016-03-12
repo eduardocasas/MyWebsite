@@ -10,7 +10,7 @@ services:
     doctrine.cache.memcached:
         class: Doctrine\Common\Cache\MemcachedCache
         calls:
-            - [setMemcached, [@memcached]]    
+            - [setMemcached, ['@memcached']]    
     ecl.twig.text_extension:
         class: AppBundle\Twig\TextExtension
         tags:
@@ -19,4 +19,4 @@ services:
         class: HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider
     my.oauth_aware.user_provider.service:
         class: AppBundle\Service\OAuthUserProvider
-        arguments: [@session, @doctrine, @service_container]
+        arguments: ['@session', '@doctrine', '@service_container']

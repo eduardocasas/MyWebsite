@@ -5,6 +5,9 @@ namespace AppBundle\Form\Type\contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Collection;
 
@@ -13,7 +16,7 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', 'text', [
+            ->add('name', TextType::class, [
                 'label' => 'contact.form.name.label',
                 'attr' => [
                     'autofocus' => 'autofocus',
@@ -21,21 +24,21 @@ class ContactType extends AbstractType
                     'required' => true
                 ]
             ])
-            ->add('email', 'email', [
+            ->add('email', EmailType::class, [
                 'label' => 'contact.form.email.label',
                 'attr' => [
                     'placeholder' => 'contact.form.email.placeholder',
                     'required' => true
                 ]
             ])
-            ->add('subject', 'text', [
+            ->add('subject', TextType::class, [
                 'label' => 'contact.form.subject.label',
                 'attr' => [
                     'placeholder' => 'contact.form.subject.placeholder',
                     'required' => true
                 ]
             ])
-            ->add('message', 'textarea', [
+            ->add('message', TextareaType::class, [
                 'label' => 'contact.form.message.label',
                 'attr' => [
                     'placeholder' => 'contact.form.message.placeholder',

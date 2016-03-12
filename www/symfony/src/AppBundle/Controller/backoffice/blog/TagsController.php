@@ -13,7 +13,7 @@ class TagsController extends Controller
     public function createAction()
     {
         $entity = new Tag;
-        $form = $this->createForm(new TagType, $entity);
+        $form = $this->createForm(TagType::class, $entity);
 
         return $this->render('backoffice/blog/tag/create.html.twig', [
             'entity' => $entity,
@@ -24,8 +24,8 @@ class TagsController extends Controller
     public function processCreateAction(Request $request)
     {
         $entity = new Tag;
-        $form = $this->createForm(new TagType, $entity);
-        $form->bind($request);
+        $form = $this->createForm(TagType::class, $entity);
+        $form->handleRequest($request);
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -44,7 +44,7 @@ class TagsController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
-        $form = $this->createForm(new TagType, $entity);
+        $form = $this->createForm(TagType::class, $entity);
 
         return $this->render('backoffice/blog/tag/edit.html.twig', [
             'entity' => $entity,
@@ -59,8 +59,8 @@ class TagsController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
-        $editForm = $this->createForm(new TagType, $entity);
-        $editForm->bind($request);
+        $editForm = $this->createForm(TagType::class, $entity);
+        $editForm->handleRequest($request);
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
