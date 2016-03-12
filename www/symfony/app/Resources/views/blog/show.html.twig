@@ -34,7 +34,7 @@
     <span id="comments"></span>
     <h2 id="comments_title">{{ 'comments.title'|trans }}</h2>
     <section id="comments_form">
-    {% if app.session.get('name') != '' %}
+    {% if true %}
         <form action="{{ path('blog_comment_process_create', { date: article_date, slug: article_slug, article_id: article.id }) }}" method="post" id="create_comment_form">
             {{ form_start(form) }}
             {{ form_errors(form) }}
@@ -44,13 +44,13 @@
                 {{ form_widget(form.text) }}
             </fieldset>
             <input type="submit" class="submit_button" value="{{ 'button.send'|trans }}">
-            <a id="user_name" href="{{app.session.get('url') }}" target="_blank">
+            <a id="user_name" href="ble" target="_blank">
             {% if app.session.get('picture') == null %}
                 <span class="no_picture"></span>
             {% else %}
                 <img src="{{ app.session.get('picture') }}" width="50" height="50" alt="{{app.session.get('name') }}">
             {% endif %}
-            {{app.session.get('name') }}</a>
+            ble</a>
             <a href="{{ path('hwi_oauth_logout', { date: article_date, slug: article_slug } ) }}" id="logout">{{ 'comments.logout'|trans }}</a>
             {{ form_end(form) }}
         </form>

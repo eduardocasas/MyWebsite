@@ -96,6 +96,11 @@
   border: 1px solid #f0f0f0;
   margin: 20px 0;
   padding: 20px; }
+  #comments_form textarea {
+    box-sizing: border-box;
+    height: 120px;
+    margin-bottom: 20px;
+    width: 100%; }
 
 .no_picture {
   background: url(/bundles/ecl/img/no-picture.jpg?2015-01-15) no-repeat;
