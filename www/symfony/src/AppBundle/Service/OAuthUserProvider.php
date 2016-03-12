@@ -98,7 +98,7 @@ class OAuthUserProvider implements OAuthAwareUserProviderInterface, UserProvider
     
     private function setUserApi()
     {
-        $request = $this->container->get('request');
+        $request = $this->request;
         $router = $this->container->get("router");
         $route = $router->match($request->getPathInfo());
         switch ($route['_route']) {
