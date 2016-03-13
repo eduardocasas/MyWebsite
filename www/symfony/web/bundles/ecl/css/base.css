@@ -235,10 +235,6 @@ body {
   margin: 21px 0 10px 20px;
   text-shadow: none; }
 
-.onscroll {
-  box-shadow: 0 0 15px #000;
-  opacity: 0.8; }
-
 #nav {
   float: right;
   margin: 15px 25px 0; }
@@ -460,9 +456,6 @@ body {
     font-weight: normal;
     margin-right: 50px;
     margin-top: 4px; }
-
-  .onscroll {
-    opacity: 1; }
 
   #display_sidebar_button {
     display: block;

@@ -2,21 +2,22 @@ $(document).ready(function() {
         
     /* ----- Header ----- */
 
-    var headerWrapper = $('#headerWrapper_wrapper');
+    var headerWrapper = $('#main_header_wrapper');
+    var headerWrapperHeight = headerWrapper.height();
+    var lastScrollTop = 0;
 
-    headerWrapper.hover(
-        function() { headerWrapper.removeClass('onscroll'); },
-        function() {
-            if ($(document).scrollTop() !== 0) {
-                headerWrapper.addClass('onscroll');
-            }
-        }
-    );
     $(window).scroll(function() {
-        headerWrapper.addClass('onscroll');
-        if ($(document).scrollTop() === 0) {
-            headerWrapper.removeClass('onscroll');
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop){
+            if ($(document).scrollTop() < headerWrapperHeight) {
+                headerWrapper.slideDown();
+            } else {
+                headerWrapper.hide();
+            }
+        } else {
+          headerWrapper.slideDown();
         }
+        lastScrollTop = st;        
     });
     $('#display_sidebar_button').click(function() { $('#default_sidebar_wrapper, #nav').toggle(); });
 
