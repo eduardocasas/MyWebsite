@@ -429,7 +429,7 @@ body {
 
 /* ---------------- Responsive Design ---------------- */
 
-@media (max-width: $section_wrapper_width+$sidebar_width+10) {
+@media (max-width: $section_wrapper_width+$sidebar_width+80) {
     #content,
     #main_article_wrapper {
         box-sizing: border-box;
