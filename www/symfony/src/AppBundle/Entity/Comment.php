@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Comment
+ * Comment.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\CommentRepository")
@@ -13,23 +13,23 @@ use Doctrine\ORM\Mapping as ORM;
 class Comment
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="active", type="boolean")
      */
     private $active;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\ManyToOne(targetEntity="Article", inversedBy="comments")
      * @ORM\JoinColumn(name="article_id", referencedColumnName="id", onDelete="CASCADE")
@@ -37,7 +37,7 @@ class Comment
     private $article;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="comments")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
@@ -65,34 +65,34 @@ class Comment
      */
     private $updateDate;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
         return $this->id;
     }
-    
+
     /**
-     * Set active
+     * Set active.
      *
      * @param string $active
+     *
      * @return Aricle
      */
     public function setActive($active)
     {
         $this->active = $active;
-    
+
         return $this;
     }
 
     /**
-     * Get active
+     * Get active.
      *
-     * @return boolean 
+     * @return bool
      */
     public function getActive()
     {
@@ -100,22 +100,23 @@ class Comment
     }
 
     /**
-     * Set article
+     * Set article.
      *
-     * @param integer $article
+     * @param int $article
+     *
      * @return Comment
      */
     public function setArticle($article)
     {
         $this->article = $article;
-    
+
         return $this;
     }
 
     /**
-     * Get article
+     * Get article.
      *
-     * @return integer 
+     * @return int
      */
     public function getArticle()
     {
@@ -123,22 +124,23 @@ class Comment
     }
 
     /**
-     * Set user
+     * Set user.
      *
-     * @param integer $user
+     * @param int $user
+     *
      * @return Comment
      */
     public function setUser($user)
     {
         $this->user = $user;
-    
+
         return $this;
     }
 
     /**
-     * Get user
+     * Get user.
      *
-     * @return integer 
+     * @return int
      */
     public function getUser()
     {
@@ -146,22 +148,23 @@ class Comment
     }
 
     /**
-     * Set text
+     * Set text.
      *
      * @param string $text
+     *
      * @return Comment
      */
     public function setText($text)
     {
         $this->text = $this->getTextWithHtmlLinks($text);
-    
+
         return $this;
     }
 
     /**
-     * Get text
+     * Get text.
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {
@@ -169,22 +172,23 @@ class Comment
     }
 
     /**
-     * Set creationDate
+     * Set creationDate.
      *
      * @param \DateTime $creationDate
+     *
      * @return Comment
      */
     public function setCreationDate($creationDate)
     {
         $this->creationDate = $creationDate;
-    
+
         return $this;
     }
 
     /**
-     * Get creationDate
+     * Get creationDate.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreationDate()
     {
@@ -192,22 +196,23 @@ class Comment
     }
 
     /**
-     * Set updateDate
+     * Set updateDate.
      *
      * @param \DateTime $updateDate
+     *
      * @return Comment
      */
     public function setUpdateDate($updateDate)
     {
         $this->updateDate = $updateDate;
-    
+
         return $this;
     }
 
     /**
-     * Get updateDate
+     * Get updateDate.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdateDate()
     {
@@ -219,8 +224,7 @@ class Comment
         return preg_replace(
             '@(https?://([-\w\.]+)+(:\d+)?(/([\S/_\.-]*(\?\S+)?)?)?)@',
             '<a href="$1">$1</a>',
-            str_replace(["&", "<", ">"], ["&amp;", "&lt;", "&gt;"], $text)
+            str_replace(['&', '<', '>'], ['&amp;', '&lt;', '&gt;'], $text)
         );
     }
-
 }

@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * GoogleUser
+ * GoogleUser.
  *
  * @ORM\Table()
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class GoogleUser
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -22,7 +22,7 @@ class GoogleUser
     private $id;
 
     /**
-     * @var integer
+     * @var int
      * 
      * @ORM\OneToOne(targetEntity="User", inversedBy="google_user_api")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
@@ -36,11 +36,10 @@ class GoogleUser
      */
     private $identifier;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -48,22 +47,23 @@ class GoogleUser
     }
 
     /**
-     * Set user
+     * Set user.
      *
-     * @param integer $user
+     * @param int $user
+     *
      * @return GoogleUser
      */
     public function setUser($user)
     {
         $this->user = $user;
-    
+
         return $this;
     }
 
     /**
-     * Get user
+     * Get user.
      *
-     * @return integer 
+     * @return int
      */
     public function getUser()
     {
@@ -71,36 +71,36 @@ class GoogleUser
     }
 
     /**
-     * Set identifier
+     * Set identifier.
      *
      * @param string $identifier
+     *
      * @return GoogleUser
      */
     public function setidentifier($identifier)
     {
         $this->identifier = $identifier;
-    
+
         return $this;
     }
 
     /**
-     * Get identifier
+     * Get identifier.
      *
-     * @return string 
+     * @return string
      */
     public function getidentifier()
     {
         return $this->identifier;
     }
-    
+
     public function getUrlByOAuthResponse($response)
     {
         return 'https://plus.google.com/'.$response->getUsername();
     }
-    
+
     public function getPictureByOAuthResponse($response)
     {
         return $response->getProfilePicture();
     }
-    
 }

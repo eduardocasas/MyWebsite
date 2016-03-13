@@ -1,7 +1,7 @@
 curriculum_es:
     path:  /curriculum-vitae
-    defaults: { _controller: AppBundle:curriculum\Default:index }
+    defaults: { _controller: AppBundle:Curriculum\Default:index }
         
 curriculum_en:
     path:  /curriculum-vitae
-    defaults: { _controller: AppBundle:curriculum\Default:index }
+    defaults: { _controller: AppBundle:Curriculum\Default:index }

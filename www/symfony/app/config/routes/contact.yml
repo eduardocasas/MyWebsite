@@ -1,10 +1,10 @@
 contact_info_es:
     path:  /{_locale}/contacto/info
-    defaults: {_controller: AppBundle:contact\Default:info }
+    defaults: {_controller: AppBundle:Contact\Default:info }
     
 contact_info_en:
     path:  /{_locale}/contact/info
-    defaults: { _controller: AppBundle:contact\Default:info }
+    defaults: { _controller: AppBundle:Contact\Default:info }
     
 contact_en_redirect:
     path:  /en/contacto
@@ -24,17 +24,17 @@ contact_es_redirect:
 
 contact_es:
     path:  /{_locale}/contacto
-    defaults: { _controller: AppBundle:contact\Default:index }
+    defaults: { _controller: AppBundle:Contact\Default:index }
     requirements:
         _locale: es|en
     
 contact_en:
     path:  /{_locale}/contact
-    defaults: { _controller: AppBundle:contact\Default:index }
+    defaults: { _controller: AppBundle:Contact\Default:index }
     requirements:
         _locale: es|en
         
 contact_submit:
     path:  /{_locale}/contacto/submit
-    defaults: { _controller: AppBundle:contact\Default:submit }
+    defaults: { _controller: AppBundle:Contact\Default:submit }
     methods:  [POST]

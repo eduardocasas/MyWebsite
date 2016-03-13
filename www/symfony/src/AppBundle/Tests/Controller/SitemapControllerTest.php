@@ -2,11 +2,8 @@
 
 namespace AppBundle\Tests\Controller;
 
-use AppBundle\Tests\Controller\BaseControllerTest;
-
 class SitemapControllerTest extends BaseControllerTest
 {
-
     public function testIndex()
     {
         $client = $this->getClient();
@@ -25,5 +22,4 @@ class SitemapControllerTest extends BaseControllerTest
         $this->assertContains('/es/contacto', $crawler->children()->eq(3)->text());
         $this->assertContains('/es/blog', $crawler->children()->eq(4)->text());
     }
-
 }

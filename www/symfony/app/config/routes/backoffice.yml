@@ -1,10 +1,10 @@
 backoffice:
     path: /backoffice
-    defaults: { _controller: AppBundle:backoffice/Default:index }
+    defaults: { _controller: AppBundle:Backoffice/Default:index }
     
 login:
     path: /backoffice/login
-    defaults: { _controller: AppBundle:backoffice/Default:login }
+    defaults: { _controller: AppBundle:Backoffice/Default:login }
     
 login_check:
     path: /backoffice/login_check
@@ -14,88 +14,88 @@ logout:
         
 blog_backoffice_articles:
     path: /backoffice/articles
-    defaults: { _controller: AppBundle:backoffice/blog/Articles:index }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Articles:index }
     
 blog_backoffice_articles_delete:
     path:  /backoffice/articles/{id}/delete
-    defaults: { _controller: AppBundle:backoffice/blog/Articles:delete }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Articles:delete }
     
 blog_backoffice_articles_create:
     path:  /backoffice/articles/create
-    defaults: { _controller: AppBundle:backoffice/blog/Articles:create }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Articles:create }
     
 blog_backoffice_articles_process_create:
     path:  /backoffice/articles/process-create
-    defaults: { _controller: AppBundle:backoffice/blog/Articles:processCreate }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Articles:processCreate }
     
 blog_backoffice_articles_edit:
     path:  /backoffice/articles/{id}/edit
-    defaults: { _controller: AppBundle:backoffice/blog/Articles:edit }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Articles:edit }
     
 blog_backoffice_articles_process_edit:
     path:  /backoffice/articles/{id}/process-edit
-    defaults: { _controller: AppBundle:backoffice/blog/Articles:processEdit }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Articles:processEdit }
     
 blog_backoffice_comments:
     path:  /backoffice/comments
-    defaults: { _controller: AppBundle:backoffice/blog/Comments:index }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Comments:index }
     
 blog_backoffice_comments_delete:
     path:  /backoffice/comments/{id}/delete
-    defaults: { _controller: AppBundle:backoffice/blog/Comments:delete }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Comments:delete }
     
 blog_backoffice_comments_edit:
     path:  /backoffice/comments/{id}/edit
-    defaults: { _controller: AppBundle:backoffice/blog/Comments:edit }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Comments:edit }
     
 blog_backoffice_comments_process_edit:
     path:  /backoffice/comments/{id}/process-edit
-    defaults: { _controller: AppBundle:backoffice/blog/Comments:processEdit }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Comments:processEdit }
     
 blog_backoffice_tags:
     path:  /backoffice/tags
-    defaults: { _controller: AppBundle:backoffice/blog/Tags:index }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Tags:index }
 
 blog_backoffice_tag_delete:
     path:  /backoffice/tags/{id}/delete
-    defaults: { _controller: AppBundle:backoffice/blog/Tags:delete }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Tags:delete }
     
 blog_backoffice_tag_create:
     path:  /backoffice/tags/create
-    defaults: { _controller: AppBundle:backoffice/blog/Tags:create }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Tags:create }
     
 blog_backoffice_tag_process_create:
     path:  /backoffice/tags/process-create
-    defaults: { _controller: AppBundle:backoffice/blog/Tags:processCreate }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Tags:processCreate }
     
 blog_backoffice_tag_edit:
     path:  /backoffice/tags/{id}/edit
-    defaults: { _controller: AppBundle:backoffice/blog/Tags:edit }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Tags:edit }
     
 blog_backoffice_tag_process_edit:
     path:  /backoffice/tags/{id}/process-edit
-    defaults: { _controller: AppBundle:backoffice/blog/Tags:processEdit }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Tags:processEdit }
     
 blog_backoffice_comments:
     path:  /backoffice/comments
-    defaults: { _controller: AppBundle:backoffice/blog/Comments:index }
+    defaults: { _controller: AppBundle:Backoffice/Blog/Comments:index }
     
 blog_boilerplate_tag:
     path:  /blog/boilerplate/tag/{blog_tag_selected}
-    defaults: { _controller: AppBundle:blog/Boilerplate:tagCollection, blog_tag_selected: null }
+    defaults: { _controller: AppBundle:Blog/Boilerplate:tagCollection, blog_tag_selected: null }
     
 file:
     path:  /backoffice/ficheros
-    defaults: { _controller: AppBundle:backoffice/File:index }
+    defaults: { _controller: AppBundle:Backoffice/File:index }
     
 file_tree:
     path:  /backoffice/ficheros/tree
-    defaults: { _controller: AppBundle:backoffice/File:getTree }
+    defaults: { _controller: AppBundle:Backoffice/File:getTree }
     
 file_upload:
     path:  /backoffice/ficheros/upload
-    defaults: { _controller: AppBundle:backoffice/File:upload }
+    defaults: { _controller: AppBundle:Backoffice/File:upload }
     
 file_remove:
     path:  /backoffice/ficheros/remove
-    defaults: { _controller: AppBundle:backoffice/File:remove }
+    defaults: { _controller: AppBundle:Backoffice/File:remove }

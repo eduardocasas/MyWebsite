@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * TwitterUser
+ * TwitterUser.
  *
  * @ORM\Table()
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class TwitterUser
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -22,7 +22,7 @@ class TwitterUser
     private $id;
 
     /**
-     * @var integer
+     * @var int
      * 
      * @ORM\OneToOne(targetEntity="User", inversedBy="twitter_user_api")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
@@ -36,11 +36,10 @@ class TwitterUser
      */
     private $identifier;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -48,22 +47,23 @@ class TwitterUser
     }
 
     /**
-     * Set user
+     * Set user.
      *
-     * @param integer $user
+     * @param int $user
+     *
      * @return TwitterUser
      */
     public function setUser($user)
     {
         $this->user = $user;
-    
+
         return $this;
     }
 
     /**
-     * Get user
+     * Get user.
      *
-     * @return integer 
+     * @return int
      */
     public function getUser()
     {
@@ -71,36 +71,36 @@ class TwitterUser
     }
 
     /**
-     * Set identifier
+     * Set identifier.
      *
      * @param string $identifier
+     *
      * @return TwitterUser
      */
     public function setidentifier($identifier)
     {
         $this->identifier = $identifier;
-    
+
         return $this;
     }
 
     /**
-     * Get identifier
+     * Get identifier.
      *
-     * @return string 
+     * @return string
      */
     public function getidentifier()
     {
         return $this->identifier;
     }
-    
+
     public function getUrlByOAuthResponse($response)
     {
         return 'https://twitter.com/'.$response->getNickname();
     }
-    
+
     public function getPictureByOAuthResponse($response)
     {
         return $response->getProfilePicture();
     }
-    
 }

@@ -21,6 +21,6 @@
         <p>{{ item.summary }}</p>
     </article>
 {% endfor %}
-{{ render(controller('AppBundle:blog/Default:nav', { page: page, tag_slug: tag_slug })) }}
+{{ render(controller('AppBundle:Blog/Default:nav', { page: page, tag_slug: tag_slug })) }}
 </section>
 {% endblock %}

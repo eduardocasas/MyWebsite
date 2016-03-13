@@ -6,14 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUser;
 
 /**
- * User
+ * User.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\UserRepository")
  */
 class User extends OAuthUser
 {
-    
     const NO_API = 1;
     const GITHUB_API = 2;
     const LINKEDIN_API = 3;
@@ -22,7 +21,7 @@ class User extends OAuthUser
     const FACEBOOK_API = 6;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -31,7 +30,7 @@ class User extends OAuthUser
     private $id;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="api", type="smallint")
      */
@@ -64,22 +63,22 @@ class User extends OAuthUser
      * @ORM\Column(name="date", type="datetime")
      */
     private $date;
-    
-     /**
+
+    /**
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="user")
      */
     private $comments;
-    
+
     /**
      * @ORM\OneToOne(targetEntity="GithubUser", mappedBy="user")
      */
     private $github_user_api;
-    
+
     /**
      * @ORM\OneToOne(targetEntity="LinkedinUser", mappedBy="user")
      */
     private $linkedin_user_api;
-    
+
     /**
      * @ORM\OneToOne(targetEntity="FacebookUser", mappedBy="user")
      */
@@ -89,16 +88,16 @@ class User extends OAuthUser
      * @ORM\OneToOne(targetEntity="TwitterUser", mappedBy="user")
      */
     private $twitter_user_api;
-    
+
     /**
      * @ORM\OneToOne(targetEntity="GoogleUser", mappedBy="user")
      */
     private $google_user_api;
-    
+
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -106,22 +105,23 @@ class User extends OAuthUser
     }
 
     /**
-     * Set api
+     * Set api.
      *
-     * @param integer $api
+     * @param int $api
+     *
      * @return User
      */
     public function setApi($api)
     {
         $this->api = $api;
-    
+
         return $this;
     }
 
     /**
-     * Get api
+     * Get api.
      *
-     * @return integer 
+     * @return int
      */
     public function getApi()
     {
@@ -129,22 +129,23 @@ class User extends OAuthUser
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
+     *
      * @return User
      */
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -152,22 +153,23 @@ class User extends OAuthUser
     }
 
     /**
-     * Set url
+     * Set url.
      *
      * @param string $url
+     *
      * @return User
      */
     public function setUrl($url)
     {
         $this->url = $url;
-    
+
         return $this;
     }
 
     /**
-     * Get url
+     * Get url.
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -175,22 +177,23 @@ class User extends OAuthUser
     }
 
     /**
-     * Set picture
+     * Set picture.
      *
      * @param string $picture
+     *
      * @return User
      */
     public function setPicture($picture)
     {
         $this->picture = $picture;
-    
+
         return $this;
     }
 
     /**
-     * Get picture
+     * Get picture.
      *
-     * @return string 
+     * @return string
      */
     public function getPicture()
     {
@@ -198,33 +201,35 @@ class User extends OAuthUser
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
+     *
      * @return User
      */
     public function setDate($date)
     {
         $this->date = $date;
-    
+
         return $this;
     }
 
     /**
-     * Get date
+     * Get date.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
         return $this->date;
     }
-        
+
     public function getRoles()
     {
         return [];
     }
-    
-    public function __toString() {}
-    
+
+    public function __toString()
+    {
+    }
 }

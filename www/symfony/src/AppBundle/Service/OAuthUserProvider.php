@@ -1,5 +1,7 @@
 <?php
+
 namespace AppBundle\Service;
+
 use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthAwareUserProviderInterface;
 use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -15,13 +17,12 @@ use AppBundle\Entity\TwitterUser;
 
 class OAuthUserProvider implements OAuthAwareUserProviderInterface, UserProviderInterface
 {
-    
     protected $session;
     protected $doctrine;
     protected $admins;
     private $user_api;
     private $request;
-    
+
     public function __construct($session, $doctrine, $service_container, RequestStack $requestStack)
     {
         $this->session = $session;
@@ -29,7 +30,7 @@ class OAuthUserProvider implements OAuthAwareUserProviderInterface, UserProvider
         $this->container = $service_container;
         $this->request = $requestStack->getCurrentRequest();
     }
-    
+
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
         $this->setUserApi();
@@ -60,9 +61,10 @@ class OAuthUserProvider implements OAuthAwareUserProviderInterface, UserProvider
         $this->session->set('url', $User->getUrl());
         $this->session->set('name', $User->getName());
         $this->session->set('picture', $User->getPicture());
+
         return $this->loadUserByUsername($identifier);
     }
-    
+
     public function loadUserByUsername($identifier)
     {
         return new User($identifier);
@@ -74,6 +76,7 @@ class OAuthUserProvider implements OAuthAwareUserProviderInterface, UserProvider
      * totally reloaded (e.g. from the database), or if the UserInterface
      * object can just be merged into some internal array of users / identity
      * map.
+     *
      * @param UserInterface $user
      *
      * @return UserInterface
@@ -85,21 +88,21 @@ class OAuthUserProvider implements OAuthAwareUserProviderInterface, UserProvider
         return $user;
     }
     /**
-     * Whether this provider supports the given user class
+     * Whether this provider supports the given user class.
      *
      * @param string $class
      *
-     * @return Boolean
+     * @return bool
      */
     public function supportsClass($class)
     {
-        return null;
+        return;
     }
-    
+
     private function setUserApi()
     {
         $request = $this->request;
-        $router = $this->container->get("router");
+        $router = $this->container->get('router');
         $route = $router->match($request->getPathInfo());
         switch ($route['_route']) {
             case 'github_login_check':
@@ -120,7 +123,7 @@ class OAuthUserProvider implements OAuthAwareUserProviderInterface, UserProvider
         }
         $this->user_api = $user_api;
     }
-    
+
     private function getUserId($identifier)
     {
         switch ($this->user_api) {
@@ -150,30 +153,30 @@ class OAuthUserProvider implements OAuthAwareUserProviderInterface, UserProvider
         } catch (NoResultException $ex) {
             $result = false;
         }
-        
+
         return $result;
     }
-    
+
     private function getApiUser($identifier)
     {
         switch ($this->user_api) {
             case User::GITHUB_API:
-                $ApiUser = (new GithubUser)->setidentifier($identifier);
+                $ApiUser = (new GithubUser())->setidentifier($identifier);
                 break;
             case User::LINKEDIN_API:
-                $ApiUser = (new LinkedinUser)->setidentifier($identifier);
+                $ApiUser = (new LinkedinUser())->setidentifier($identifier);
                 break;
             case User::GOOGLE_API:
-                $ApiUser = (new GoogleUser)->setidentifier($identifier);
+                $ApiUser = (new GoogleUser())->setidentifier($identifier);
                 break;
             case User::TWITTER_API:
-                $ApiUser = (new TwitterUser)->setidentifier($identifier);
+                $ApiUser = (new TwitterUser())->setidentifier($identifier);
                 break;
             case User::FACEBOOK_API:
-                $ApiUser = (new FacebookUser)->setidentifier($identifier);
+                $ApiUser = (new FacebookUser())->setidentifier($identifier);
                 break;
         }
+
         return $ApiUser;
     }
-    
 }

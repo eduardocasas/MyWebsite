@@ -3,23 +3,21 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\ArticleExtend;
 
 /**
- * Article
+ * Article.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\ArticleRepository")
  */
 class Article
 {
-    
     const SPANISH_LANGUAGE = 1;
     const ENGLISH_LANGUAGE = 2;
     const BOTH_LANGUAGE = 3;
-    
+
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -28,19 +26,19 @@ class Article
     private $id;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="active", type="boolean")
      */
     private $active;
-    
+
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="language", type="smallint")
      */
     private $language;
-    
+
     /**
      * @var string
      *
@@ -82,73 +80,75 @@ class Article
      * @ORM\Column(name="date", type="datetime")
      */
     private $date;
-    
+
     /**
      * @ORM\OneToOne(targetEntity="ArticleExtend", mappedBy="article")
      */
     private $article_extend;
-    
-     /**
+
+    /**
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="articles")
      * @ORM\JoinTable(name="ArticleTag")
      */
     private $tags;
-    
-     /**
+
+    /**
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="article")
      */
     private $comments;
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
         return $this->id;
     }
-    
+
     /**
-     * Set active
+     * Set active.
      *
      * @param string $active
+     *
      * @return Aricle
      */
     public function setActive($active)
     {
         $this->active = $active;
-    
+
         return $this;
     }
 
     /**
-     * Get active
+     * Get active.
      *
-     * @return boolean 
+     * @return bool
      */
     public function getActive()
     {
         return $this->active;
     }
-    
+
     /**
-     * Set language
+     * Set language.
      *
-     * @param integer $language
+     * @param int $language
+     *
      * @return Article
      */
     public function setLanguage($language)
     {
         $this->language = $language;
-    
+
         return $this;
     }
 
     /**
-     * Get language
+     * Get language.
      *
-     * @return integer 
+     * @return int
      */
     public function getLanguage()
     {
@@ -156,22 +156,23 @@ class Article
     }
 
     /**
-     * Set title
+     * Set title.
      *
      * @param string $title
+     *
      * @return Article
      */
     public function setTitle($title)
     {
         $this->title = $title;
-    
+
         return $this;
     }
 
     /**
-     * Get title
+     * Get title.
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -179,22 +180,23 @@ class Article
     }
 
     /**
-     * Set slug
+     * Set slug.
      *
      * @param string $slug
+     *
      * @return Article
      */
     public function setSlug($slug)
     {
         $this->slug = $slug;
-    
+
         return $this;
     }
 
     /**
-     * Get slug
+     * Get slug.
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -202,22 +204,23 @@ class Article
     }
 
     /**
-     * Set summary
+     * Set summary.
      *
      * @param string $summary
+     *
      * @return Article
      */
     public function setSummary($summary)
     {
         $this->summary = $summary;
-    
+
         return $this;
     }
 
     /**
-     * Get summary
+     * Get summary.
      *
-     * @return string 
+     * @return string
      */
     public function getSummary()
     {
@@ -225,22 +228,23 @@ class Article
     }
 
     /**
-     * Set thumbnail
+     * Set thumbnail.
      *
      * @param string $thumbnail
+     *
      * @return Article
      */
     public function setThumbnail($thumbnail)
     {
         $this->thumbnail = $thumbnail;
-    
+
         return $this;
     }
 
     /**
-     * Get thumbnail
+     * Get thumbnail.
      *
-     * @return string 
+     * @return string
      */
     public function getThumbnail()
     {
@@ -248,22 +252,23 @@ class Article
     }
 
     /**
-     * Set thumbnailAlt
+     * Set thumbnailAlt.
      *
      * @param string $thumbnailAlt
+     *
      * @return Article
      */
     public function setThumbnailAlt($thumbnailAlt)
     {
         $this->thumbnailAlt = $thumbnailAlt;
-    
+
         return $this;
     }
 
     /**
-     * Get thumbnailAlt
+     * Get thumbnailAlt.
      *
-     * @return string 
+     * @return string
      */
     public function getThumbnailAlt()
     {
@@ -271,22 +276,23 @@ class Article
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
+     *
      * @return Article
      */
     public function setDate($date)
     {
         $this->date = $date;
-    
+
         return $this;
     }
 
     /**
-     * Get date
+     * Get date.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -302,29 +308,28 @@ class Article
     {
         return $this->article_extend;
     }
-    
+
     public function getTags()
     {
         return $this->tags;
     }
-    
+
     public function setTags($tags)
     {
         $this->tags = $tags;
-    
+
         return $this;
     }
-    
+
     public function getComments()
     {
         return $this->comments;
     }
-    
+
     public function setComments($comments)
     {
         $this->comments = $comments;
-    
+
         return $this;
     }
-
 }

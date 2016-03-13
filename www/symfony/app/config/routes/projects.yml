@@ -16,12 +16,12 @@ project_es_redirect:
         
 project_es:
     path:  /{_locale}/proyectos
-    defaults: { _controller: AppBundle:projects\Default:index }
+    defaults: { _controller: AppBundle:Projects\Default:index }
     requirements:
         _locale: en|es
 
 project_en:
     path:  /{_locale}/projects
-    defaults: { _controller: AppBundle:projects\Default:index }
+    defaults: { _controller: AppBundle:Projects\Default:index }
     requirements:
         _locale: en|es

@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * FacebookUser
+ * FacebookUser.
  *
  * @ORM\Table()
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class FacebookUser
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -22,7 +22,7 @@ class FacebookUser
     private $id;
 
     /**
-     * @var integer
+     * @var int
      * 
      * @ORM\OneToOne(targetEntity="User", inversedBy="facebook_user_api")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
@@ -36,11 +36,10 @@ class FacebookUser
      */
     private $identifier;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -48,22 +47,23 @@ class FacebookUser
     }
 
     /**
-     * Set user
+     * Set user.
      *
-     * @param integer $user
+     * @param int $user
+     *
      * @return FacebookUser
      */
     public function setUser($user)
     {
         $this->user = $user;
-    
+
         return $this;
     }
 
     /**
-     * Get user
+     * Get user.
      *
-     * @return integer 
+     * @return int
      */
     public function getUser()
     {
@@ -71,36 +71,36 @@ class FacebookUser
     }
 
     /**
-     * Set identifier
+     * Set identifier.
      *
      * @param string $identifier
+     *
      * @return FacebookUser
      */
     public function setidentifier($identifier)
     {
         $this->identifier = $identifier;
-    
+
         return $this;
     }
 
     /**
-     * Get identifier
+     * Get identifier.
      *
-     * @return string 
+     * @return string
      */
     public function getidentifier()
     {
         return $this->identifier;
     }
-    
+
     public function getUrlByOAuthResponse($response)
     {
         return 'https://www.facebook.com/'.$response->getUsername();
     }
-    
+
     public function getPictureByOAuthResponse($response)
     {
         return 'http://graph.facebook.com/'.$response->getNickname().'/picture';
     }
-    
 }

@@ -3,10 +3,9 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\Article;
 
 /**
- * ArticleExtend
+ * ArticleExtend.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\ArticleExtendRepository")
@@ -14,7 +13,7 @@ use AppBundle\Entity\Article;
 class ArticleExtend
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -29,12 +28,12 @@ class ArticleExtend
      */
     private $content;
 
-   /**
+    /**
      * @ORM\OneToOne(targetEntity="Article", inversedBy="article_extend")
      * @ORM\JoinColumn(name="id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $article;
-    
+
     public function setArticle(Article $article)
     {
         $this->article = $article;
@@ -46,9 +45,9 @@ class ArticleExtend
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -56,22 +55,23 @@ class ArticleExtend
     }
 
     /**
-     * Set content
+     * Set content.
      *
      * @param string $content
+     *
      * @return ArticleExtend
      */
     public function setContent($content)
     {
         $this->content = $content;
-    
+
         return $this;
     }
 
     /**
-     * Get content
+     * Get content.
      *
-     * @return string 
+     * @return string
      */
     public function getContent()
     {
