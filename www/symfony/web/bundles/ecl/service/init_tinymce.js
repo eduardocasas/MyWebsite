@@ -1,5 +1,5 @@
 tinymce.init({
-    selector : "#article_form_article_extend_content",
+    selector : "#article_article_extend_content",
     menubar:false,
     statusbar: false,
     plugins: ["fullscreen image link textcolor code"],
