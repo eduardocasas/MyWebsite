@@ -8,6 +8,20 @@
 <article id="main_article_wrapper">
     <h1 id="title">{{ 'project.title'|trans }}</h1>
     <div>
+        <h2 id="title">{{ 'project.section_5.title'|trans }}</h2>
+        <p>URL: <a href="https://musicplayer.eduardocasas.com/{{ app.request.locale }}/" target="_blank">https://musicplayer.eduardocasas.com/{{ app.request.locale }}/</a></p>
+        <img src="{{ asset('bundles/ecl/img/musicfolderplayer.png') }}" alt="{{ 'project.section_5.alt'|trans }}" id="android_picture">
+        <section>
+            <ul>
+                <li>{{ 'project.section_5.text_1'|trans|raw }}</li>
+                <li>{{ 'project.section_5.text_2'|trans|raw }}</li>
+                <li>{{ 'project.section_5.text_3'|trans|raw }}</li>
+                <li>{{ 'project.section_5.text_4'|trans|raw }}</li>
+                <li>{{ 'project.section_5.text_5'|trans|raw }}</li>
+            </ul>
+        </section>
+    </div>
+    <div>
         <h2 id="title">{{ 'project.section_1.title'|trans }}</h2>
         <p>URL: <a href="https://www.stathub.org/{{ app.request.locale }}/" target="_blank">https://www.stathub.org/{{ app.request.locale }}/</a></p>
         <img src="{{ asset('bundles/ecl/img/stathub.png') }}" alt="{{ 'project.section_1.alt'|trans }}">

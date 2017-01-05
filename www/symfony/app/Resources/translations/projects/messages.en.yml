@@ -37,3 +37,11 @@ project:
         text_4: 'Database: <a href="http://www.mysql.com/" target="_blank">MySQL</a>'
         text_5: 'Web Server: <a href="http://httpd.apache.org/" target="_blank">NGINX</a>'
         text_6: 'OS: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
+    section_5:
+        alt: Music Folder Player for Android
+        title: Music Folder Player
+        text_1: 'Language: <a href="https://www.java.com" target="_blank">Java</a>'
+        text_2: 'Development Environment: <a href="https://developer.android.com/studio/releases/sdk-tools.html" target="_blank">Android SDK</a>'
+        text_3: 'Min Api Level: <a href="https://developer.android.com/about/versions/android-4.1.html" target="_blank">16</a>'
+        text_4: 'Database: <a href="http://www.mysql.com/" target="_blank">SQLite</a>'
+        text_5: 'OS: <a href="https://www.android.com" target="_blank">Android</a>'

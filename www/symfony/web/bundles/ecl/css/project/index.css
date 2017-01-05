@@ -19,5 +19,7 @@
   font-weight: bold; }
 #main_article_wrapper p {
   clear: both; }
-
+#android_picture {
+    border: none;
+}
 /*# sourceMappingURL=index.css.map */
