@@ -30,6 +30,11 @@ curriculum:
             text_9: "Testing: Postman"
             text_10: "Package manager: Bower"
         subsection_3:
+            title: Android Development
+            text_1: "Languages: Java"
+            text_2: "Databases: SQLite"
+            text_3: "Build tool: Gradle"
+        subsection_4:
             title: Sysadmin
             text_1: "Languages: Bash, Python"
             text_2: "Operating systems: Debian GNU/Linux, Microsoft Windows"
@@ -39,13 +44,13 @@ curriculum:
             text_6: "Monitoring: Nagios"
             text_7: "Database administration: CLI, MySQL Workbench, pgAdmin, phpMyAdmin, Robomongo"
             text_8: "Process manager: PM2"
-            text_9: "Other tools: Google Apps for Work, FileZilla"
-        subsection_4:
+            text_9: "Hardening"
+        subsection_5:
             title: Others
             text_1: "Other languages: C++ (+Qt), MATLAB, Fortran"
             text_2: "Version Control Systems: Git (+GitHub +GitLab +Bitbucket), Subversion"
             text_3: "Graphic Design: GIMP, Photoshop"
-            text_4: "Other tools: NetBeans, MediaWiki, Firebug, yuglify, Mantis Bug Tracker, Bugzilla"
+            text_4: "Other tools: Slack, Trello, NetBeans, MediaWiki, Firebug, Mantis Bug Tracker, Bugzilla"
     section_3: 
         title: Work Experience
         subtitle_1: Spain

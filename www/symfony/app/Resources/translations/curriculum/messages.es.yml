@@ -5,7 +5,7 @@ curriculum:
         title: Datos Personales
         text_1: "Nombre: Eduardo Casas"
         text_2: "Fecha de nacimiento: 5 de febrero de 1983"
-        text_3: "Edad: 32 años"
+        text_3: "Edad: 34 años"
         text_4: "Ubicación: Madrid"
     section_2: 
         title: Conocimientos Técnicos 
@@ -30,6 +30,11 @@ curriculum:
             text_9: "Testing: Postman"
             text_10: "Gestión de paquetes: Bower"
         subsection_3:
+            title: Programación Android
+            text_1: "Lenguajes: Java"
+            text_2: "Bases de datos: SQLite"
+            text_3: "Automatizador de tareas: Gradle"
+        subsection_4:
             title: Administrador de Sistemas
             text_1: "Lenguajes: Bash, Python"
             text_2: "Sistemas Operativos: Debian GNU/Linux, Microsoft Windows"
@@ -39,13 +44,13 @@ curriculum:
             text_6: "Monitorización: Nagios"
             text_7: "Administración de Bases de datos: CLI, MySQL Workbench, pgAdmin, phpMyAdmin, Robomongo"
             text_8: "Gestor de procesos: PM2"
-            text_9: "Otras herramientas: Google Apps for Work, FileZilla"
-        subsection_4:
+            text_9: "Hardening"
+        subsection_5:
             title: Otros 
             text_1: "Otros lenguajes: C++ (+Qt), MATLAB, Fortran"
             text_2: "Control de Versiones: Git (+GitHub +GitLab +Bitbucket), Subversion"
             text_3: "Diseño Gráfico: GIMP, Photoshop"
-            text_4: "Otras herramientas: NetBeans, MediaWiki, Firebug, yuglify, Mantis Bug Tracker, Bugzilla"
+            text_4: "Otras herramientas: Slack, Trello, NetBeans, MediaWiki, Firebug, Mantis Bug Tracker, Bugzilla"
     section_3: 
         title: Experiencia laboral 
         subtitle_1: España
