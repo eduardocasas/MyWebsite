@@ -31,9 +31,10 @@ curriculum:
             text_10: "Package manager: Bower"
         subsection_3:
             title: Android Development
-            text_1: "Languages: Java"
-            text_2: "Databases: SQLite"
-            text_3: "Build tool: Gradle"
+            text_1: "DevKit: Android SDK"
+            text_2: "Languages: Java"
+            text_3: "Databases: SQLite"
+            text_4: "Build tool: Gradle"
         subsection_4:
             title: Sysadmin
             text_1: "Languages: Bash, Python"

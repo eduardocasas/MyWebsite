@@ -31,9 +31,10 @@ curriculum:
             text_10: "Gestión de paquetes: Bower"
         subsection_3:
             title: Programación Android
-            text_1: "Lenguajes: Java"
-            text_2: "Bases de datos: SQLite"
-            text_3: "Automatizador de tareas: Gradle"
+            text_1: "Kit de desarrollo: Android SDK"
+            text_2: "Lenguajes: Java"
+            text_3: "Bases de datos: SQLite"
+            text_4: "Automatizador de tareas: Gradle"
         subsection_4:
             title: Administrador de Sistemas
             text_1: "Lenguajes: Bash, Python"
