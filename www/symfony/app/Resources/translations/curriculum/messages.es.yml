@@ -15,7 +15,7 @@ curriculum:
             text_2: "Bases de datos: MySQL, PostgreSQL, MongoDB"
             text_3: "Frameworks: Symfony, Zend Framework, Django, Spring, Express"
             text_4: "Testing: PHPUnit (+Selenium)"
-            text_5: "Gestión de paquetes: Composer, pip (+virtualenv), Maven, Gradle, npm"
+            text_5: "Gestión de paquetes: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
             text_6: "RESTful APIs"
         subsection_2:
             title: Programación Front-End
@@ -27,8 +27,9 @@ curriculum:
             text_6: "Responsive Design"
             text_7: "Técnicas SEO"
             text_8: "Automatizador de tareas: Gulp"
-            text_9: "Testing: Postman"
-            text_10: "Gestión de paquetes: Bower"
+            text_9: "Generador estático: Jekyll"
+            text_10: "Testing: Postman"
+            text_11: "Gestión de paquetes: Bower"
         subsection_3:
             title: Programación Android
             text_1: "Kit de desarrollo: Android SDK"
