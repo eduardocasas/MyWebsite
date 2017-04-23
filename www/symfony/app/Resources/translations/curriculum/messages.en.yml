@@ -15,14 +15,15 @@ curriculum:
             text_2: "Databases: MySQL, PostgreSQL, MongoDB"
             text_3: "Frameworks: Symfony, Zend Framework, Django, Spring, Express"
             text_4: "Testing: PHPUnit (+Selenium)"
-            text_5: "Package managers: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
-            text_6: "RESTful APIs"
+            text_5: "Package Managers: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
+            text_6: "Caching System: Memcached"
+            text_7: "RESTful APIs"
         subsection_2:
             title: Front-End Development
             text_1: "Languages: HTML, CSS, JavaScript, XML, JSON, Markdown"
             text_2: "Frameworks: jQuery, AngularJS"
             text_3: "Preprocessors: Sass"
-            text_4: "Template engines: Twig, Thymeleaf, Jade"
+            text_4: "Template Engines: Twig, Thymeleaf, Jade"
             text_5: "Cross-Browser Compatibility"
             text_6: "Responsive Design"
             text_7: "SEO Skills"
@@ -39,20 +40,20 @@ curriculum:
         subsection_4:
             title: Sysadmin
             text_1: "Languages: Bash, Python"
-            text_2: "Operating systems: Debian GNU/Linux, Microsoft Windows"
-            text_3: "Web servers: Apache, Nginx, Gunicorn"
+            text_2: "Operating Systems: Debian GNU/Linux, Microsoft Windows"
+            text_3: "Web Servers: Apache, Nginx, Gunicorn"
             text_4: "Virtualization: Oracle VM VirtualBox"
             text_5: "Control panel: Ajenti, cPanel"
             text_6: "Monitoring: Nagios"
-            text_7: "Database administration: CLI, MySQL Workbench, pgAdmin, phpMyAdmin, Robomongo"
-            text_8: "Process manager: PM2"
+            text_7: "Database Administration: CLI, MySQL Workbench, pgAdmin, phpMyAdmin, Robomongo"
+            text_8: "Process Manager: PM2"
             text_9: "Hardening"
         subsection_5:
             title: Others
             text_1: "Other languages: C++ (+Qt), MATLAB, Fortran"
             text_2: "Version Control Systems: Git (+GitHub +GitLab +Bitbucket), Subversion"
             text_3: "Graphic Design: GIMP, Photoshop"
-            text_4: "Other tools: Slack, Trello, NetBeans, MediaWiki, Firebug, Mantis Bug Tracker, Bugzilla"
+            text_4: "Other tools: Slack, Trello, AWS, MediaWiki, Firebug, Mantis Bug Tracker, Bugzilla"
     section_3: 
         title: Work Experience
         subtitle_1: Spain

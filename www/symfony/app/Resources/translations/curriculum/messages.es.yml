@@ -12,24 +12,25 @@ curriculum:
         subsection_1:
             title: Programación Back-End
             text_1: "Lenguajes: PHP, Python, Java, Node.js"
-            text_2: "Bases de datos: MySQL, PostgreSQL, MongoDB"
+            text_2: "Bases de Datos: MySQL, PostgreSQL, MongoDB"
             text_3: "Frameworks: Symfony, Zend Framework, Django, Spring, Express"
             text_4: "Testing: PHPUnit (+Selenium)"
-            text_5: "Gestión de paquetes: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
-            text_6: "RESTful APIs"
+            text_5: "Gestión de Paquetes: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
+            text_6: "Sistema de Caché: Memcached"
+            text_7: "RESTful APIs"
         subsection_2:
             title: Programación Front-End
             text_1: "Lenguajes: HTML, CSS, JavaScript, XML, JSON, Markdown"
             text_2: "Frameworks: jQuery, AngularJS"
             text_3: "Preprocesadores: Sass"
-            text_4: "Motor de plantillas: Twig, Thymeleaf, Jade"
+            text_4: "Motor de Plantillas: Twig, Thymeleaf, Jade"
             text_5: "Compatibilidad Cross-Browser"
             text_6: "Responsive Design"
             text_7: "Técnicas SEO"
-            text_8: "Automatizador de tareas: Gulp"
+            text_8: "Automatizador de Tareas: Gulp"
             text_9: "Generador estático: Jekyll"
             text_10: "Testing: Postman"
-            text_11: "Gestión de paquetes: Bower"
+            text_11: "Gestión de Paquetes: Bower"
         subsection_3:
             title: Programación Android
             text_1: "Kit de desarrollo: Android SDK"
@@ -52,7 +53,7 @@ curriculum:
             text_1: "Otros lenguajes: C++ (+Qt), MATLAB, Fortran"
             text_2: "Control de Versiones: Git (+GitHub +GitLab +Bitbucket), Subversion"
             text_3: "Diseño Gráfico: GIMP, Photoshop"
-            text_4: "Otras herramientas: Slack, Trello, NetBeans, MediaWiki, Firebug, Mantis Bug Tracker, Bugzilla"
+            text_4: "Otras herramientas: Slack, Trello, AWS, MediaWiki, Firebug, Mantis Bug Tracker, Bugzilla"
     section_3: 
         title: Experiencia laboral 
         subtitle_1: España
