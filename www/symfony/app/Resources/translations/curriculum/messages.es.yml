@@ -42,7 +42,7 @@ curriculum:
             text_1: "Lenguajes: Bash, Python"
             text_2: "Sistemas Operativos: Debian GNU/Linux, Microsoft Windows"
             text_3: "Servidores web: Apache, Nginx, Gunicorn"
-            text_4: "Virtualización: Oracle VM VirtualBox"
+            text_4: "Virtualización: Docker, Oracle VM VirtualBox"
             text_5: "Paneles de control: Ajenti, cPanel"
             text_6: "Monitorización: Nagios"
             text_7: "Administración de Bases de datos: CLI, MySQL Workbench, pgAdmin, phpMyAdmin, Robomongo"
