@@ -30,7 +30,7 @@ curriculum:
             text_8: "Automatizador de Tareas: Gulp"
             text_9: "Generador estático: Jekyll"
             text_10: "Testing: Postman"
-            text_11: "Gestión de Paquetes: Bower"
+            text_11: "Gestión de Paquetes: Bower, Yarn"
         subsection_3:
             title: Programación Android
             text_1: "Kit de desarrollo: Android SDK"

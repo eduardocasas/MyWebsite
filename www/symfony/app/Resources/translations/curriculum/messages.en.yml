@@ -30,7 +30,7 @@ curriculum:
             text_8: "Task Runner: Gulp"
             text_9: "Static Site Generator: Jekyll"
             text_10: "Testing: Postman"
-            text_11: "Package manager: Bower"
+            text_11: "Package manager: Bower, Yarn"
         subsection_3:
             title: Android Development
             text_1: "DevKit: Android SDK"
