@@ -28,7 +28,7 @@ curriculum:
             text_6: "Responsive Design"
             text_7: "SEO Skills"
             text_8: "Task Runner: Gulp"
-            text_9: "Static Site Generator: Jekyll"
+            text_9: "Static Site Generator: Jekyll, MkDocs"
             text_10: "Testing: Postman"
             text_11: "Package manager: Bower, Yarn"
         subsection_3:
@@ -50,7 +50,7 @@ curriculum:
             text_9: "Hardening"
         subsection_5:
             title: Others
-            text_1: "Other languages: C++ (+Qt), MATLAB, Fortran"
+            text_1: "Other languages: C++ (+Qt), R, MATLAB, Fortran"
             text_2: "Version Control Systems: Git (+GitHub +GitLab +Bitbucket), Subversion"
             text_3: "Graphic Design: GIMP, Photoshop"
             text_4: "Other tools: Slack, Trello, AWS, MediaWiki, Firebug, Mantis Bug Tracker, Bugzilla"

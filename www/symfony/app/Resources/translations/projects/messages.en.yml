@@ -3,6 +3,7 @@ project:
     description: Summary of all my personal projects.
     section_1: 
         alt: StatHub Website
+        description: Stathub is a real-time monitoring web app to track websites traffic. It gives you complete information about all your visitors, where they come from and their navigation paths. Find out which are your more popular pages. There are no limits and you can filter all the data by multiple fields.
         title: StatHub. Another visitor tracker for web applications.
         text_1: 'Server Language: <a href="https://www.python.org/" target="_blank">Python</a>'
         text_2: 'Server Framework: <a href="https://www.djangoproject.com/" target="_blank">Django</a>'
@@ -12,6 +13,7 @@ project:
         text_6: 'OS: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
     section_2: 
         alt: LuaIssueTracker Website
+        description: A general purpose issue tracking web app that allows you to manage all your incident tickets in an easy and friendly way. Manage multiple projects, keep them public or private and invite your team to join.
         title: Lua Issue Tracker. A free, modern and friendly issue manager.
         text_1: 'Server Language: <a href="https://nodejs.org/" target="_blank">Node.js</a>'
         text_2: 'Server Framework: <a href="http://expressjs.com/" target="_blank">Express</a>'
@@ -21,6 +23,7 @@ project:
         text_6: 'OS: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
     section_3:
         alt: EduardoCasas Website
+        description: This is the site where I write a little about me, my curriculum vitae and my personal projects (this is where you are right now). You might have seen I've got a blog about programming, quite abbandoned though.
         title: My Personal Website
         text_1: 'Server Language: <a href="http://php.net/" target="_blank">PHP</a>'
         text_2: 'Server Framework: <a href="http://symfony.com/" target="_blank">Symfony</a>'
@@ -30,6 +33,7 @@ project:
         text_6: 'OS: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
     section_4:
         alt: Respira Madrid Website
+        description: Respira Madrid is a web app to query in real time the open data regarding the air quality offered by the city council of Madrid. The data is provided every hour by the 24 stations spread throughout the city.
         title: Respira Madrid
         text_1: 'Server Language: <a href="http://php.net/" target="_blank">PHP</a>'
         text_2: 'Server Framework: <a href="http://symfony.com/" target="_blank">Symfony</a>'
@@ -39,6 +43,7 @@ project:
         text_6: 'OS: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
     section_5:
         alt: Music Folder Player for Android
+        description: Folder based player to browsing and listening to music on Android devices. It also allows you to create custom playlists and control the player from notification bar and lock screen. Last but not least, it's free and does not contain ads.
         title: Music Folder Player
         text_1: 'Language: <a href="https://www.java.com" target="_blank">Java</a>'
         text_2: 'Development Environment: <a href="https://developer.android.com/studio/releases/sdk-tools.html" target="_blank">Android SDK</a>'

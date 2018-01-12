@@ -526,11 +526,6 @@ body {
     width: 100% !important; }
 
   /* ---------------- Blog Responsive Design ---------------- */
-  #main_article_wrapper .article {
-    background-color: inherit;
-    border: none;
-    border-bottom: 1px solid #eee; }
-
   #article {
     background-color: inherit !important;
     border: none !important;

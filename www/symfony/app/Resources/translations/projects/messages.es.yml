@@ -3,6 +3,7 @@ project:
     description: Resumen de todos mis proyectos personales.
     section_1: 
         alt: StatHub Aplicación Web
+        description: Stathub es una web app para monitorizar el tráfico de sitios web en tiempo real. Ofrece información completa de todos tus visitantes, de donde vienen y como navegan por la página. Averigua cuales son tus secciones más populares. No hay límites y puedes filtrar todos los datos por múltiples campos.
         title: StatHub. Otro contandor de visitas para aplicaciones web.
         text_1: 'Lenguaje (servidor): <a href="https://www.python.org/" target="_blank">Python</a>'
         text_2: 'Framework (servidor): <a href="https://www.djangoproject.com/" target="_blank">Django</a>'
@@ -12,6 +13,7 @@ project:
         text_6: 'SO: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
     section_2: 
         alt: LuaIssueTracker Aplicación Web
+        description: Web app para la gestión de tareas de propósito general. Permite organizar todos los tickets de tus incidencias de forma sencilla. Gestiona múltiples proyectos, mantenlos públicos o privados e invita a tu equipo a unirse.
         title: Lua Issue Tracker. Un gestor de incidencias moderno, sencillo y gratuito.
         text_1: 'Lenguaje (servidor): <a href="https://nodejs.org/" target="_blank">Node.js</a>'
         text_2: 'Framework (servidor): <a href="http://expressjs.com/" target="_blank">Express</a>'
@@ -21,6 +23,7 @@ project:
         text_6: 'SO: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
     section_3:
         alt: EduardoCasas Aplicación Web
+        description: Este es mi sitio web donde hablo un poco sobre mi, mi curriculum y mis proyectos personales (que es donde estás ahora mismo). Verás que también tengo un blog dedicado al mundo del desarrollo, aunque bastante abandonado.
         title: Mi Página Personal
         text_1: 'Lenguaje (servidor): <a href="http://php.net/" target="_blank">PHP</a>'
         text_2: 'Framework (servidor): <a href="http://symfony.com/" target="_blank">Symfony</a>'
@@ -30,6 +33,7 @@ project:
         text_6: 'SO: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
     section_4:
         alt: Respira Madrid Aplicación Web
+        description: Respira Madrid es una aplicación web para la consulta en tiempo real y del archivo histórico de los datos abiertos sobre la calidad del aire ofrecidos por el ayuntamiento de Madrid. Los datos son suministrados cada hora por las 24 estaciones repartidas por toda la ciudad.
         title: Respira Madrid
         text_1: 'Lenguaje (servidor): <a href="http://php.net/" target="_blank">PHP</a>'
         text_2: 'Framework (servidor): <a href="http://symfony.com/" target="_blank">Symfony</a>'
@@ -39,6 +43,7 @@ project:
         text_6: 'SO: <a href="http://www.ubuntu.com" target="_blank">Ubuntu GNU/Linux</a>'
     section_5:
         alt: Music Folder Player para Android 
+        description: Reproductor basado en carpetas para escuchar música en dispositivos Android. Permite crear listas de reproducción personalizadas y controlar la reproducción en la barra de notificaciones y en la pantalla de bloqueo. Por último, pero no menos importante, es gratuita y no contiene anuncios.
         title: Music Folder Player
         text_1: 'Lenguaje: <a href="https://www.java.com/" target="_blank">Java</a>'
         text_2: 'Entorno de Desarrollo: <a href="https://developer.android.com/studio/releases/sdk-tools.html" target="_blank">Android SDK</a>'
