@@ -21,11 +21,7 @@ $(document).ready(function() {
         return (elemBottom <= docViewBottom) && (elemTop >= docViewTop);
     }        
     function setMobileSidebarSettings() {
-        if (isScrolledIntoView()) {
-            mobileSidebar.css('max-height', $(window).height()-header.height()-footer.height());
-        } else {
-            mobileSidebar.css('max-height', $(window).height()-header.height());
-        }
+        mobileSidebar.css('max-height', $(window).height()-header.height());
     }
     if (isMobileView) {
         setMobileSidebarSettings();
@@ -45,7 +41,7 @@ $(document).ready(function() {
         }
         
     });
-    $(window).on('resize', function(){
+    $(window).on('resize', function() {
         isMobileView = $('#sidebar').css('display') == 'none';
         if (!isMobileView) {
             header.show();   
@@ -55,7 +51,6 @@ $(document).ready(function() {
     });    
     
     /* -------------- Hide/Show header when scrolling -------------- */
-    
     
     var lastScrollTop = 0;
     $(window).scroll(function() {
