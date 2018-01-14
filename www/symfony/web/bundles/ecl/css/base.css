@@ -445,11 +445,11 @@ body {
     float: none;
     height: 100%;
     left: 0;
-    margin: 0 0 0 -275px;
+    margin: 0 0 0 -200px;
     overflow: auto;
     position: fixed;
     top: 59px;
-    width: 275px; }
+    width: 200px; }
     #nav .picture_info {
       display: block;
       box-sizing: border-box;
@@ -488,6 +488,7 @@ body {
 
   #main_nav,
   #tag_nav {
+    font-size: 0.8em;
     margin: 0;
     width: 100%; }
     #main_nav ul,
