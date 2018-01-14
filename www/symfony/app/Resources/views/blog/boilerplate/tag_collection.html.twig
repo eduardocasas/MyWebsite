@@ -4,7 +4,7 @@
     {% for item in tags %}
         <li>
         {% if blog_tag_selected != null and blog_tag_selected ==  item.slug %}
-            <strong>{{ item.name }}</strong>
+            <h2>{{ item.name }}</h2>
         {% else %}
             <a href="{{ url('blog', { tag_slug: item.slug } ) }}">{{ item.name }}</a>
         {% endif %}

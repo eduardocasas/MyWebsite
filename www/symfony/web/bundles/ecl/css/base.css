@@ -346,7 +346,7 @@ body {
     margin: 30px; }
     #sidebar .tag_boilerplate_list ul {
       margin: 10px 0 0 10px; }
-    #sidebar .tag_boilerplate_list strong,
+    #sidebar .tag_boilerplate_list h2,
     #sidebar .tag_boilerplate_list a {
       font-size: 1.6em; }
 
@@ -365,11 +365,11 @@ body {
 #my_rss {
   background-position: -280px 0; }
 
-.tag_boilerplate_list strong,
+.tag_boilerplate_list h2,
 .tag_boilerplate_list a {
   color: #777;
   font-family: "league-gothic"; }
-.tag_boilerplate_list strong {
+.tag_boilerplate_list h2 {
   color: #000;
   font-weight: normal; }
 .tag_boilerplate_list a:hover {
