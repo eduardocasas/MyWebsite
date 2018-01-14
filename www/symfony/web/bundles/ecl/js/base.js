@@ -21,7 +21,8 @@ $(document).ready(function() {
         return (elemBottom <= docViewBottom) && (elemTop >= docViewTop);
     }        
     function setMobileSidebarSettings() {
-        mobileSidebar.css('max-height', $(window).height()-header.height());
+        var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
+        mobileSidebar.css('max-height', windowHeight-header.height());
     }
     if (isMobileView) {
         setMobileSidebarSettings();
