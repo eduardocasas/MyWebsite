@@ -1,6 +1,7 @@
-/* --------- dimmensions --------- */
-/* --------- colors --------- */
-/* --------- borders --------- */
+/* --------- Dimmensions --------- */
+/* --------- Indexes --------- */
+/* --------- Colors --------- */
+/* --------- Borders --------- */
 /* --------- Images --------- */
 /* --------- Fonts --------- */
 @font-face {
@@ -211,7 +212,7 @@ body {
   width: 960px; }
 
 /* ---------------- header ---------------- */
-#main_header_wrapper {
+#header {
   background-color: #f7f7f7;
   border-bottom: 1px solid #eee;
   left: 0;
@@ -219,12 +220,12 @@ body {
   position: fixed;
   width: 100%;
   z-index: 90; }
-  #main_header_wrapper h1 {
+  #header h1 {
     display: inline-block;
     float: left;
     font-size: 1.8em;
     margin: 15px 0 10px 20px; }
-  #main_header_wrapper .loading {
+  #header .loading {
     margin: 10px 10px 10px 10px; }
 
 #subtitle {
@@ -263,6 +264,16 @@ body {
     color: #ddd;
     content: "|";
     margin: 0 20px 0 10px; }
+  #nav .picture_info {
+    display: none; }
+
+#tag_nav {
+  display: none; }
+
+#language {
+  float: right;
+  margin: 2px -10px 0 17px;
+  padding: 3px; }
 
 #display_sidebar_button {
   display: none; }
@@ -292,46 +303,52 @@ body {
   line-height: 160%; }
 
 /* --------- sidebar --------- */
-#default_sidebar_wrapper {
+#sidebar {
   float: right;
   width: 290px; }
-  #default_sidebar_wrapper .sidebar_section {
+  #sidebar .sidebar_section {
     background-color: #f7f7f7;
     border: 1px solid #f0f0f0;
     border-radius: 5px;
     margin-bottom: 15px; }
-  #default_sidebar_wrapper .sidebar_section h1 {
+  #sidebar .sidebar_section h1 {
     border-bottom: 1px solid #ddd;
     font-family: "league-gothic";
     font-size: 2em;
     font-weight: normal;
     padding-bottom: 5px; }
-  #default_sidebar_wrapper img {
-    border-radius: 5px;
+  #sidebar .picture_info {
     display: block;
-    margin: 35px auto 10px; }
-
-#picture_sidebar_section {
-  padding: 0 36px; }
-
-#my_social {
-  margin-bottom: 25px;
-  text-align: center; }
-  #my_social li {
-    display: inline-block; }
-  #my_social a {
-    background-image: url(/bundles/ecl/img/social_icons.png?2015-01-15);
-    background-repeat: no-repeat;
-    border-radius: 5px;
-    display: block;
-    height: 40px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    width: 40px; }
-    #my_social a:hover {
-      box-shadow: inset 0 0 8px #000; }
+    padding: 0 36px; }
+    #sidebar .picture_info img {
+      border-radius: 5px;
+      display: block;
+      margin: 35px auto 10px; }
+    #sidebar .picture_info ul {
+      margin-bottom: 25px;
+      text-align: center; }
+      #sidebar .picture_info ul li {
+        display: inline-block; }
+      #sidebar .picture_info ul a {
+        background-image: url(/bundles/ecl/img/social_icons.png?2015-01-15);
+        background-repeat: no-repeat;
+        border-radius: 5px;
+        display: block;
+        height: 40px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        width: 40px; }
+        #sidebar .picture_info ul a:hover {
+          box-shadow: inset 0 0 8px #000; }
+  #sidebar .tag_boilerplate_list {
+    margin: 30px; }
+    #sidebar .tag_boilerplate_list ul {
+      margin: 10px 0 0 10px; }
+    #sidebar .tag_boilerplate_list strong,
+    #sidebar .tag_boilerplate_list a {
+      font-size: 1.6em; }
 
 #my_twitter {
   background-position: 0 0; }
@@ -348,21 +365,16 @@ body {
 #my_rss {
   background-position: -280px 0; }
 
-#tag_boilerplate_list {
-  margin: 30px; }
-  #tag_boilerplate_list ul {
-    margin: 10px 0 0 10px; }
-  #tag_boilerplate_list strong,
-  #tag_boilerplate_list a {
-    color: #777;
-    font-family: "league-gothic";
-    font-size: 1.6em; }
-  #tag_boilerplate_list strong {
-    color: #000;
-    font-weight: normal; }
-  #tag_boilerplate_list a:hover {
-    color: #000;
-    text-decoration: none; }
+.tag_boilerplate_list strong,
+.tag_boilerplate_list a {
+  color: #777;
+  font-family: "league-gothic"; }
+.tag_boilerplate_list strong {
+  color: #000;
+  font-weight: normal; }
+.tag_boilerplate_list a:hover {
+  color: #000;
+  text-decoration: none; }
 
 #github_collection {
   margin: 30px; }
@@ -383,16 +395,16 @@ body {
       text-decoration: none; }
 
 /* --------- footer --------- */
-#main_footer_wrapper {
+#footer {
   border-top: 1px solid #eee;
   margin-top: 60px;
   text-align: center;
   padding-top: 10px; }
-  #main_footer_wrapper li {
+  #footer li {
     display: inline-block; }
-  #main_footer_wrapper a {
+  #footer a {
     font-weight: bold; }
-  #main_footer_wrapper .separator:after {
+  #footer .separator:after {
     content: "|";
     padding: 0 20px; }
 
@@ -401,6 +413,13 @@ body {
 
 /* ---------------- Responsive Design ---------------- */
 @media (max-width: 980px) {
+  html {
+    height: 100%; }
+
+  body {
+    min-height: 100%;
+    position: relative; }
+
   #content,
   #main_article_wrapper {
     box-sizing: border-box;
@@ -415,38 +434,97 @@ body {
       border: none;
       border-bottom: 1px solid #eee; }
 
-  #nav,
-  #default_sidebar_wrapper {
-    display: none; }
+  #sidebar {
+    display: none !important; }
 
   #nav {
     background-color: #f7f7f7;
     border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+    display: block;
     float: none;
-    height: 59px;
-    margin: 0;
+    height: 100%;
+    left: 0;
+    margin: 0 0 0 -275px;
+    overflow: auto;
     position: fixed;
     top: 59px;
-    width: 100%; }
-    #nav ul {
+    width: 275px; }
+    #nav .picture_info {
       display: block;
-      text-align: center;
-      margin: 5px 0; }
-    #nav #main_nav {
-      margin: 10px 0 5px; }
-    #nav li {
-      font-size: 1.2em;
-      margin: 0 5px; }
-    #nav .separator:before {
-      content: none;
-      margin: 0; }
+      box-sizing: border-box;
+      padding: 0 15px;
+      width: 100%;
+      margin: 0 auto; }
+      #nav .picture_info img {
+        margin: 15px auto 10px; }
+      #nav .picture_info ul {
+        margin-bottom: 10px; }
+        #nav .picture_info ul li {
+          display: inline-block;
+          margin: 0 1px; }
+        #nav .picture_info ul a {
+          background-image: url(/bundles/ecl/img/social_icons.png?2015-01-15);
+          background-repeat: no-repeat;
+          border-radius: 5px;
+          display: block;
+          height: 40px;
+          width: 40px; }
+          #nav .picture_info ul a:hover {
+            box-shadow: inset 0 0 8px #000; }
     #nav .blog_tag_nav {
       display: none; }
 
-  #main_header_wrapper {
+  #disable_background_on_sidebar {
+    display: none;
+    opacity: 0;
+    background-color: #000;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 89; }
+
+  #main_nav,
+  #tag_nav {
+    margin: 0;
+    width: 100%; }
+    #main_nav ul,
+    #tag_nav ul {
+      display: block; }
+    #main_nav li,
+    #tag_nav li {
+      display: block;
+      margin: 0; }
+    #main_nav h2,
+    #main_nav a,
+    #tag_nav h2,
+    #tag_nav a {
+      display: block;
+      padding: 5px 20px; }
+    #main_nav .separator:before,
+    #tag_nav .separator:before {
+      content: none;
+      margin: 0; }
+
+  #tag_nav {
+    display: block;
+    border-top: 1px solid #eee;
+    margin-top: 15px;
+    padding-top: 15px; }
+    #tag_nav h1 {
+      float: none; }
+
+  #language {
+    display: block;
+    float: none;
+    margin: 15px auto 30px; }
+
+  #header {
     box-sizing: border-box;
     padding-top: 15px; }
-    #main_header_wrapper h1 {
+    #header h1 {
       font-size: 1.3em;
       margin-top: 0;
       margin-bottom: 5px; }
@@ -469,29 +547,12 @@ body {
       margin-top: 4px;
       width: 16px; }
 
-  #default_sidebar_wrapper {
-    background-color: #f7f7f7;
-    left: 0;
-    position: fixed;
-    top: 118px;
-    width: 50%; }
-
-  #default_sidebar_wrapper .sidebar_section {
-    border-radius: 0; }
-
-  #picture_sidebar_section {
-    padding: 0 10px;
-    max-width: 235px;
-    margin: 0 auto; }
-    #picture_sidebar_section img {
-      margin-top: 20px; }
-
-  #tags_sidebar_section {
+  .tags_sidebar_section {
     position: fixed;
     left: 50%;
     top: 118px;
     width: 50%; }
-    #tags_sidebar_section section {
+    .tags_sidebar_section section {
       margin-top: 20px; }
 
   #github_sidebar_section {
@@ -501,12 +562,12 @@ body {
     margin: 0 !important;
     padding: 10px 0 !important; }
 
-  #main_footer_wrapper {
+  #footer {
     margin-top: 0; }
-    #main_footer_wrapper li {
+    #footer li {
       display: block;
       margin-bottom: 5px; }
-    #main_footer_wrapper .separator:after {
+    #footer .separator:after {
       content: "";
       padding: 0; }
 

@@ -2,8 +2,8 @@ web_developer: Programmer
 web_developer_header: Programmer in Madrid
 main_description: Programmer Analyst / Web Developer in Madrid. Spain. 
 translation:
-    to_spanish: Ver en castellano
-    to_english:
+    spanish: Castellano
+    english: Inglés
 section:
     home:
         link: About Me

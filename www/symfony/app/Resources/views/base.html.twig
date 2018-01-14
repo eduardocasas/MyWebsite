@@ -20,7 +20,7 @@
     </head>
     <body>
         <div id="content">
-            <header id="main_header_wrapper">
+            <header id="header">
                 <button id="display_sidebar_button">
                     <span></span>
                     <span></span>
@@ -29,6 +29,7 @@
                 <h1>Eduardo Casas</h1>
                 <strong id="subtitle">{{ 'web_developer_header' | trans }}</strong>
                 <nav id="nav">
+                    {% include 'boilerplate.html.twig' %}
                     <ul id="main_nav">
                         <li id="home_nav">
                             {% if app.request.get('_route') == 'home' %}
@@ -71,55 +72,36 @@
                                 <a href="{% if app.request.locale == 'en' %}{{ url('contact_en') }}{% else %}{{ url('contact_es') }}{% endif %}">{{ 'section.contact.link'|trans }}</a>
                             {% endif %}
                         </li>
-                    </ul>            
-                    <ul id="language_nav">
-                        <li class="separator">
-                            {% if app.request.locale == 'es' and status_code is not defined  %}
-                                <strong>es</strong>
-                            {% else %}
-                                <a href="{{app.request.uri | replace({'/en/': '/es/'}) }}" title="{{ 'translation.to_spanish'|trans }}">es</a>
-                            {% endif %}
-                        </li>
-                        <li>
-                            {% if app.request.locale == 'en' and status_code is not defined  %}
-                                <strong>en</strong>
-                            {% else %}
-                                <a href="{{app.request.uri | replace({'/es/': '/en/'}) }}" title="{{ 'translation.to_english'|trans }}">en</a>
-                            {% endif %}
-                        </li>
                     </ul>
+                    <div id="tag_nav">
+                    {{ render(controller("AppBundle:Blog/Boilerplate:tagCollection", { 'blog_tag_selected' : blog_tag_selected is defined ? blog_tag_selected : null } )) }}
+                    </div>                        
+                    <select id="language">
+                        <option data-url="{{app.request.uri | replace({'/en/': '/es/'}) }}" {% if app.request.locale == 'es' %}selected{% endif %}>{{ 'translation.spanish'|trans }}</option>
+                        <option data-url="{{app.request.uri | replace({'/es/': '/en/'}) }}" {% if app.request.locale == 'en' %}selected{% endif %}>{{ 'translation.english'|trans }}</option>
+                    </select>
                 </nav>
             </header>
             <div id="main_wrapper">
                 {% block main %}{% endblock %}
-                <sidebar id="default_sidebar_wrapper">
-                    <div class="sidebar_section" id="picture_sidebar_section">
-                    <img src="{{ asset('bundles/ecl/img/profile/main.jpg') }}" alt="{{ 'web_developer' | trans }} Eduardo Casas" width="100%">
-                    <ul id="my_social">
-                        <li><a target="_blank" href="https://github.com/eduardocasas" id="my_github" title="{{ 'sidebar.social.github'|trans }}"></a></li>
-                        <li><a target="_blank" href="https://plus.google.com/u/0/+EduardoCasasLopez/" id="my_gplus" title="{{ 'sidebar.social.gplus'|trans }}"></a></li>
-                        <li><a target="_blank" href="https://twitter.com/eduardo_casas" id="my_twitter" title="{{ 'sidebar.social.twitter'|trans }}"></a></li>
-                        <li><a target="_blank" href="http://es.linkedin.com/in/ecasas" id="my_linkedin" title="{{ 'sidebar.social.linkedin'|trans }}"></a></li>
-                        <li><a target="_blank" href="{% if blog_tag_selected is defined %}{{ url('blog_rss', { 'tag_slug' : blog_tag_selected}) }}{% else %}{{ url('blog_rss') }}{% endif %}" id="my_rss" title="{{ 'sidebar.social.rss'|trans }}{% if blog_tag_selected is defined and blog_tag_selected != null %} ({{ blog_tag_selected_name }}){% endif %}"></a></li>
-                    </ul>
-                    </div>
-                    <div class="sidebar_section" id="tags_sidebar_section">
+                <sidebar id="sidebar">
+                    {% include 'boilerplate.html.twig' %}
+                    <div class="sidebar_section tags_sidebar_section">
                     {{ render(controller("AppBundle:Blog/Boilerplate:tagCollection", { 'blog_tag_selected' : blog_tag_selected is defined ? blog_tag_selected : null } )) }}
                     </div>
                     <div class="sidebar_section" id="github_sidebar_section">
-                    {{ render(controller("AppBundle:Blog/Boilerplate:githubCollection")) }}
+                        {{ render(controller("AppBundle:Blog/Boilerplate:githubCollection")) }}
                     </div>
                 </sidebar>
             </div>
-            {% block sidebar %}
-            <footer id="main_footer_wrapper">
+            <div id="disable_background_on_sidebar"></div>
+            <footer id="footer">
                 <ul>
                     <li class="separator">License: <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 Unported</a></li>
                     <li class="separator">Powered by <a target="_blank" href="http://symfony.com/" target="_blank">Symfony 3</a></li>
                     <li>Fork me on <a href="https://github.com/eduardocasas/mywebsite" target="_blank">GitHub</a></li>
                 </ul>
             </footer>
-            {% endblock %}
         </div>
         <!-- Start of StatHub Code -->
         <script type="text/javascript">

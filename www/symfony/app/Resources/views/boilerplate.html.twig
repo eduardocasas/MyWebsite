@@ -1,0 +1,10 @@
+<div class="sidebar_section picture_info">
+    <img src="{{ asset('bundles/ecl/img/profile/main.jpg') }}" alt="{{ 'web_developer' | trans }} Eduardo Casas" width="100%">
+    <ul>
+        <li><a target="_blank" href="https://github.com/eduardocasas" id="my_github" title="{{ 'sidebar.social.github'|trans }}"></a></li>
+        <li><a target="_blank" href="https://plus.google.com/u/0/+EduardoCasasLopez/" id="my_gplus" title="{{ 'sidebar.social.gplus'|trans }}"></a></li>
+        <li><a target="_blank" href="https://twitter.com/eduardo_casas" id="my_twitter" title="{{ 'sidebar.social.twitter'|trans }}"></a></li>
+        <li><a target="_blank" href="http://es.linkedin.com/in/ecasas" id="my_linkedin" title="{{ 'sidebar.social.linkedin'|trans }}"></a></li>
+        <li><a target="_blank" href="{% if blog_tag_selected is defined %}{{ url('blog_rss', { 'tag_slug' : blog_tag_selected}) }}{% else %}{{ url('blog_rss') }}{% endif %}" id="my_rss" title="{{ 'sidebar.social.rss'|trans }}{% if blog_tag_selected is defined and blog_tag_selected != null %} ({{ blog_tag_selected_name }}){% endif %}"></a></li>
+    </ul>
+</div>

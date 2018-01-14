@@ -1,11 +1,17 @@
-/* --------- dimmensions --------- */
+/* --------- Dimmensions --------- */
 
 $header_height: 59px;
 $sidebar_width: 290px;
+$mobile_sidebar_with: 275px;
 $wrapper_width: 960px;
 $section_wrapper_width: 610px;
 
-/* --------- colors --------- */
+/* --------- Indexes --------- */
+
+$header_index: 90;
+$disable_background_index: $header_index - 1;
+
+/* --------- Colors --------- */
 
 $main_block_background: #f7f7f7;
 $link_color: #777;
@@ -14,7 +20,7 @@ $input_background_color: #fefefe;
 $input_background_color_disabled: #eee;
 $input_background_color_hover: #fffee3;
 
-/* --------- borders --------- */
+/* --------- Borders --------- */
 
 $main_block_border: 1px solid #eee;
 $input_border: 1px solid #888;
