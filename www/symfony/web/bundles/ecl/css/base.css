@@ -317,31 +317,6 @@ body {
     font-size: 2em;
     font-weight: normal;
     padding-bottom: 5px; }
-  #sidebar .picture_info {
-    display: block;
-    padding: 0 36px; }
-    #sidebar .picture_info img {
-      border-radius: 5px;
-      display: block;
-      margin: 35px auto 10px; }
-    #sidebar .picture_info ul {
-      margin-bottom: 25px;
-      text-align: center; }
-      #sidebar .picture_info ul li {
-        display: inline-block; }
-      #sidebar .picture_info ul a {
-        background-image: url(/bundles/ecl/img/social_icons.png?2015-01-15);
-        background-repeat: no-repeat;
-        border-radius: 5px;
-        display: block;
-        height: 40px;
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        transition: all 0.5s;
-        width: 40px; }
-        #sidebar .picture_info ul a:hover {
-          box-shadow: inset 0 0 8px #000; }
   #sidebar .tag_boilerplate_list {
     margin: 30px; }
     #sidebar .tag_boilerplate_list ul {
@@ -350,20 +325,55 @@ body {
     #sidebar .tag_boilerplate_list a {
       font-size: 1.6em; }
 
-#my_twitter {
-  background-position: 0 0; }
+.picture_info {
+  display: block;
+  padding: 0 36px; }
+  .picture_info img {
+    border-radius: 5px;
+    display: block;
+    margin: 35px auto 10px; }
+  .picture_info ul {
+    margin-bottom: 25px;
+    text-align: center; }
+    .picture_info ul li {
+      display: inline-block; }
+    .picture_info ul a {
+      display: block;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      font-size: 1.8em;
+      padding: 5px 8px 0;
+      transition: all 0.5s; }
+      .picture_info ul a:before {
+        font-family: FontAwesome; }
+      .picture_info ul a:hover {
+        text-decoration: none; }
 
-#my_github {
-  background-position: -80px 0; }
+#my_twitter:hover {
+  color: #0971e6; }
+#my_twitter:before {
+  content: "\f099"; }
 
-#my_linkedin {
-  background-position: -200px 0; }
+#my_github:hover {
+  color: #0971e6; }
+#my_github:before {
+  content: "\f09b"; }
 
-#my_gplus {
-  background-position: -40px 0; }
+#my_linkedin:hover {
+  color: #215999; }
+#my_linkedin:before {
+  content: "\f0e1"; }
 
-#my_rss {
-  background-position: -280px 0; }
+#my_gplus:hover {
+  color: #cc0d0d; }
+#my_gplus:before {
+  content: "\f0d5"; }
+
+#my_rss:hover {
+  color: #d17600; }
+#my_rss:before {
+  content: "\f09e"; }
 
 .tag_boilerplate_list h2,
 .tag_boilerplate_list a {
@@ -463,15 +473,9 @@ body {
         #nav .picture_info ul li {
           display: inline-block;
           margin: 0 1px; }
-        #nav .picture_info ul a {
-          background-image: url(/bundles/ecl/img/social_icons.png?2015-01-15);
-          background-repeat: no-repeat;
-          border-radius: 5px;
-          display: block;
-          height: 40px;
-          width: 40px; }
-          #nav .picture_info ul a:hover {
-            box-shadow: inset 0 0 8px #000; }
+      #nav .picture_info a {
+        font-size: 0.8em;
+        padding: 5px 4px 0; }
     #nav .blog_tag_nav {
       display: none; }
 

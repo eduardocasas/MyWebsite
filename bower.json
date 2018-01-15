@@ -12,6 +12,7 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "tinymce": "~4.0.26",
-    "SyntaxHighlighter": "~3.0.83"
+    "SyntaxHighlighter": "~3.0.83",
+    "font-awesome": "fontawesome#^4.7.0"
   }
 }
