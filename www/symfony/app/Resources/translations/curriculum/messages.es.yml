@@ -17,7 +17,8 @@ curriculum:
             text_4: "Testing: PHPUnit (+Selenium)"
             text_5: "Gestión de Paquetes: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
             text_6: "Sistema de Caché: Memcached"
-            text_7: "RESTful APIs"
+            text_7: "Bróker de mensajería: RabbitMQ"
+            text_8: "RESTful APIs"
         subsection_2:
             title: Programación Front-End
             text_1: "Lenguajes: HTML, CSS, JavaScript, XML, JSON, Markdown"
