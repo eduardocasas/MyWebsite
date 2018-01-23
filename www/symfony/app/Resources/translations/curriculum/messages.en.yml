@@ -18,7 +18,8 @@ curriculum:
             text_5: "Package Managers: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
             text_6: "Caching System: Memcached"
             text_7: "Message broker: RabbitMQ"
-            text_8: "RESTful APIs"
+            text_8: "Modeling: UML"
+            text_9: "RESTful APIs"
         subsection_2:
             title: Front-End Development
             text_1: "Languages: HTML, CSS, JavaScript, XML, JSON, Markdown"
