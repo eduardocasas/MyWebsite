@@ -50,6 +50,7 @@ curriculum:
             text_7: "Database Administration: CLI, MySQL Workbench, pgAdmin, phpMyAdmin, Robomongo"
             text_8: "Process Manager: PM2"
             text_9: "Hardening"
+            text_10: "DNS Management: BIND"
         subsection_5:
             title: Others
             text_1: "Other languages: C++ (+Qt), R, MATLAB, Fortran"
