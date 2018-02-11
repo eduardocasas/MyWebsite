@@ -31,9 +31,6 @@ video {
   margin: 0;
   padding: 0; }
 
-iframe {
-  display: none; }
-
 :focus {
   outline: none; }
 
@@ -73,6 +70,7 @@ option {
 textarea:focus,
 input[type=text]:focus,
 input[type=password]:focus,
+input[type=email]:focus,
 select:focus,
 option:focus {
   background-color: #fffee3; }
@@ -590,6 +588,9 @@ body {
   #contact_message {
     box-sizing: border-box;
     width: 100% !important; }
+
+  .g-recaptcha {
+    margin-left: 0 !important; }
 
   /* ---------------- Blog Responsive Design ---------------- */
   #article {

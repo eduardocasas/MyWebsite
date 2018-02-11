@@ -12,7 +12,7 @@ class DefaultController extends Controller
     {
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
-        if ($form->isValid()) {
+        if ($form->isValid() && $this->reCaptchaIsValid()) {
             $data = $form->getData();
             $message = \Swift_Message::newInstance()
             ->setSubject($this->container->getParameter('mailer_prefix_site').'Correo enviado desde la web')
@@ -34,11 +34,13 @@ Mensaje:
             );
             $this->get('mailer')->send($message);
             $this->get('session')->set('email_sent', true);
-
             return $this->redirect($this->generateUrl('contact_info_'.$request->getLocale()));
+        } else {
+            return $this->render('contact/index.html.twig', [
+                'form' => $form->createView(),
+                'recaptcha_site_key' => $this->container->getParameter('recaptcha_site_key')
+            ]);
         }
-
-        return $this->redirect($this->generateUrl('contact_'.$request->getLocale()));
     }
 
     public function infoAction(Request $request)
@@ -47,7 +49,6 @@ Mensaje:
             return $this->redirect($this->generateUrl('contact_'.$request->getLocale()));
         }
         $this->get('session')->remove('email_sent');
-
         return $this->render('contact/info.html.twig');
     }
 
@@ -55,6 +56,23 @@ Mensaje:
     {
         return $this->render('contact/index.html.twig', [
             'form' => $this->createForm(ContactType::class)->createView(),
+            'recaptcha_site_key' => $this->container->getParameter('recaptcha_site_key')
         ]);
+    }
+    
+    private function reCaptchaIsValid()
+    {
+	$url = $this->container->getParameter('recaptcha_url');
+	$options = ['http' => [
+            'method' => 'POST',
+            'header' => "Content-Type: application/x-www-form-urlencoded",
+            'content' => http_build_query([
+                'secret' => $this->container->getParameter('recaptcha_secret_key'),
+                'response' => $_POST['g-recaptcha-response']
+            ])
+        ]];
+	$verify = file_get_contents($url, false, stream_context_create($options));
+	$captchaSuccess = json_decode($verify);
+	return $captchaSuccess->success;
     }
 }

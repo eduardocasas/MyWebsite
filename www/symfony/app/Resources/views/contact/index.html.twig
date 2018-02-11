@@ -4,6 +4,14 @@
 {% block stylesheets %}
 <link rel="stylesheet" href="{{ asset('bundles/ecl/css/contact/index.css') }}">
 {% endblock %}
+{% block javascripts %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script type="text/javascript">
+function recaptchaCallback() {
+    $('#submit_form_button').prop('disabled', false);
+}
+</script>
+{% endblock %}
 {% block locale %}
     <link rel="alternate" hreflang="es" href="{{ url('contact_es') }}">
     <link rel="alternate" hreflang="en" href="{{ url('contact_en') }}">
@@ -12,7 +20,6 @@
 <article id="main_article_wrapper">
     <h1 id="title">{{ 'contact.title'|trans }}</h1>
     <form action="{{ path('contact_submit') }}" method="post" id="contact_form">
-        {{ form_start(form) }}
         {{ form_errors(form) }}
         <fieldset>
             {{ form_label(form.name) }}
@@ -34,8 +41,9 @@
             {{ form_errors(form.message) }}
             {{ form_widget(form.message) }}
         </fieldset>
-        <input type="submit" class="submit_button" value="{{ 'button.send'|trans }}">
-        {{ form_end(form) }}
+        {{ form_widget(form._token) }}
+        <div class="g-recaptcha" data-sitekey="{{ recaptcha_site_key }}" data-callback="recaptchaCallback"></div>
+        <input type="submit" class="submit_button" id="submit_form_button" value="{{ 'button.send'|trans }}" disabled>
     </form>
 </article>
 {% endblock %}
