@@ -14,7 +14,7 @@ curriculum:
             text_1: "Languages: PHP, Python, Java, Node.js"
             text_2: "Databases: MySQL, PostgreSQL, MongoDB"
             text_3: "Frameworks: Symfony, Zend Framework, Django, Spring, Express"
-            text_4: "Testing: PHPUnit (+Selenium)"
+            text_4: "Testing: PHPUnit, pytest, Selenium"
             text_5: "Package Managers: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
             text_6: "Caching System: Memcached"
             text_7: "Message broker: RabbitMQ"
@@ -24,7 +24,7 @@ curriculum:
             title: Front-End Development
             text_1: "Languages: HTML, CSS, JavaScript, XML, JSON, Markdown"
             text_2: "Frameworks: jQuery, AngularJS"
-            text_3: "Preprocessors: Sass"
+            text_3: "Preprocessors: TypeScript, Sass"
             text_4: "Template Engines: Twig, Thymeleaf, Jade"
             text_5: "Cross-Browser Compatibility"
             text_6: "Responsive Design"
