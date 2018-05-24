@@ -48,9 +48,10 @@ curriculum:
             text_5: "Control panel: Ajenti, cPanel"
             text_6: "Monitoring: Nagios"
             text_7: "Database Administration: CLI, MySQL Workbench, pgAdmin, phpMyAdmin, Robomongo"
-            text_8: "Process Manager: PM2"
-            text_9: "Hardening"
-            text_10: "DNS Management: BIND"
+            text_8: "Process Manager: PM2, ps, top"
+            text_9: "Service Manager: Systemd, Upstart"
+            text_10: "Hardening"
+            text_11: "DNS Management: BIND"
         subsection_5:
             title: Others
             text_1: "Other languages: C++ (+Qt), R, MATLAB, Fortran"
