@@ -54,10 +54,12 @@ curriculum:
             text_11: "Gestión DNS: BIND"
         subsection_5:
             title: Otros 
-            text_1: "Otros lenguajes: C++ (+Qt), R, MATLAB, Fortran"
-            text_2: "Control de Versiones: Git (+GitHub +GitLab +Bitbucket), Subversion"
-            text_3: "Diseño Gráfico: GIMP, Photoshop"
-            text_4: "Otras herramientas: Slack, Trello, AWS, MediaWiki, Firebug, Mantis Bug Tracker, Bugzilla"
+            text_1: "Control de Versiones: Git (+GitHub +GitLab +Bitbucket), Subversion"
+            text_2: "Gestión de Proyectos: OpenProject, Trello, Slack, MediaWiki"
+            text_3: "Gestión de Incidencias: Mantis Bug Tracker, Bugzilla"
+            text_4: "Otros lenguajes: C++ (+Qt), R, MATLAB, Fortran"
+            text_5: "Diseño Gráfico: GIMP, Photoshop"
+            text_6: "Otras herramientas: AWS, Firebug, AVD"
     section_3: 
         title: Experiencia laboral 
         subtitle_1: España
