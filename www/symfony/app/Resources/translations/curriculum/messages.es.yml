@@ -14,12 +14,11 @@ curriculum:
             text_1: "Lenguajes: PHP, Python, Java, Node.js"
             text_2: "Bases de Datos: MySQL, PostgreSQL, MongoDB"
             text_3: "Frameworks: Symfony, Zend Framework, Django, Spring, Express"
-            text_4: "Testing: PHPUnit, pytest, Selenium"
-            text_5: "Gestión de Paquetes: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
-            text_6: "Sistema de Caché: Memcached"
-            text_7: "Bróker de mensajería: RabbitMQ"
-            text_8: "Modelado: UML"
-            text_9: "RESTful APIs"
+            text_4: "Gestión de Paquetes: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
+            text_5: "Sistema de Caché: Memcached"
+            text_6: "Bróker de mensajería: RabbitMQ"
+            text_7: "Modelado: UML"
+            text_8: "RESTful APIs"
         subsection_2:
             title: Programación Front-End
             text_1: "Lenguajes: HTML, CSS, JavaScript, XML, JSON, Markdown"
@@ -31,8 +30,7 @@ curriculum:
             text_7: "Técnicas SEO"
             text_8: "Automatizador de Tareas: Gulp"
             text_9: "Generador estático: Jekyll, MkDocs"
-            text_10: "Testing: Postman"
-            text_11: "Gestión de Paquetes: Bower, Yarn"
+            text_10: "Gestión de Paquetes: Bower, Yarn"
         subsection_3:
             title: Programación Android
             text_1: "Kit de desarrollo: Android SDK"
@@ -57,8 +55,12 @@ curriculum:
             text_1: "Metodología: Cascada, Scrum"
             text_2: "Control de Versiones: Git (+GitHub +GitLab +Bitbucket), Subversion"
             text_3: "Herramientas de Gestión: OpenProject, Trello, Slack, MediaWiki"
-            text_4: "Control de Incidencias: Mantis Bug Tracker, Bugzilla"
         subsection_6:
+            title: Ejecución de Pruebas
+            text_1: "Integración Continua: Jenkins"
+            text_2: "Frameworks: Pytest (+Selenium), PHPUnit"
+            text_3: "Gestión de Incidencias: Mantis Bug Tracker, Bugzilla"
+        subsection_7:
             title: Otros
             text_1: "Otros lenguajes: C++ (+Qt), R, MATLAB, Fortran"
             text_2: "Diseño Gráfico: GIMP, Photoshop"

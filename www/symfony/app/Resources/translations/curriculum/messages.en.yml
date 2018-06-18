@@ -14,12 +14,11 @@ curriculum:
             text_1: "Languages: PHP, Python, Java, Node.js"
             text_2: "Databases: MySQL, PostgreSQL, MongoDB"
             text_3: "Frameworks: Symfony, Zend Framework, Django, Spring, Express"
-            text_4: "Testing: PHPUnit, pytest, Selenium"
-            text_5: "Package Managers: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
-            text_6: "Caching System: Memcached"
-            text_7: "Message broker: RabbitMQ"
-            text_8: "Modeling: UML"
-            text_9: "RESTful APIs"
+            text_4: "Package Managers: Composer, pip (+virtualenv), Maven, Gradle, npm (+nvm)"
+            text_5: "Caching System: Memcached"
+            text_6: "Message broker: RabbitMQ"
+            text_7: "Modeling: UML"
+            text_8: "RESTful APIs"
         subsection_2:
             title: Front-End Development
             text_1: "Languages: HTML, CSS, JavaScript, XML, JSON, Markdown"
@@ -31,8 +30,7 @@ curriculum:
             text_7: "SEO Skills"
             text_8: "Task Runner: Gulp"
             text_9: "Static Site Generator: Jekyll, MkDocs"
-            text_10: "Testing: Postman"
-            text_11: "Package manager: Bower, Yarn"
+            text_10: "Package manager: Bower, Yarn"
         subsection_3:
             title: Android Development
             text_1: "DevKit: Android SDK"
@@ -55,10 +53,14 @@ curriculum:
         subsection_5:
             title: Project Management
             text_1: "Methodology: Waterfall, Scrum"
-            text_2: "Version Control Systems: Git (+GitHub +GitLab +Bitbucket), Subversion"
+            text_2: "Version Control System: Git (+GitHub +GitLab +Bitbucket), Subversion"
             text_3: "Management Tools: OpenProject, Trello, Slack, MediaWiki"
-            text_4: "Bug Tracker: Mantis Bug Tracker, Bugzilla"
         subsection_6:
+            title: Testing
+            text_1: "Continuous Integration: Jenkins"
+            text_2: "Frameworks: Pytest (+Selenium), PHPUnit"
+            text_3: "Bug Tracker: Mantis Bug Tracker, Bugzilla"
+        subsection_7:
             title: Others
             text_1: "Other languages: C++ (+Qt), R, MATLAB, Fortran"
             text_2: "Graphic Design: GIMP, Photoshop"
